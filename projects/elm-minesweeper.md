@@ -20,3 +20,6 @@ I used emojis for the icons to keep it basic
 
 ### Screenshots
 
+![Screenshot 1](/static/img/projects-screenshots/elm-minesweeper-1.png)
+![Screenshot 2](/static/img/projects-screenshots/elm-minesweeper-2.png)
+![Screenshot 3](/static/img/projects-screenshots/elm-minesweeper-3.png)

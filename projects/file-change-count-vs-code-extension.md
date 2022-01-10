@@ -13,4 +13,4 @@ tags:
 
 
 ### Screenshots
-
+![Screenshot 1](/static/img/projects-screenshots/file-change-count-extension-1.jpg)

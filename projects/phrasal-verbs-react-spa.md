@@ -18,5 +18,10 @@ I had a question answer dataset. The dataset had only one question and one answe
 
 ### Screenshots
 
+
+![Screenshot 1](/static/img/projects-screenshots/phrasal-verbs-1.png)
+![Screenshot 2](/static/img/projects-screenshots/phrasal-verbs-2.png)
+![Screenshot 3](/static/img/projects-screenshots/phrasal-verbs-3.png)
+
 ### Future
 This can have more intelligence. It should keep track of the mistakes

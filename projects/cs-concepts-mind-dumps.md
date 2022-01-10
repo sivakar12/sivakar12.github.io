@@ -12,4 +12,6 @@ tags:
 
 ### Screenshots
 
+![Screenshot](/static/img/projects-screenshots/cs-concepts-mind-dumps.jpeg)
+
 ### Future

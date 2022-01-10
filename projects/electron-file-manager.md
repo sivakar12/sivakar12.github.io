@@ -20,4 +20,8 @@ tabs and then also make multiple parallel copy paste dialogs. (The copy paste th
 
 ### Screenshots
 
+![Screenshot 1](/static/img/projects-screenshots/electron-file-manager-1.png)
+![Screenshot 2](/static/img/projects-screenshots/electron-file-manager-2.png)
+![Screenshot 3](/static/img/projects-screenshots/electron-file-manager-3.png)
+
 ### Future
