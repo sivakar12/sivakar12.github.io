@@ -23,5 +23,55 @@ I had a question answer dataset. The dataset had only one question and one answe
 ![Screenshot 2](/static/img/projects-screenshots/phrasal-verbs-2.png)
 ![Screenshot 3](/static/img/projects-screenshots/phrasal-verbs-3.png)
 
+### Code Snippets
+
+    function App() {
+      const [{ question, answers, correctAnswer, meaning }, setQuestion] = 
+        useState(getNextQuestionAndAnswers(data, null))
+
+      const [correctCount, setCorrectCount] = useState(0)
+      const [doneCount, setDoneCount] = useState(0)
+      const [answerClicked, setAnswerClicked] = useState(null)
+
+      const handleOnComplete = (answerClicked) => {
+        setAnswerClicked(answerClicked)
+        if (correctAnswer) {
+          setCorrectCount(correctCount + 1)
+        }
+        setDoneCount(doneCount + 1)
+        
+      }
+      
+      useEffect(() => {
+        if (doneCount === 0) { return }
+        let waitTime = correctAnswer === answerClicked ? 1000 : 4000;
+        setTimeout(() => {
+          setAnswerClicked(null)
+          setQuestion(getNextQuestionAndAnswers(data, null))
+        }, waitTime)
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      }, [doneCount])
+
+      return (
+        <Prompt
+          question={question}
+          options={answers}
+          meaning={meaning}
+          correctAnswer={correctAnswer}
+          answerClicked={answerClicked}
+          onComplete={handleOnComplete}
+        />
+      );
+    }
+
+<br/>
+
+    docs = {}
+    ids = [int(i) for i in df.index.tolist()]
+    for id in ids:
+        docs[id] = nlp(df['verb'][id])
+    for i in ids:
+        for j in ids:
+            similarities[i][j] = docs[i].similarity(docs[j])
 ### Future
 This can have more intelligence. It should keep track of the mistakes

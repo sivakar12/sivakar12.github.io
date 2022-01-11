@@ -23,3 +23,105 @@ I used emojis for the icons to keep it basic
 ![Screenshot 1](/static/img/projects-screenshots/elm-minesweeper-1.png)
 ![Screenshot 2](/static/img/projects-screenshots/elm-minesweeper-2.png)
 ![Screenshot 3](/static/img/projects-screenshots/elm-minesweeper-3.png)
+
+### Code Snippets
+
+    type GameState 
+      = NotStarted
+      | Playing
+      | Finished Bool
+
+    type CoverState 
+      = Covered
+      | Opened
+      | Flagged
+
+    type MineState
+      = Mined
+      | NotMined
+
+    type alias Cell = 
+      { covered: CoverState
+      , mine: MineState
+      , neighboringBombs: Int 
+      }
+
+    type alias Model = 
+      { grid: Grid Cell
+      , flaggingMode: Bool
+      , gameState: GameState
+      }
+
+    type ChangeAxis = Width | Height
+    type ChangeDirection = Increase | Decrease
+
+    type alias BombPositions = Set (Int, Int)
+
+    type Msg 
+      = HandleCellClick { x: Int, y: Int }
+      | AddBombs BombPositions
+      | ChangeGridSize ChangeAxis ChangeDirection
+      | ToggleFlaggingMode
+      | StartGame
+
+<br/>
+
+    displayCell: Int -> Int -> Cell -> E.Element Msg
+    displayCell x y { covered, mine, neighboringBombs } =
+      case (covered, mine) of
+        (Covered, _) ->
+          E.el 
+            (
+              cellStyles ++ 
+              [
+                Element.Events.onClick 
+                <| HandleCellClick { x = x, y = y }
+              ]
+            ) 
+            <| E.text "📦"
+        
+        (Opened, Mined) ->
+          E.el 
+            cellStyles 
+            (E.text "💣")
+        
+        (Opened, NotMined) -> 
+          E.el
+            cellStyles
+            (
+              E.text 
+              <| Maybe.withDefault "" 
+              <| Array.get neighboringBombs numbersToEmoji
+            )
+        
+        (Flagged, _) ->
+          E.el 
+            (
+              cellStyles ++ 
+              [
+                Element.Events.onClick 
+                <| HandleCellClick { x = x, y = y }
+              ]
+            )
+            (E.text "⛳")
+
+<br/>
+
+    isGameWon: Grid Cell -> Bool
+    isGameWon grid =
+      let
+        foldFinishCombinations: Cell -> Bool -> Bool
+        foldFinishCombinations cell goodSoFar =
+          let
+            wonState = 
+              case (cell.mine, cell.covered) of
+                (Mined, Covered) -> True
+                (Mined, Opened) -> False
+                (Mined, Flagged) -> True
+                (NotMined, Covered) -> False
+                (NotMined, Opened) -> True
+                (NotMined, Flagged) -> False
+          in
+            goodSoFar && wonState
+      in
+      Grid.foldl foldFinishCombinations True grid

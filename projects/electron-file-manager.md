@@ -24,4 +24,105 @@ tabs and then also make multiple parallel copy paste dialogs. (The copy paste th
 ![Screenshot 2](/static/img/projects-screenshots/electron-file-manager-2.png)
 ![Screenshot 3](/static/img/projects-screenshots/electron-file-manager-3.png)
 
+### Code Snippets
+
+
+ 
+    const NUMBER_OF_COLUMNS = 3
+
+    export default function() {
+        const path = useCurrentPath()
+        const { selection } = useSelection()
+
+        const columnPaths: Path[] = []
+        let middlePath = path
+        while(columnPaths.length < NUMBER_OF_COLUMNS) {
+            if (middlePath === columnPaths[0]) break
+            columnPaths.unshift(middlePath)
+            middlePath = pathModule.dirname(middlePath)
+        }
+        const selectedPaths: (Path| null)[] = _.drop(columnPaths, 1)
+        selectedPaths.push(selection)
+        
+        const [columnContents, setColumnContents] = useState<ContentItem[][]>(columnPaths.map(() => []))
+
+        useEffect(() => {
+            Promise.all(columnPaths.map(p => getFolderContents(p)))
+                .then(contents => setColumnContents(contents))
+        }, [path])
+
+        return (
+            <ColumnView>
+                {columnPaths.map((path, index) =>
+                    <ColumnContainer
+                        key={path}
+                        path={path}
+                        contents={columnContents[index]}
+                        selectedItem={selectedPaths[index]}
+                    />
+                )}
+            </ColumnView>
+        )
+    }
+
+<br/>
+
+    export function getFolderTree(path: Path, maxItems: number = -1): Observable<Path> {
+        let itemsLooked = 0
+        return Observable.create(async (observer: Observer<Path>) => {
+            async function recurse(folder: Path) {
+                const items = await fsPromise.readdir(folder)
+                for (let i = 0; i < items.length; i++) {
+                    const childPath = pathModule.resolve(folder, items[i])
+                    observer.next(childPath)
+                    itemsLooked += 1
+                    if (itemsLooked === maxItems) {
+                        observer.error({ message: 'Too many items'})
+                        observer.complete()
+                    }
+                    const isFolder = (await fsPromise.stat(childPath)).isDirectory()
+                    if (isFolder) {
+                        await recurse(childPath)
+                    }
+                }
+            }
+            await recurse(path)
+            observer.complete()
+        })
+    }
+
+    export function getFolderSize(path: Path): Observable<number> {
+        return getFolderTree(path, 10000)
+                .pipe(concatMap(getFileDetails))
+                .pipe(map(stats => stats.size))
+                .pipe(scan((total, current) => total + current))
+                .pipe(throttleTime(300))
+    }
+
+<br/>
+
+    type Props = {
+        content: ContentItem,
+        onClick?: (event: any) => void,
+        onDoubleClick?: (item: any) => void,
+        isSelected?: boolean
+    }
+    export default function(props: Props) {
+        let icon = props.content.isDirectory ? '📁': '📃'
+        if (props.content.errorAccessing) {
+            icon = '❌'
+        }
+        return (
+            <div className={`column-view-item ${props.isSelected ? 'selected' : ''}`} 
+                onClick={props.onClick}
+                onDoubleClick={props.onDoubleClick}>
+                <div className="column-view-item-name">
+                    { icon }
+                    {props.content.name}
+                    {props.content.isSymLink ? '🔗' : '' }
+                </div>
+            </div>
+        )
+    }
+
 ### Future
