@@ -1,19 +1,25 @@
 ---
-title: Udacity Data Analyst Nanodegree
+title: Seattle AirBnB Data Analytics
 emoji: 📊
-date: 2019-01-01T00:00:00.000Z
+date: 2021-07-21
 metaDescription: This is a sample meta description. If one is not present in your page/project's front matter, the default metadata.desciption will be used instead.
-summary: Some data cleaning, analyzing and visualizing work as part of Udacity Nanodegere
+summary: Analysing a dataset and presenting findings as part of Udacity Data Scientist Nanodegree
 tags:
   - Python
   - Pandas
   - Matplotlib
+  - Scikit-learn
 ---
 
 ### Background
 
-Udacity had this course on discount. I got 75 percent off. And they say it is typically a four-month course. I thought if I did this in one month, paying only for one month with 75 percent off, I would end up paying 1/16 of what is typical. I did just that
+A data exploration blog post I am doing as part of the Udacity Data Scientist Nanodegree This is a dataset of AirBnB listings in Seattle. It has details about the prices, ratings, host information, amenities provided by the property etc. I looked at the amenities provided and also see how they react with price and ratings. 
 
-### Work
+Used popular data science tools like Pandas, Matplotlib, Scikit-Learn etc. There is a Jupyter Notebook and a Gatsby site with 
+the blog post
 
 ### Links
+
+- [Respository](https://github.com/sivakar12/seattle-airbnb-nanodegree-project)
+- [Jupyter Notebook](https://github.com/sivakar12/seattle-airbnb-nanodegree-project/blob/main/CRISP-DM.ipynb)
+- [Blog post](https://sivakar12.github.io/seattle-airbnb-nanodegree-project/seattle-airbnb/)
