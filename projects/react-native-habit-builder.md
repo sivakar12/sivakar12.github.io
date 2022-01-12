@@ -1,7 +1,7 @@
 ---
 title: React Native Habit Builder
 emoji: ✅
-date: 2019-01-01T00:00:00.000Z
+date: 2021-11-03
 metaDescription: This is a sample meta description. If one is not present in your page/project's front matter, the default metadata.desciption will be used instead.
 summary: A small but whole application
 tags:

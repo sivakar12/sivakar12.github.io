@@ -1,7 +1,7 @@
 ---
 title: CS Concepts Mind Dumps
 emoji: 📋
-date: 2019-01-01T00:00:00.000Z
+date: 2020-08-17
 metaDescription: This is a sample meta description. If one is not present in your page/project's front matter, the default metadata.desciption will be used instead.
 summary: A blog with an experimental style of writing, to try out the Feynman's advice
 tags:
