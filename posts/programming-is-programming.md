@@ -1,7 +1,7 @@
 ---
 title: Programming is Programming
 metaDescription: Arguing aganinst labels
-date: 2022-01-13
+date: 2022-01-20
 author: Sivakar Sithamparanathan
 summary: Why I don't limit myself to particular stacks
 tags:
