@@ -8,6 +8,7 @@ tags:
   - learning
 ---
 [DRAFT]
+
 Programming is programming. 
 
 It always baffles me when I see jobs listed for Java Developers, PHP Developers, .NET Programmers, etc. I really don't buy into this idea that these are so different from one another. They all have so much in common than they are different. A for loop is a for loop in all languages. All Turing languages are there for the same reason. The syntax is a surface-level thing. 

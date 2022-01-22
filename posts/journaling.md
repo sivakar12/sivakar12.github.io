@@ -7,5 +7,5 @@ summary: Journaling obsessively helped me discover my voice
 tags:
   - learning
 ---
-
+[Not ready yet]
 Journaling obsessively helped me discover my voice
