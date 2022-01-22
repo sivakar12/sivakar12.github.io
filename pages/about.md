@@ -8,7 +8,7 @@ eleventyNavigation:
   key: About
   order: 1
 ---
-
+[DRAFT]
 Always curious, I love learning about everything under the sun. I want to become a polymath one day. 
 My present day interests are computer science, economics, history, geopolitics and psychology. I have
 mostly done well at school. In highscool I loved Physics and Math with came naturally to me, I 
