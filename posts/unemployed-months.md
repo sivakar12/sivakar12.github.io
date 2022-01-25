@@ -23,9 +23,7 @@ So I took the bulk of my time away from tech and looked at various other subject
 
 #### Computer Science
 
-I am a programmer only mostly. I wanted to see if it would be possible for me to pivot to Data Science at some point. There was the Udacity Nanodegree programmes on 75% discount. That course typically takes four months to complete. I did the Data Analyst Nonodegree and finished it in just a month, at a cost 1/12 of what their website said. I took that Data Scientist course but coult not complete the thing in one month and I didn't pay for the other months.
-
-I made a lot of small but complete side projects, some using new tech stacks I wasn't using before. I made Minesweeper game clone in Elm. I made a small Visual Studio Code extension. I build a React Native app that I now use on a daily basis for my own productivity.
+I am a programmer only mostly. I wanted to see if it would be possible for me to pivot to Data Science at some point. There was the Udacity Nanodegree program on discount and I did one in a really quick time paying really less. I made a lot of small but complete side projects, some using new tech stacks I wasn't using before. I made Minesweeper game clone in Elm. I made a small Visual Studio Code extension. I build a React Native app that I now use on a daily basis for my own productivity.
 
 So I had the reassurance that I am still in that game.
 
@@ -44,7 +42,7 @@ I realized how the soccial media and marketing makes use of psychology.
 
 #### Economy
 
-I don't get to live the way I want and do that job I want because of economy. The system. I have been very angry at how modern capitalism worked. I know Capitalism did play its role in a lot of progressive outcomes but I have been really bothered by all these bubbles I keep seeing everywhere.
+I don't get to live the way I want and do that job I want because of economy. The system. I have been very angry at how modern capitalism worked. I know Capitalism did play its role in a lot of progressive outcomes but I have been really bothered by all these bubbles I keep seeing everywhere. And modern Capitalism in my view just keeps solving easy problems, with litle foregight in my opinion. The most pressing issues of today are climate change, mental health and inequality there is very litte done by Capitalism on these.
 
 I learned about the very fundamenals in economics like opportunity cost, demand and supply, comparative advantage, value, etc. I found myself applying a lot of these thing in my day-to-day decision making thigns as well.
 
