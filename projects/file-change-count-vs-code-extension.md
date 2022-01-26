@@ -22,6 +22,7 @@ I have made a Visual Studio Code extension that looks at the Git history and cou
 
 ### Links
 - [GitHub repository](https://github.com/sivakar12/file-change-count-vscode-extension)
+- [Extension in Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=sivakar12.file-change-count)
 
 ### Code Snippets
 ```
