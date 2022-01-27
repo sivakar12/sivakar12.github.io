@@ -8,7 +8,7 @@ tags:
   - life
   - learning
 ---
-[Draft 2]
+[Draft 3]
 
 I was unemployed for several months in 2021. I was unemployed but I wasn't unproductive.
 
@@ -22,15 +22,12 @@ Dogmas are rules that are taken for granted but aren't derived from solid princi
 
 Another popular dogma is that only experts are allowed to have opinions on certain subjects and you should stick to the subjects of your profession. If only experts are entitled to a professional opinion, then how does democracy or free market work. They are based on the idea that the voter knows best and the consumer knows best. I say that as long as I am following logic and facts, I can learn anything and comment on anything.
 
-So I took the bulk of my time away from tech and looked at various other subjects like economics, geopolitics, philosophy and psychology. But I did some computer science work on the side so that I don't lose touch
+So I took the bulk of my time away from tech and looked at various other subjects like economics, geopolitics, philosophy and psychology. But I did some computer science work on the side so that I don't lose touch.
 
-#### Computer Science
+I had saved most of what I had earned in the last two years. I am financially secure. So common sense wise it is a reasonable decision to take time off work.
 
-I needed to have some work to show that I still am in the coding game. I made a lot of small but complete side projects, some using new tech stacks I haven't used before. I made a Minesweeper game clone in Elm. I made a small Visual Studio Code extension. I build a React Native app that I now use daily for my productivity.
 
-I am a programmer mostly. I wanted to see if it would be possible for me to pivot to Data Science at some point. I took a couple of courses in Udacity that were in discount and completed one in a very quick time.
-
-#### Economy
+#### Can't escape the economy
 
 I don't get to live the way I want and do that job I want because of the economy. I have been very angry at how modern capitalism worked. I know Capitalism did play its role in a lot of progressive outcomes but I have been really bothered by all these bubbles I keep seeing everywhere. And modern Capitalism in my view just keeps solving easy problems, with litle foresight in my opinion. The most pressing issues of today are climate change, mental health and inequality there is very little done by Capitalism on these.
 
@@ -38,25 +35,23 @@ I learned about the very fundamentals in economics like opportunity cost, demand
 
 I learned about the countries' economics. I started seeing the forest instead of the trees. It was illuminating and I believe that they will help me for many many years into the future.
 
-#### Philosophy
+#### Understanding the world order
+
+The last time the world order changed for good was at the end of World War II. I believe that we are at such a watershed moment now at the end of Covid 19. I read a few really good books. I was reading the news a lot. I was going through some high-quality Reddit threads. They gave me so much valuable framework to understand how the world works.
+
+#### Searching for meaning in philosophy
 
 Like I said before, I was disillusioned with the world and needed some answers to big questions. I looked at a lot of philosophical concepts and the works of many people but maybe on a shallow level. I had already been looking at those ideas for several years. 
 
 Stoicism was a good guiding philosophy. It helped me live through all the hard things that were thrown at me, every day. I also liked what Fredrich Nietzsche had to say. I read and watched a lot and I thought a lot. Thinking is the hallmark of philosophy.
 
-#### Phychology
+#### Psychology and neuroscience 
 
 I needed psychology to understand people. The pandemic showed just how important it is. Although we had a lot of scientific information, making people behave rationally is near impossible. (I, myself,  am a bit guilty of that). 
 
-Freud, I learned a long time ago. Then I did learn about Carl Jung. I hung out in a few subreddits. I read a lot of articles and books. 
-I realized how much social media and marketing makes use of psychology and how these ideas are used to shape the human collective. 
+Freud, I learned a long time ago. Then I did learn about Carl Jung. I hung out in a few subreddits. I read a lot of articles and books. I realized how much social media and marketing makes use of psychology and how these ideas are used to shape the human collective. I found new tricks to be more productive. I learned a lot about human nature. I trained myself to me more empathetic to people. 
 
-
-#### Geopolitics
-
-The last time the world order changed for good was at the end of World War II. I believe that we are at such a watershed moment now at the end of Covid 19. I read a few really good books. I was reading the news a lot. I was going through some high-quality Reddit threads. They gave me so much valuable framework to understand how the world works.
-
-#### Communication Skills
+#### I wanted to find my own voice and to get it across to other people
 
 I have been really introverted and reclusive most of my life. I am only now learning to convert my thoughts to words when it became clear how many doors communication skills can open. 
 
@@ -64,13 +59,19 @@ I journaled extensively. For hundreds of hours. I was writing down everything th
 
 I was experimenting with social media. I was getting a lot of engagement and validation, although from a small group of people, I know they liked the things I post because of their inherent value. I was really into a variety and I found people liking and appreciating me for what I have been sharing. It helped me beat a lot of my discomfort in sharing my ideas.
 
-#### Brain training
+#### Unlocking new parts of the brain
 
 Foreign languages can do a lot of good to the brain. Just like how one exercises the body, one's brain needs to be exercised too. Thanks to Duolingo, I learned a lot of French, which is good for my personality and for my brain.
 
 I spend a lot of time in brain training apps, beating record after record, unlocking achievements after achievements. 
 
 Neuroplasticity is something that is not well known but super important. I know I am planting seeds that will bear fruit down the road.
+
+#### Not forgetting Computer Science
+
+I needed to have some work to show that I still am in the coding game. I made a lot of small but complete side projects, some using new tech stacks I haven't used before. I made a Minesweeper game clone in Elm. I made a small Visual Studio Code extension. I build a React Native app that I now use daily for my productivity.
+
+I am a programmer mostly. I wanted to see if it would be possible for me to pivot to Data Science at some point. I took a couple of courses in Udacity that were in discount and completed one in a very quick time.
 
 #### Long Term Benefits
 
