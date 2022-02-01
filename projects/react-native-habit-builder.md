@@ -35,23 +35,23 @@ I am not using a database at the moment. The whole data is stored as a JSON stri
 ```
 <AppContext.Provider value={contextData}>
     <SafeAreaView style={styles.safeArea}>
-    <HeaderBar 
-        title="Habit Builder"
-        showBack={selectedHabit !== null}
-        handleBack={() => setSelectedHabit(null)}
-        handleMenu={() => setShowMenu(showMenu => !showMenu)}
+        <HeaderBar 
+            title="Habit Builder"
+            showBack={selectedHabit !== null}
+            handleBack={() => setSelectedHabit(null)}
+            handleMenu={() => setShowMenu(showMenu => !showMenu)}
+            />
+        { 
+            (selectedHabit) ? 
+            <HabitDetailView habitId={selectedHabit}/> : 
+            <HabitListView onHabitSelect={setSelectedHabit} showArchives={showArchives}/> 
+        }
+        <Menu
+            open={showMenu} 
+            items={selectedHabit ? habitDetailMenuItems : mainMenuItems} 
+            onClose={() => { setShowMenu(false) }}
         />
-    { 
-        (selectedHabit) ? 
-        <HabitDetailView habitId={selectedHabit}/> : 
-        <HabitListView onHabitSelect={setSelectedHabit} showArchives={showArchives}/> 
-    }
-    <Menu
-        open={showMenu} 
-        items={selectedHabit ? habitDetailMenuItems : mainMenuItems} 
-        onClose={() => { setShowMenu(false) }}
-    />
-    {DialogBoxToShow}
+        {DialogBoxToShow}
     </SafeAreaView>
 </AppContext.Provider>
 ```
@@ -74,82 +74,93 @@ type HabitLog = {
 type Orders = Id[]
 ```
 ```
-const makeInitialContextData = () => {
-    const [habits, setHabits] = useState<Habit[]>([])
-    
+const habitsReducer = (state: State, action: Action): State => {
+    switch (action.type) {
+        case 'INCREMENT_HABIT':
+            return state.map(habit => {
+                if (habit.id === action.habitId) {
+                    return {
+                        ...habit,
+                        logs: [
+                            ...habit.logs,
+                            {
+                                time: dayjs().toISOString()
+                            }
+                        ]
+                    }
+                } else {
+                    return habit;
+                }
+            });
+        case 'ADD_HABIT':
+            return [
+                ...state,
+                {
+                    id: state.length.toString(),
+                    name: action.habitName,
+                    createdTime: dayjs().toISOString(),
+                    archived: false,
+                    logs: []
+                }
+            ];
+        case 'DELETE_HABIT':
+            return state.filter(habit => habit.id !== action.habitId);
+        case 'RENAME_HABIT':
+            return state.map(habit => {
+                if (habit.id === action.habitId) {
+                    return {
+                        ...habit,
+                        name: action.newName
+                    }
+                } else {
+                    return habit;
+                }
+            });
+        case 'TOGGLE_ARCHIVE':
+            return state.map(habit => {
+                if (habit.id === action.habitId) {
+                    return {
+                        ...habit,
+                        archived: !habit.archived
+                    }
+                } else {
+                    return habit;
+                }
+            });
+        case 'DELETE_LAST_ENTRY':
+            return state.map(habit => {
+                if (habit.id === action.habitId) {
+                    return {
+                        ...habit,
+                        logs: habit.logs.slice(0, habit.logs.length - 1)
+                    }
+                } else {
+                    return habit;
+                }
+            });
+        case 'SET_HABITS':
+            return action.habits;
+        default:
+            return state;
+    }
+}
+
+const useHabitsReducer: () => [State, React.Dispatch<Action>] = () => {
+    const [state, dispatch] = useReducer<React.Reducer<State, Action>>(habitsReducer, []);
     useEffect(() => {
         AsyncStorage.getItem('habitdatalogs').then(dataString => {
             if (dataString) {
                 const dataParsed = JSON.parse(dataString) as Habit[]
-                setHabits(dataParsed)
+                dispatch({ type: 'SET_HABITS', habits: dataParsed })
             }
         })
     }, [])
     useEffect(() => {
-        AsyncStorage.setItem('habitdatalogs', JSON.stringify(habits))
+        AsyncStorage.setItem('habitdatalogs', JSON.stringify(state))
             .catch(() => { alert('failure to save')})
-    }, [habits])
+    }, [state])
 
-    const incrementHabit = (habitId: Id) => {
-        const newHabits = habits.map(habit => {
-            if (habit.id === habitId) {
-                const log: HabitLog = {
-                    time: dayjs().toISOString()
-                }
-                return {...habit, logs: [...habit.logs, log]}
-            } else {
-                return habit
-            }
-        })
-        setHabits(newHabits)
-    }
-
-    const getHabitById = (habitId: Id) => {
-        return habits.filter(h => h.id === habitId)[0]
-    }
-
-    const addHabit = (habitName: string) => {
-        const habit: Habit = {
-            id: habits.length.toString(),
-            name: habitName,
-            createdTime: dayjs().toISOString(),
-            archived: false,
-            logs: []
-        }
-        setHabits([...habits, habit])
-    }
-
-    const deleteHabit = (habitId: Id) => {
-        const newHabits = habits.filter(h => h.id !== habitId);
-        setHabits(newHabits)
-    }
-
-    const toggleArchiveForHabit = (habitId: Id) => {
-        const newHabits = habits.map(habit => {
-            if (habit.id === habitId) {
-                return {...habit, archived: !habit.archived}
-            } else {
-                return habit
-            }
-        })
-        setHabits(newHabits);
-    }
-
-
-    const loadSampleData = () => {
-        setHabits(sampleData)
-    }
-
-    return {
-        loadSampleData,
-        habits,
-        incrementHabit,
-        getHabitById,
-        addHabit,
-        setHabits,
-        deleteHabit,
-        toggleArchiveForHabit
-    }
+    return [state, dispatch]
 }
 ```
 
