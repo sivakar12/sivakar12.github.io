@@ -3,7 +3,7 @@ title: React Native Habit Builder
 emoji: ✅
 date: 2021-11-03
 metaDescription: This is a sample meta description. If one is not present in your page/project's front matter, the default metadata.desciption will be used instead.
-summary: A small but whole application
+summary: A React Native application to track progress of building new habits
 tags:
   - TypeScript
   - React Native

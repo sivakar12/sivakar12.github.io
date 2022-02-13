@@ -12,11 +12,9 @@ tags:
 
 ### Background
 
-I wanted to have a file manager with multiple tabs because Windows didn't have one. I wanted to make use of the full suite of tools
-modern web development offered. 
+I wanted to have a file manager with multiple tabs because Windows didn't have one. I wanted to make use of the full suite of tools modern web development offered.
 
-When I am doing file transfers, there are always multiple explorer windows open alongside many copy progress dialogs. I wanted to add
-tabs and then also make multiple parallel copy paste dialogs. (The copy paste thing is still not implemented)
+When I am doing file transfers, there are always multiple explorer windows open alongside many copy progress dialogs. I wanted to add tabs and then also make multiple parallel copy paste dialogs. (The copy paste thing is still not implemented)
 
 ### Screenshots
 

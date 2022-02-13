@@ -15,16 +15,17 @@ When looking at a new code repository, you may want to know what are the importa
 
 I have made a Visual Studio Code extension that looks at the Git history and count how many times each file has gone through a change. I propagate this up the file tree as well. There is another file tree panel next to the standard one that shows this tree.
 
-
 ### Screenshots
+
 ![Screenshot 1](/static/img/projects-screenshots/file-change-count-extension-1.jpg)
 
-
 ### Links
+
 - [GitHub repository](https://github.com/sivakar12/file-change-count-vscode-extension)
 - [Extension in Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=sivakar12.file-change-count)
 
 ### Code Snippets
+
 ```
 function getDirectChildrenForPath(parentPath: string, allPaths: string[]): ChildrenList[] {
   return allPaths
@@ -42,6 +43,7 @@ function getDirectChildrenForPath(parentPath: string, allPaths: string[]): Child
     });
 }
 ```
+
 ```
 async function getFileChangeCounts(repoAbsolutePath: string): Promise<CountsForPaths> {
   const commits = await gitToJs(repoAbsolutePath);
@@ -63,4 +65,3 @@ async function getFileChangeCounts(repoAbsolutePath: string): Promise<CountsForP
   return counts;
 }
 ```
-
