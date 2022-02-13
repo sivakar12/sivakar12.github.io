@@ -7,7 +7,6 @@ summary: Android app that sends reminders for 20-20-20 rule for reducing eye str
 tags:
   - Java
   - Android SDK
-  - Material You
 ---
 
 ### Background
