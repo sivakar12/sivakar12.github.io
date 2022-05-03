@@ -1,5 +1,5 @@
 ---
-title: React Native Habit Builder
+title: Small Wins (React Native app)
 emoji: ✅
 date: 2021-11-03
 metaDescription: This is a sample meta description. If one is not present in your page/project's front matter, the default metadata.desciption will be used instead.
@@ -21,8 +21,8 @@ I am not using a database at the moment. The whole data is stored as a JSON stri
 
 ### Links
 
-- [GitHub repository](https://github.com/sivakar12/habit-builder-react-native)
-- [Hosted on Expo platform]("exp://exp.host/@sivakar12/habit-builder")
+- [GitHub repository](https://github.com/sivakar12/small-wins)
+- [Hosted on Expo platform]("exp://exp.host/@sivakar12/small-wins")
 
 
 ### Screenshots
