@@ -15,8 +15,8 @@ I have for a long time been fascinated by functional programming. I have never d
 
 I made use of flex methods to style thing properly. The height and width can be changed and everything stayed centered an in layout. I used emojis for the icons to keep it basic
 
+### Links
 
-### 
 - [Live site](https://elm-minesweeper-sivakar12.netlify.app/)
 - [GitHub repository](https://github.com/sivakar12/elm-minesweeper)
 
@@ -27,7 +27,9 @@ I made use of flex methods to style thing properly. The height and width can be 
 ![Screenshot 3](/static/img/projects-screenshots/elm-minesweeper-3.png)
 
 ### Code Snippets
+
 ```
+
 type GameState 
   = NotStarted
   | Playing
