@@ -1,6 +1,6 @@
 import fs from "fs"
 import matter from "gray-matter"
-import { Item, Label } from "semantic-ui-react"
+import { Card, Image, Item, Label, List } from "semantic-ui-react"
 
 type Project = {
   title: string;
@@ -41,7 +41,7 @@ export default function Projects({ projects }: { projects: Project[] }) {
     <div>
         <h1>Projects</h1>
 
-        <Item.Group link>
+        {/* <Item.Group link>
           {projectsOrdered.map((p) => (
             <Item key={p.title} href={`projects/${p.slug}`}>
               <Item.Image size="tiny" src="https://react.semantic-ui.com/images/wireframe/image.png" />
@@ -54,7 +54,22 @@ export default function Projects({ projects }: { projects: Project[] }) {
               </Item.Content>
             </Item>
           ))}
-        </Item.Group>
+        </Item.Group> */}
+        <Card.Group link>
+          {projectsOrdered.map((p) => (
+            <Card key={p.title} href={`projects/${p.slug}`}>
+              <Card.Content>
+                <Card.Header>{p.emoji} {p.title}</Card.Header>
+                <Card.Description>{p.summary}</Card.Description>
+              </Card.Content>
+              <Card.Content extra>
+                <List celled horizontal link>
+                  {p.tags.map((t) => (<List.Item key={t}>{t}</List.Item>))}
+                </List>
+              </Card.Content>
+            </Card>
+          ))}
+        </Card.Group>
     </div>
   );
 }
