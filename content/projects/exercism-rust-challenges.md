@@ -2,7 +2,6 @@
 title: Rust Exercises in Exercism
 emoji: 📋
 date: 2021-10-04
-metaDescription: This is a sample meta description. If one is not present in your page/project's front matter, the default metadata.desciption will be used instead.
 summary: Rust code I wrote for the excercises from the coding practice website Exercism
 tags:
   - Rust

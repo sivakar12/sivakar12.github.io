@@ -2,7 +2,6 @@
 title: Seattle AirBnB Data Analytics
 emoji: 📊
 date: 2021-07-21
-metaDescription: This is a sample meta description. If one is not present in your page/project's front matter, the default metadata.desciption will be used instead.
 summary: Analysing a dataset and presenting findings as part of Udacity Data Scientist Nanodegree
 tags:
   - Python

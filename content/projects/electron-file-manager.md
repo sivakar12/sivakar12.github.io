@@ -2,7 +2,6 @@
 title: Electron File Manager
 emoji: 📁
 date: 2018-04-19
-metaDescription: This is a sample meta description. If one is not present in your page/project's front matter, the default metadata.desciption will be used instead.
 summary: File manager built on Electron and React using modern HTML/CSS/Js tools with multi tabs
 tags:
   - HTML/CSS

@@ -2,7 +2,6 @@
 title: Phrasal Verbs React SPA
 emoji: 📖
 date: 2021-09-03
-metaDescription: This is a sample meta description. If one is not present in your page/project's front matter, the default metadata.desciption will be used instead.
 summary: Single Page Web Application to practice phrasal verbs, question-answer way
 tags:
   - React

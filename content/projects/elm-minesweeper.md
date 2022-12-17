@@ -2,7 +2,6 @@
 title: Elm Minesweeper
 emoji: 💣
 date: 2021-10-06
-metaDescription: This is a sample meta description. If one is not present in your page/project's front matter, the default metadata.desciption will be used instead.
 summary: Built this Minesweeper game clone using Elm languange while learning the language and functional style of programming
 tags:
   - Elm

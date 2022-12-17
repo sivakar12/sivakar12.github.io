@@ -2,7 +2,6 @@
 title: Diaster Response ML Pipeline - Udacity
 emoji: 📊
 date: 2021-07-07
-metaDescription: This is a sample meta description. If one is not present in your page/project's front matter, the default metadata.desciption will be used instead.
 summary: A multilabel classification model I built as part of Udacity Data Scientist Nanodegree
 tags:
   - Python

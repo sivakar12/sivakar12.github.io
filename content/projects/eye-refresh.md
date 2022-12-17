@@ -2,7 +2,6 @@
 title: Eye Refresh
 emoji: 👁
 date: 2022-01-28
-metaDescription: This is a sample meta description. If one is not present in your page/project's front matter, the default metadata.desciption will be used instead.
 summary: Android app that sends reminders for 20-20-20 rule for reducing eye strain
 tags:
   - Java
