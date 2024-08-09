@@ -4,6 +4,9 @@ type PersonalWebsiteData = {
   bigBio: string;
   smallBio: string;
   contact: ContactData;
+  photoUrl: string;
+  resume: ResumeData;
+  settings: WebsiteSettings
 }
 
 type ContactData = {
@@ -496,3 +499,30 @@ When I am doing file transfers, there are always multiple explorer windows open 
     links: [],
   },
 ];
+
+const settings: WebsiteSettings = {
+  font: "Arial",
+  primaryColor: "#000",
+  secondaryColor: "#fff",
+  backgroundColor: "#f5f5f5",
+}
+
+const data: PersonalWebsiteData = {
+  name: "Sivakar Sithamparanathan",
+  title: "Software Developer",
+  bigBio,
+  smallBio: "I am a software developer with a degree in engineering and a proven track record of working with diverse technologies. As a quick learner and first-principles thinker, I approach coding with creativity, organization, and discipline. My communication style is organic and authentic, fostering effective team collaboration. I am seeking challenging opportunities where I can grow and make meaningful contribution.",
+  contact: contactData,
+  photoUrl: "profile.jpeg",
+  resume: {
+    name: "Sivakar Sithamparanathan",
+    contact: contactData,
+    links: linksData,
+    personalStatement,
+    skills,
+    experiences,
+    education,
+    interests,
+  },
+  settings,
+}
