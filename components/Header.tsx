@@ -1,31 +1,50 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useTheme } from '@/components/ThemeProvider';
-import data from '@/data';
 import styles from './Header.module.css';
 
+const navItems = [
+  { name: 'Home', path: '/' },
+  { name: 'Resume', path: '/resume' },
+  { name: 'Projects', path: '/projects' },
+  { name: 'Contact', path: '/contact' },
+];
+
 export default function Header() {
-  const { toggleTheme, colors } = useTheme();
+  const { toggleTheme, mode, colors } = useTheme();
+  const pathname = usePathname();
 
   return (
-    <header className={styles.header} style={{ background: colors.primaryGradient }}>
-      <div className={`container ${styles.headerContent}`}>
-        <h1 className={styles.title}>{data.name}</h1>
-        <nav className={styles.nav}>
-          <Link href="/">Home</Link>
-          <Link href="/resume">Resume</Link>
-          <Link href="/projects">Projects</Link>
-          <Link href="/contact">Contact</Link>
-        </nav>
-        <button 
-          onClick={toggleTheme} 
-          className={styles.themeToggle}
-          style={{ background: colors.secondaryGradient }}
-        >
-          Toggle Theme
-        </button>
-      </div>
+    <header className={styles.header} style={{ backgroundColor: colors.background }}>
+      <nav className={styles.nav}>
+        {navItems.map((item) => (
+          <Link 
+            key={item.path} 
+            href={item.path}
+            className={`${styles.navItem} ${pathname === item.path ? styles.selected : ''}`}
+          >
+            <span style={{
+              backgroundImage: pathname === item.path ? colors.secondaryGradient : colors.primaryGradient,
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+              color: 'transparent',
+            }}>
+              {item.name}
+            </span>
+          </Link>
+        ))}
+      </nav>
+      <button 
+        onClick={toggleTheme} 
+        className={styles.themeToggle}
+        style={{ color: colors.text }}
+        aria-label={`Switch to ${mode === 'light' ? 'dark' : 'light'} mode`}
+      >
+        {mode === 'light' ? '🌙' : '☀️'}
+      </button>
     </header>
   );
 }

@@ -1,15 +1,9 @@
 'use client';
 
-import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 import data from '@/data';
 
-type ThemeMode = 'light' | 'dark';
-
-const ThemeContext = createContext<{
-  mode: ThemeMode;
-  toggleTheme: () => void;
-  colors: typeof data.settings.colorScheme.light;
-}>({
+const ThemeContext = createContext({
   mode: 'light',
   toggleTheme: () => {},
   colors: data.settings.colorScheme.light,
@@ -17,13 +11,8 @@ const ThemeContext = createContext<{
 
 export const useTheme = () => useContext(ThemeContext);
 
-export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [mode, setMode] = useState<ThemeMode>('light');
-
-  useEffect(() => {
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    setMode(prefersDark ? 'dark' : 'light');
-  }, []);
+export function ThemeProvider({ children }) {
+  const [mode, setMode] = useState('light');
 
   const toggleTheme = () => {
     setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
@@ -32,13 +21,10 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   const colors = mode === 'light' ? data.settings.colorScheme.light : data.settings.colorScheme.dark;
 
   useEffect(() => {
-    const root = document.documentElement;
-    Object.entries(colors).forEach(([key, value]) => {
-      root.style.setProperty(`--color-${key}`, value);
-    });
-    Object.entries(data.settings.colorScheme.shared).forEach(([key, value]) => {
-      root.style.setProperty(`--color-${key}`, value);
-    });
+    document.documentElement.style.setProperty('--primary-gradient', colors.primaryGradient);
+    document.documentElement.style.setProperty('--secondary-gradient', colors.secondaryGradient);
+    document.documentElement.style.setProperty('--background-color', colors.background);
+    document.documentElement.style.setProperty('--text-color', colors.text);
   }, [colors]);
 
   return (
