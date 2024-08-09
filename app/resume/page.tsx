@@ -1,51 +1,84 @@
-import data from '../../data';
+'use client';
+
+import { useTheme } from '@/components/ThemeProvider';
+import data from '@/data';
+import styles from './resume.module.css';
 
 export default function Resume() {
+  const { colors } = useTheme();
+
   return (
-    <div>
-      <h2 className="text-3xl font-bold mb-6">Resume</h2>
-      
-      <section className="mb-8">
-        <h3 className="text-2xl font-bold mb-4">Skills</h3>
-        <ul className="list-disc pl-6">
-          {data.resume.skills.map((skill, index) => (
-            <li key={index}>
-              <strong>{skill.title}:</strong> {skill.details}
-            </li>
+    <div style={{ backgroundColor: colors.background, color: colors.text, minHeight: '100vh' }}>
+      <div className={styles.container}>
+        <header className={styles.header}>
+          <h1>{data.resume.name}</h1>
+          <p>{data.resume.contact.email} | {data.resume.contact.phone}</p>
+          <p>
+            {Object.entries(data.resume.links).map(([key, value], index) => (
+              <span key={key}>
+                {index > 0 && ' | '}
+                <a href={value} target="_blank" rel="noopener noreferrer" className={styles.link}>{key}</a>
+              </span>
+            ))}
+          </p>
+        </header>
+
+        <section className={styles.section}>
+          <h2>Personal Statement</h2>
+          <p>{data.resume.personalStatement}</p>
+        </section>
+
+        <section className={styles.section}>
+          <h2>Skills</h2>
+          <ul className={styles.skillsList}>
+            {data.resume.skills.map((skill, index) => (
+              <li key={index}>
+                <strong>{skill.title}:</strong> {skill.details}
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section className={styles.section}>
+          <h2>Experience</h2>
+          {data.resume.experiences.map((exp, index) => (
+            <div key={index} className={styles.experience}>
+              <h3>{exp.jobTitle} at {exp.company}</h3>
+              <p className={styles.dates}>{exp.dates}</p>
+              <ul className={styles.list}>
+                {exp.details.map((detail, detailIndex) => (
+                  <li key={detailIndex}>
+                    <strong>{detail.title}:</strong> {detail.description}
+                  </li>
+                ))}
+              </ul>
+            </div>
           ))}
-        </ul>
-      </section>
+        </section>
 
-      <section className="mb-8">
-        <h3 className="text-2xl font-bold mb-4">Experience</h3>
-        {data.resume.experiences.map((exp, index) => (
-          <div key={index} className="mb-6">
-            <h4 className="text-xl font-bold">{exp.jobTitle} at {exp.company}</h4>
-            <p className="italic">{exp.dates}</p>
-            <ul className="list-disc pl-6 mt-2">
-              {exp.details.map((detail, detailIndex) => (
-                <li key={detailIndex}>
-                  <strong>{detail.title}:</strong> {detail.description}
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </section>
+        <section className={styles.section}>
+          <h2>Education</h2>
+          {data.resume.education.map((edu, index) => (
+            <div key={index} className={styles.education}>
+              <h3>{edu.title}</h3>
+              <ul className={styles.list}>
+                {edu.details.map((detail, detailIndex) => (
+                  <li key={detailIndex}>{detail}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </section>
 
-      <section>
-        <h3 className="text-2xl font-bold mb-4">Education</h3>
-        {data.resume.education.map((edu, index) => (
-          <div key={index} className="mb-4">
-            <h4 className="text-xl font-bold">{edu.title}</h4>
-            <ul className="list-disc pl-6">
-              {edu.details.map((detail, detailIndex) => (
-                <li key={detailIndex}>{detail}</li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </section>
+        <section className={styles.section}>
+          <h2>Interests</h2>
+          <ul className={styles.interestsList}>
+            {data.resume.interests.map((interest, index) => (
+              <li key={index}>{interest}</li>
+            ))}
+          </ul>
+        </section>
+      </div>
     </div>
   );
 }
