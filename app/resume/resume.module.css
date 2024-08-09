@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
+
+.container {
+  font-family: 'Merriweather', serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  line-height: 1.6;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  margin: 0.25rem 0;
+}
+
+.section {
+  margin-bottom: 2rem;
+}
+
+.section h2 {
+  font-size: 1.8rem;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.skillsList, .interestsList, .list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.skillsList li, .interestsList li {
+  margin-bottom: 0.5rem;
+}
+
+.experience, .education {
+  margin-bottom: 1.5rem;
+}
+
+.experience h3, .education h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.dates {
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .section h2 {
+    font-size: 1.5rem;
+  }
+}
