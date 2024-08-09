@@ -1,25 +1,35 @@
+'use client';
+
 import Image from 'next/image';
-import data from '../data';
+import { useTheme } from '@/components/ThemeProvider';
+import data from '@/data';
+import styles from './page.module.css';
 
 export default function Home() {
-  return (
-    <div>
-      <section className="flex items-center gap-10 mb-10">
-        <Image
-          src={'/' + data.photoUrl}
-          alt={data.name}
-          width={200}
-          height={200}
-          className="rounded-full object-cover"
-        />
-        <div>
-          <h2 className="text-4xl font-bold mb-2">{data.title}</h2>
-          <p>{data.smallBio}</p>
-        </div>
-      </section>
+  const { mode } = useTheme();
+  const colors = mode === 'light' ? data.settings.colorScheme.light : data.settings.colorScheme.dark;
 
-      <section>
-        <h3 className="text-2xl font-bold mb-4">About Me</h3>
+  return (
+    <div className={styles.container} style={{ backgroundColor: colors.background, color: colors.text }}>
+      <div className={styles.banner}>
+        <div className={styles.photoContainer}>
+          <Image
+            src={`/${data.photoUrl}`}
+            alt={data.name}
+            width={300}
+            height={300}
+            className={styles.photo}
+          />
+        </div>
+        <div className={styles.textContainer}>
+          <h1 className={styles.name} style={{ color: colors.secondary }}>
+            {data.name}
+          </h1>
+          <p className={styles.tagline}>Software Engineer | Fullstack Developer</p>
+        </div>
+      </div>
+      <section className={styles.aboutSection}>
+        <h2 style={{ color: colors.primary }}>About Me</h2>
         <p>{data.bigBio}</p>
       </section>
     </div>
