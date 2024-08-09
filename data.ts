@@ -66,11 +66,36 @@ type ProjectItem = {
   }[]
 }
 
+type ColorScheme = {
+  light: {
+    primary: string;
+    primaryGradient: string;
+    secondary: string;
+    secondaryGradient: string;
+    background: string;
+    text: string;
+    accent: string;
+  };
+  dark: {
+    primary: string;
+    primaryGradient: string;
+    secondary: string;
+    secondaryGradient: string;
+    background: string;
+    text: string;
+    accent: string;
+  };
+  shared: {
+    white: string;
+    black: string;
+    grayLight: string;
+    grayDark: string;
+  };
+}
+
 type WebsiteSettings = {
   font: string;
-  primaryColor: string;
-  secondaryColor: string;
-  backgroundColor: string;
+  colorScheme: ColorScheme;
 }
 
 const contactData: ContactData = {
@@ -500,11 +525,36 @@ When I am doing file transfers, there are always multiple explorer windows open 
   },
 ];
 
+const colorScheme: ColorScheme = {
+  light: {
+    primary: "#3498db",
+    primaryGradient: "linear-gradient(135deg, #3498db, #2980b9)",
+    secondary: "#ff9966",
+    secondaryGradient: "linear-gradient(135deg, #ff9966, #ff7f50)",
+    background: "#f5f5f5",
+    text: "#333333",
+    accent: "#ff7f50",
+  },
+  dark: {
+    primary: "#2980b9",
+    primaryGradient: "linear-gradient(135deg, #2980b9, #1f618d)",
+    secondary: "#ff7f50",
+    secondaryGradient: "linear-gradient(135deg, #ff9966, #ff7f50)",
+    background: "#2c3e50",
+    text: "#ecf0f1",
+    accent: "#ff9966",
+  },
+  shared: {
+    white: "#ffffff",
+    black: "#000000",
+    grayLight: "#cccccc",
+    grayDark: "#666666",
+  },
+};
+
 const settings: WebsiteSettings = {
   font: "Arial",
-  primaryColor: "#000",
-  secondaryColor: "#fff",
-  backgroundColor: "#f5f5f5",
+  colorScheme,
 }
 
 const data: PersonalWebsiteData = {
@@ -526,3 +576,5 @@ const data: PersonalWebsiteData = {
   },
   settings,
 }
+
+export default data;
