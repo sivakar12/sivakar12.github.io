@@ -6,6 +6,7 @@ type PersonalWebsiteData = {
   contact: ContactData;
   photoUrl: string;
   resume: ResumeData;
+  projects: ProjectItem[];
   settings: WebsiteSettings
 }
 
@@ -268,8 +269,8 @@ Problems with using the OS's file manager to copy and paste
 Here, we make choosing source, choosing destination and running the copying independent operations. Operations are added to the queue. Only one operation runs at one point.
     `,
     screenshotUrls: [
-      'projects-screenshots/copy-queue-1.png)',
-      'projects-screenshots/copy-queue-2.png)',
+      'projects-screenshots/copy-queue-1.png',
+      'projects-screenshots/copy-queue-2.png',
     ],
     links: [
       {
@@ -574,6 +575,7 @@ const data: PersonalWebsiteData = {
     education,
     interests,
   },
+  projects,
   settings,
 }
 
