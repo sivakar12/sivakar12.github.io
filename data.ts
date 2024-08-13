@@ -161,8 +161,8 @@ const skills: SkillGroupItem[] = [
 
 const experiences: ExperienceItem[] = [
   {
-    company: "Revocare",
-    jobTitle: "Freelance Fullstack Developer",
+    company: "Freelance Work",
+    jobTitle: "Fullstack Developer",
     dates: "May 2022 ‐ Present",
     details: [
       {
