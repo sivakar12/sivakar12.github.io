@@ -24,7 +24,7 @@ export default function Projects() {
   return (
     <div className={styles.pageContainer} style={{ backgroundColor: colors.background, color: colors.text }}>
       <div className={styles.container}>
-        <h1 className={styles.title} style={{ color: colors.primary }}>{data.title}</h1>
+        {/* <h1 className={styles.title} style={{ color: colors.primary }}>What to put here</h1> */}
         <div className={styles.projectGrid}>
           {data.projects.map((project, index) => (
             <motion.div
