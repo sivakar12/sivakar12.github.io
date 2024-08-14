@@ -17,11 +17,11 @@ type ContactData = {
 
 type LinksData = {
   website: string;
-  linkedin: string;
-  github: string;
-  twitter?: string;
-  goodreads?: string;
-  youtube?: string;
+  LinkedIn: string;
+  GitHub: string;
+  Twitter?: string;
+  Goodreads?: string;
+  YouTube?: string;
 }
 
 type ResumeData = {
@@ -106,8 +106,8 @@ const contactData: ContactData = {
 
 const linksData: LinksData = {
   website: "https://sivakar.com",
-  linkedin: "https://www.linkedin.com/in/sivakar-sithamparanathan-363762109/",
-  github: "http://github.com/sivakar12"
+  LinkedIn: "https://www.linkedin.com/in/sivakar-sithamparanathan-363762109/",
+  GitHub: "http://github.com/sivakar12"
 }
 
 
