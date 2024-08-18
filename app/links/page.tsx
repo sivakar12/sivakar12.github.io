@@ -1,7 +1,7 @@
 'use client';
 
-import { useTheme } from '@/components/ThemeProvider';
-import data from '@/data';
+import { useTheme } from '../../components/ThemeProvider';
+import data from '../../data/index';
 import styles from './links.module.css';
 
 export default function Links() {

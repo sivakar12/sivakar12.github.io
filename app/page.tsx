@@ -1,8 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import { useTheme } from '@/components/ThemeProvider';
-import data from '@/data';
+import { useTheme } from '../components/ThemeProvider';
+import data from '../data/index';
 import styles from './page.module.css';
 
 export default function Home() {

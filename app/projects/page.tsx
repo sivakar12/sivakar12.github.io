@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import { useTheme } from '@/components/ThemeProvider';
-import data from '@/data';
+import { useTheme } from '../../components/ThemeProvider';
+import data from '../../data/index';
 import styles from './projects.module.css';
 import { motion, AnimatePresence } from 'framer-motion';
 import ReactMarkdown from 'react-markdown';
