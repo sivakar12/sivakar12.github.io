@@ -1,9 +1,9 @@
 import { Metadata } from 'next';
 import { Merriweather } from 'next/font/google';
-import { ThemeProvider } from '@/components/ThemeProvider';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import data from '@/data';
+import { ThemeProvider } from '../components/ThemeProvider';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import data from '../data/index';
 import './globals.css';
 
 const merriweather = Merriweather({ 

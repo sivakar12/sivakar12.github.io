@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useTheme } from '@/components/ThemeProvider';
+import { useTheme } from './ThemeProvider';
 import styles from './Header.module.css';
 
 const navItems = [
