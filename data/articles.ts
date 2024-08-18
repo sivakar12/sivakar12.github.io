@@ -116,6 +116,48 @@ In addition to this, the app shows statistics that make you want to beat your ow
 I have now used this app for three whole years now. It is one of the best lifestyle changes I made.
     `
 
+  },
+  {
+    title: "Journaling",
+    shortDescription: "Training for thoughts to words conversion",
+    hidden: false,
+    contentMarkdown: ``
+  },
+  {
+    title: "Notion",
+    shortDescription: "Things thing took a ton of weight off my head",
+    hidden: false,
+    contentMarkdown: ``
+  },
+  {
+    title: "Flow State",
+    shortDescription: "Work is bliss",
+    hidden: false,
+    contentMarkdown: ``
+  },
+  {
+    title: "Learning with LLMs",
+    shortDescription: "Ask AI to ask questions",
+    hidden: false,
+    contentMarkdown: ``
+  },
+  {
+    title: "Duolingo",
+    shortDescription: "Learning can be addictive",
+    hidden: false,
+    contentMarkdown: ``
+  },
+  {
+    title: "LLMs forced a paradigm shift on me",
+    shortDescription: "No more memorizing",
+    hidden: false,
+    contentMarkdown: ``
+  },
+  {
+    title: "Juggling",
+    shortDescription: "Banking on neuroplasticity",
+    hidden: false,
+    contentMarkdown: ``
   }
 ];
 
