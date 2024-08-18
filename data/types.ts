@@ -7,7 +7,8 @@ type PersonalWebsiteData = {
   photoUrl: string;
   resume: ResumeData;
   projects: ProjectItem[];
-  settings: WebsiteSettings
+  articles: ArticleItem[];
+  settings: WebsiteSettings;
 }
 
 type ContactData = {
@@ -67,6 +68,14 @@ type ProjectItem = {
   }[]
 }
 
+type ArticleItem = {
+  title: string;
+  hidden: boolean;
+  date: string;
+  shortDescription?: string;
+  contentMarkdown: string;
+}
+
 type ColorScheme = {
   light: {
     primary: string;
@@ -97,15 +106,4 @@ type ColorScheme = {
 type WebsiteSettings = {
   font: string;
   colorScheme: ColorScheme;
-}
-
-const contactData: ContactData = {
-  email: "sivakar.sithamparanathan@gmail.com",
-  phone: "+94770246042",
-}
-
-const linksData: LinksData = {
-  website: "https://sivakar.com",
-  LinkedIn: "https://www.linkedin.com/in/sivakar-sithamparanathan-363762109/",
-  GitHub: "http://github.com/sivakar12"
 }
