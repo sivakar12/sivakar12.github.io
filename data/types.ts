@@ -71,7 +71,7 @@ type ProjectItem = {
 type ArticleItem = {
   title: string;
   hidden: boolean;
-  date: string;
+  date?: string;
   shortDescription?: string;
   contentMarkdown: string;
 }
