@@ -121,13 +121,42 @@ I have now used this app for three whole years now. It is one of the best lifest
     title: "Journaling",
     shortDescription: "Training for thoughts to words conversion",
     hidden: false,
-    contentMarkdown: ``
+    contentMarkdown: `
+[DRAFT 1]
+Journaling transformed my life. I got a lot less stressfull. I got more creative. My ability to plan got a big boost. It was like I have upgraded my hardware. I got more RAM in my head.
+
+I got to articulate thing well. That gave me a breakthrough in my social status and career. I had this problem all my life. I had thoughts and I could not put them to words. I always could get ideas. But I was not getting it across to people.
+
+When I write my journals, I go on a freewheeling ride. I don't think about paragarpahs. I don't want ot edit. I write things the way they go. No overthinking. The style is something I discovered on my own. Things fell in place without me realing. I was amazed and proud. I had collected all these ideas and knowledge over the year. But only now I am seeing them written done.
+
+It was liberating experience. Before this everytime I try to write, I overthink and overwhelm myself. I am stuck editing. Maybe the editing featurs that come with comptutes isn't always a blessing. I always wanted everyting to be perfect that I was thinking of the output, the product when typing. But journaling made me realize the process is all about dealing with the thoughts in the mind. And working to ther this. There is no audience. It is about going where the mind is taking me. It wasn't coherent at first. But I evolved quickly. I write really good stuff.
+
+I don't write to read. But I have a whole stash. I go revisit them sometimes. I see how fa I have come. Language is the single biggest human invention. But so many of us as so bad at it. I was bad at ti. But I got it. No big tool was requied. A simple app. Pen and paper would have done the deal too.
+
+    `
   },
   {
     title: "Notion",
     shortDescription: "Things thing took a ton of weight off my head",
     hidden: false,
-    contentMarkdown: ``
+    contentMarkdown: `
+[DRAFT 1]
+It took a lot of trial and error for me to crack how to use Notion. But when everything finally clicked, a huge weight was lifted off my head.
+
+The first big breakthrough came when I want to deal with my axieties by creating a database for all the things. I added things in sparotically. And then I saw that for each item, I can add notes piece by piece, again at irregular intervals. Whenever I was in the mood for it. 
+
+I had gotten better at brainstorming with bullet points. I was using it mostly for work. Then I got to add them to Notion to collect them in one place. I loved how the notes you want to make can be very simple or very elaborate. For complex things, you could page inside page inside page.
+
+I then created a database for all the long term goals. Todo lists never worked for me. Trials and error thee always left me anxious. Things getting long there made me feel bad, put a lot of pressrure. Every thing there is either not done or done. There are deadlien too. 
+
+Then I watched a video that resonated with me. About how deadlines and plans based on time are bad. I just have to work on what I feel like. Take the task I am just in the mood for and get into the flow state. When I did it with Notion, having a database for each long term task, I woudl do soemethign adn put notes. Them collecting. 
+
+This was I got to feel good every time I did something for the long term task. I was breaking it down to pieces in a nice way. I was feeling delighted when the notes got bigger and the task got longer. Before that if something is getting bigger, I would start feeling overwhelmed. Now I feel I can freely go deep into something. This inversion is the greatest thigns that supercharged my productivity.
+
+Then I got into the Notion's in-house template for Project and everything is task. It is better than what i did on my own. I am dealing with a hundred parallal task. Some tasks are just braingtroming. Some tasks are about changing habits and go on for months. Some are about coding. Some are bureaucracy. 
+
+I am now all set to conquer the world of complexity with the new tricks and techniques of oraganization I am fine-tuning  every day.
+    `
   },
   {
     title: "Flow State",
@@ -156,6 +185,13 @@ I have now used this app for three whole years now. It is one of the best lifest
   {
     title: "Juggling",
     shortDescription: "Banking on neuroplasticity",
+    hidden: false,
+    contentMarkdown: ``
+  },
+
+  {
+    title: "Screen Time",
+    shortDescription: "I halved it and it feels so good",
     hidden: false,
     contentMarkdown: ``
   }
