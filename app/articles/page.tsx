@@ -5,7 +5,7 @@ import { useTheme } from '../../components/ThemeProvider';
 import data from '../../data/index';
 import styles from './articles.module.css';
 import { motion, AnimatePresence } from 'framer-motion';
-import ReactMarkdown from 'react-markdown';
+import MarkdownText from '../../components/MarkdownText';
 
 type Article = typeof data.articles[0];
 
@@ -71,7 +71,7 @@ export default function Articles() {
                   <h2 style={{ color: colors.primary }}>{selectedArticle.title}</h2>
                   <p className={styles.date}>{selectedArticle.date}</p>
                   <div className={styles.markdownContent}>
-                    <ReactMarkdown>{selectedArticle.contentMarkdown}</ReactMarkdown>
+                    <MarkdownText markdownContent={selectedArticle.contentMarkdown} />
                   </div>
                 </div>
               </motion.div>

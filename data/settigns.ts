@@ -28,7 +28,7 @@ const colorScheme: ColorScheme = {
 };
 
 const settings: WebsiteSettings = {
-  font: "Open Sans",
+  font: "Merriweather",
   colorScheme,
 }
 
