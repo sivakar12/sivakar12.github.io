@@ -43,7 +43,7 @@ export default function Resume() {
           <h2>Experience</h2>
           {data.resume.experiences.map((exp, index) => (
             <div key={index} className={styles.experience}>
-              <h3>{exp.jobTitle} at {exp.company}</h3>
+              <h3>{exp.jobTitle} - {exp.company}</h3>
               <p className={styles.dates}>{exp.dates}</p>
               <ul className={styles.list}>
                 {exp.details.map((detail, detailIndex) => (
