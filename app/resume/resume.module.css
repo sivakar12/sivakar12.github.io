@@ -34,7 +34,7 @@
 }
 
 .skillsList, .interestsList, .list {
-  list-style-type: none;
+  list-style-type: square;
   padding-left: 0;
 }
 

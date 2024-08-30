@@ -4,6 +4,8 @@ import Image from 'next/image';
 import { useTheme } from '../components/ThemeProvider';
 import data from '../data/index';
 import styles from './page.module.css';
+import MarkdownText from '../components/MarkdownText';
+import { bigBio } from '../data/paragraphs';
 
 export default function Home() {
   const { mode } = useTheme();
@@ -30,7 +32,7 @@ export default function Home() {
       </div>
       <section className={styles.aboutSection}>
         <h2 style={{ color: colors.primary }}>About Me</h2>
-        <p>{data.bigBio}</p>
+        <MarkdownText markdownContent={bigBio} />
       </section>
     </div>
   );

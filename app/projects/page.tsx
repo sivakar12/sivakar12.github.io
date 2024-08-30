@@ -6,6 +6,7 @@ import data from '../../data/index';
 import styles from './projects.module.css';
 import { motion, AnimatePresence } from 'framer-motion';
 import ReactMarkdown from 'react-markdown';
+import MarkdownText from '../../components/MarkdownText';
 
 type Project = typeof data.projects[0];
 
@@ -79,7 +80,7 @@ export default function Projects() {
                     ))}
                   </div>
                   <div className={styles.markdownContent}>
-                    <ReactMarkdown>{selectedProject.longDescriptionMarkdown}</ReactMarkdown>
+                    <MarkdownText markdownContent={selectedProject.longDescriptionMarkdown} />
                   </div>
                   <div className={styles.links}>
                     {selectedProject.links.map((link, index) => (
