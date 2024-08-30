@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
+import { Components } from 'react-markdown';
 
-const CustomParagraph: React.FC<React.PropsWithChildren<{}>> = ({ children }) => (
-  <p style={{ marginTop: '0.5em', marginBottom: '0.5em' }}>{children}</p>
+const CustomParagraph: Components['p'] = ({ children, ...props }) => (
+  <p style={{ marginBottom: '1em' }} {...props}>
+    {children}
+  </p>
 );
 
 interface MarkdownTextProps {
