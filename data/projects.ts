@@ -1,3 +1,5 @@
+import { ProjectItem } from "./types";
+
 const projects: ProjectItem[] = [
   {
     title: "Copy Queue",
