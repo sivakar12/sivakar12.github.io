@@ -1,5 +1,6 @@
 import { personalStatement } from "./paragraphs"
 import { contactData, linksData } from "./contact"
+import { EducationItem, ExperienceItem, ResumeData, SkillGroupItem } from "./types"
 
 const skills: SkillGroupItem[] = [
   {

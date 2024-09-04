@@ -1,107 +1,79 @@
-'use client';
+// app/projects/page.tsx
+'use client'
 
-import React, { useState } from 'react';
-import { useTheme } from '../../components/ThemeProvider';
-import data from '../../data/index';
-import styles from './projects.module.css';
-import { motion, AnimatePresence } from 'framer-motion';
-import ReactMarkdown from 'react-markdown';
-import MarkdownText from '../../components/MarkdownText';
+import React, { useState, useEffect } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
+import { ProjectItem } from '@/data/types';
+import ProjectCard from './ProjectCard';
+import ProjectDetail from './ProjectDetail';
 
-type Project = typeof data.projects[0];
+// Assume we're importing project data from somewhere
+import projectsData from '@/data/projects';
 
-export default function Projects() {
-  const { mode, colors } = useTheme();
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+export default function ProjectsPage() {
+  const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
+  const router = useRouter();
+  const searchParams = useSearchParams();
 
-  const openProject = (project: Project) => {
+  useEffect(() => {
+    const projectTitle = searchParams.get('project');
+    if (projectTitle) {
+      const project = projectsData.find(p => p.title === decodeURIComponent(projectTitle));
+      if (project) {
+        setSelectedProject(project);
+      }
+    } else {
+      setSelectedProject(null);
+    }
+  }, [searchParams]);
+
+  const handleProjectSelect = (project: ProjectItem) => {
     setSelectedProject(project);
+    router.push(`/projects?project=${encodeURIComponent(project.title)}`, { scroll: false });
   };
 
-  const closeProject = () => {
+  const handleBackToGrid = () => {
     setSelectedProject(null);
+    router.push('/projects', { scroll: false });
   };
 
   return (
-    <div className={styles.pageContainer} style={{ backgroundColor: colors.background, color: colors.text }}>
-      <div className={styles.container}>
-        {/* <h1 className={styles.title} style={{ color: colors.primary }}>What to put here</h1> */}
-        <div className={styles.projectGrid}>
-          {data.projects.map((project, index) => (
-            <motion.div
-              key={index}
-              className={styles.projectBox}
-              style={{
-                backgroundColor: mode === 'light' ? colors.white : colors.black,
-                borderColor: colors.accent,
-              }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => openProject(project)}
+    <div className="container mx-auto p-4">
+      {selectedProject ? (
+        <div className="flex flex-col md:flex-row">
+          <div className="w-full md:w-1/3 pr-4">
+            <button 
+              onClick={handleBackToGrid}
+              className="mb-4 text-blue-600 hover:underline"
             >
-              <h3 style={{ color: colors.primary }}>{project.title}</h3>
-              <p>{project.shortDescription}</p>
-            </motion.div>
+              ← Back to all projects
+            </button>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-4">
+              {projectsData.map((project) => (
+                <ProjectCard
+                  key={project.title}
+                  project={project}
+                  isSelected={project.title === selectedProject.title}
+                  onClick={() => handleProjectSelect(project)}
+                />
+              ))}
+            </div>
+          </div>
+          <div className="w-full md:w-2/3 mt-4 md:mt-0">
+            <ProjectDetail project={selectedProject} />
+          </div>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {projectsData.map((project) => (
+            <ProjectCard
+              key={project.title}
+              project={project}
+              onClick={() => handleProjectSelect(project)}
+            />
           ))}
         </div>
-
-        <AnimatePresence>
-          {selectedProject && (
-            <motion.div
-              className={styles.modalOverlay}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={closeProject}
-            >
-              <motion.div
-                className={styles.modal}
-                style={{ backgroundColor: mode === 'light' ? colors.white : colors.black, color: colors.text }}
-                initial={{ y: '100%' }}
-                animate={{ y: 0 }}
-                exit={{ y: '100%' }}
-                transition={{ type: 'spring', damping: 15 }}
-                onClick={(e) => e.stopPropagation()}
-              >
-                <button className={styles.closeButton} onClick={closeProject}>
-                  Close
-                </button>
-                <div className={styles.modalContent}>
-                  <h2 style={{ color: colors.primary }}>{selectedProject.title}</h2>
-                  <p className={styles.tagline}>{selectedProject.shortDescription}</p>
-                  <div className={styles.screenshotContainer}>
-                    {selectedProject.screenshotUrls.map((url, index) => (
-                      <img
-                        key={index}
-                        src={url}
-                        alt={`Screenshot ${index + 1}`}
-                        className={styles.screenshot}
-                      />
-                    ))}
-                  </div>
-                  <div className={styles.markdownContent}>
-                    <MarkdownText markdownContent={selectedProject.longDescriptionMarkdown} />
-                  </div>
-                  <div className={styles.links}>
-                    {selectedProject.links.map((link, index) => (
-                      <a
-                        key={index}
-                        href={link.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={styles.link}
-                        style={{ color: colors.primary }}
-                      >
-                        {link.title}
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
+      )}
     </div>
   );
 }

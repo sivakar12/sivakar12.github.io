@@ -1,35 +1,25 @@
-import { Metadata } from 'next';
-import { Merriweather } from 'next/font/google';
-import { ThemeProvider } from '../components/ThemeProvider';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import data from '../data/index';
-import './globals.css';
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
+import NavigationBar from "./components/NavigationBar";
 
-const merriweather = Merriweather({ 
-  weight: ['300', '400', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: `${data.name} - ${data.title}`,
-  description: data.smallBio,
+  title: "Sivakar Sithamparanthan",
+  description: "Software Engineer | Fullstack Developer | Writer",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html lang="en">
-      <body style={{ fontFamily: data.settings.font }}>
-        <ThemeProvider>
-          <div className="flex flex-col min-h-screen">
-            <Header />
-            <main className="flex-grow container">
-              {children}
-            </main>
-            <Footer />
-          </div>
-        </ThemeProvider>
+      <body className={inter.className}>
+        <NavigationBar/>
+        {children}
       </body>
     </html>
   );

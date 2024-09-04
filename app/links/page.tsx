@@ -1,37 +1,35 @@
-'use client';
+// app/links/page.tsx
+import React from 'react';
+import { LinksData } from '@/data/types';
 
-import { useTheme } from '../../components/ThemeProvider';
-import data from '../../data/index';
-import styles from './links.module.css';
+// Assume we're importing links data from somewhere
+import { linksData } from '@/data/contact';
 
-export default function Links() {
-  const { colors } = useTheme();
+const capitalizeFirstLetter = (string: string) => {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+};
+
+const LinkItem: React.FC<{ platform: string; url: string }> = ({ platform, url }) => (
+  <a 
+    href={url} 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    className="flex items-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+  >
+    <span className="text-xl font-semibold">{capitalizeFirstLetter(platform)}</span>
+    <span className="ml-auto text-blue-600">{new URL(url).hostname}</span>
+  </a>
+);
+
+export default function LinksPage() {
+  const links: LinksData = linksData;
 
   return (
-    <div style={{ backgroundColor: colors.background, color: colors.text, minHeight: '100vh' }}>
-      <div className={styles.container}>
-        <header className={styles.header}>
-          <img src={data.photoUrl} alt={data.name} className={styles.profileImage} />
-          <h1 className={styles.name}>{data.name}</h1>
-        </header>
-        <ul className={styles.linksList}>
-          {Object.entries(data.resume.links).map(([key, value]) => (
-            <li key={key}>
-              <a 
-                href={value} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className={styles.linkButton}
-                style={{ 
-                  background: colors.primaryGradient,
-                  color: colors.white
-                }}
-              >
-                {key.charAt(0).toUpperCase() + key.slice(1)}
-              </a>
-            </li>
-          ))}
-        </ul>
+    <div className="container mx-auto p-4">
+      <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        {Object.entries(links).map(([platform, url]) => (
+          <LinkItem key={platform} platform={platform} url={url} />
+        ))}
       </div>
     </div>
   );

@@ -1,9 +1,10 @@
-type PersonalWebsiteData = {
+export type PersonalWebsiteData = {
   name: string;
   title: string;
   bigBio: string;
   smallBio: string;
   contact: ContactData;
+  links: LinksData;
   photoUrl: string;
   resume: ResumeData;
   projects: ProjectItem[];
@@ -11,12 +12,12 @@ type PersonalWebsiteData = {
   settings: WebsiteSettings;
 }
 
-type ContactData = {
+export type ContactData = {
   email: string;
   phone: string;
 }
 
-type LinksData = {
+export type LinksData = {
   website: string;
   LinkedIn: string;
   GitHub: string;
@@ -25,7 +26,7 @@ type LinksData = {
   YouTube?: string;
 }
 
-type ResumeData = {
+export type ResumeData = {
   name: string;
   contact: ContactData;
   links: LinksData;
@@ -36,12 +37,12 @@ type ResumeData = {
   interests: string[];
 }
 
-type SkillGroupItem = {
+export type SkillGroupItem = {
   title: string;
   details: string;
 }
 
-type ExperienceItem = {
+export type ExperienceItem = {
   company: string;
   jobTitle: string;
   dates: string;
@@ -51,12 +52,12 @@ type ExperienceItem = {
   }[];
 }
 
-type EducationItem = {
+export type EducationItem = {
   title: string;
   details: string[];
 }
 
-type ProjectItem = {
+export type ProjectItem = {
   title: string;
   date: string;
   shortDescription: string;
@@ -68,7 +69,7 @@ type ProjectItem = {
   }[]
 }
 
-type ArticleItem = {
+export type ArticleItem = {
   title: string;
   hidden: boolean;
   date?: string;
@@ -76,7 +77,7 @@ type ArticleItem = {
   contentMarkdown: string;
 }
 
-type ColorScheme = {
+export type ColorScheme = {
   light: {
     primary: string;
     primaryGradient: string;
@@ -103,7 +104,7 @@ type ColorScheme = {
   };
 }
 
-type WebsiteSettings = {
+export type WebsiteSettings = {
   font: string;
   colorScheme: ColorScheme;
 }

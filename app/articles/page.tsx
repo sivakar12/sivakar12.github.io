@@ -1,84 +1,81 @@
-'use client';
+// app/articles/page.tsx
+'use client'
 
-import React, { useState } from 'react';
-import { useTheme } from '../../components/ThemeProvider';
-import data from '../../data/index';
-import styles from './articles.module.css';
-import { motion, AnimatePresence } from 'framer-motion';
-import MarkdownText from '../../components/MarkdownText';
+import React, { useState, useEffect } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
+import { ArticleItem } from '@/data/types';
+import ArticleCard from './ArticleCard';
+import ArticleDetail from './ArticleDetail';
 
-type Article = typeof data.articles[0];
+// Assume we're importing article data from somewhere
+import articlesData from '@/data/articles';
 
-export default function Articles() {
-  const { mode, colors } = useTheme();
-  const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
+export default function ArticlesPage() {
+  const [selectedArticle, setSelectedArticle] = useState<ArticleItem | null>(null);
+  const router = useRouter();
+  const searchParams = useSearchParams();
 
-  const openArticle = (article: Article) => {
+  useEffect(() => {
+    const articleTitle = searchParams.get('article');
+    if (articleTitle) {
+      const article = articlesData.find(a => a.title === decodeURIComponent(articleTitle));
+      if (article && !article.hidden) {
+        setSelectedArticle(article);
+      }
+    } else {
+      setSelectedArticle(null);
+    }
+  }, [searchParams]);
+
+  const handleArticleSelect = (article: ArticleItem) => {
     setSelectedArticle(article);
+    router.push(`/articles?article=${encodeURIComponent(article.title)}`, { scroll: false });
   };
 
-  const closeArticle = () => {
+  const handleBackToGrid = () => {
     setSelectedArticle(null);
+    router.push('/articles', { scroll: false });
   };
 
-  const visibleArticles = data.articles.filter(article => !article.hidden);
+  const visibleArticles = articlesData.filter(article => !article.hidden);
 
   return (
-    <div className={styles.pageContainer} style={{ backgroundColor: colors.background, color: colors.text }}>
-      <div className={styles.container}>
-        <div className={styles.articleGrid}>
-          {visibleArticles.map((article, index) => (
-            <motion.div
-              key={index}
-              className={styles.articleBox}
-              style={{
-                backgroundColor: mode === 'light' ? colors.white : colors.black,
-                borderColor: colors.accent,
-              }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => openArticle(article)}
+    <div className="container mx-auto p-4">
+      {selectedArticle ? (
+        <div className="flex flex-col md:flex-row">
+          <div className="w-full md:w-1/3 pr-4">
+            <button 
+              onClick={handleBackToGrid}
+              className="mb-4 text-blue-600 hover:underline"
             >
-              <h3 style={{ color: colors.primary }}>{article.title}</h3>
-              <p>{article.shortDescription || 'Click to read more'}</p>
-              <p className={styles.date}>{article.date}</p>
-            </motion.div>
+              ← Back to all articles
+            </button>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-4">
+              {visibleArticles.map((article) => (
+                <ArticleCard
+                  key={article.title}
+                  article={article}
+                  isSelected={article.title === selectedArticle.title}
+                  onClick={() => handleArticleSelect(article)}
+                />
+              ))}
+            </div>
+          </div>
+          <div className="w-full md:w-2/3 mt-4 md:mt-0">
+            <ArticleDetail article={selectedArticle} />
+          </div>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {visibleArticles.map((article) => (
+            <ArticleCard
+              key={article.title}
+              article={article}
+              onClick={() => handleArticleSelect(article)}
+            />
           ))}
         </div>
-
-        <AnimatePresence>
-          {selectedArticle && (
-            <motion.div
-              className={styles.modalOverlay}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={closeArticle}
-            >
-              <motion.div
-                className={styles.modal}
-                style={{ backgroundColor: mode === 'light' ? colors.white : colors.black, color: colors.text }}
-                initial={{ y: '100%' }}
-                animate={{ y: 0 }}
-                exit={{ y: '100%' }}
-                transition={{ type: 'spring', damping: 15 }}
-                onClick={(e) => e.stopPropagation()}
-              >
-                <button className={styles.closeButton} onClick={closeArticle}>
-                  Close
-                </button>
-                <div className={styles.modalContent}>
-                  <h2 style={{ color: colors.primary }}>{selectedArticle.title}</h2>
-                  <p className={styles.date}>{selectedArticle.date}</p>
-                  <div className={styles.markdownContent}>
-                    <MarkdownText markdownContent={selectedArticle.contentMarkdown} />
-                  </div>
-                </div>
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
+      )}
     </div>
   );
 }

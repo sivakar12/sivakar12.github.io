@@ -1,3 +1,5 @@
+import { ArticleItem } from "./types";
+
 const articles: ArticleItem[] = [
   {
     title: "Programming is Programming",
