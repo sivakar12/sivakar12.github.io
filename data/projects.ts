@@ -3,7 +3,7 @@ import { ProjectItem } from "./types";
 const projects: ProjectItem[] = [
   {
     title: "Copy Queue",
-    emoji: "",
+    emoji: "📋",
     date: "2023-07-12",
     shortDescription: "A cross-platform Desktop app for better copy-pasting experience",
     longDescriptionMarkdown: `
@@ -30,7 +30,7 @@ Here, we make choosing source, choosing destination and running the copying inde
   },
   {
     title: "Eye Refresh",
-    emoji: "",
+    emoji: "👁",
     date: "2022-01-28",
     shortDescription: "Android app that sends reminders for 20-20-20 rule for reducing eye strain",
     longDescriptionMarkdown: `
@@ -59,7 +59,7 @@ I learned Android four or five years ago. I have forgotten a lot and a lot has c
   },
   {
     title: "Wordle Clone",
-    emoji: "",
+    emoji: "🔍",
     date: "2022-01-17",
     shortDescription: "Made a clone on viral Wordle game in 5 hours",
     longDescriptionMarkdown: `
@@ -83,7 +83,7 @@ I wanted to see how quickly I can make a clone of the Wordle game that went vira
   },
   {
     title: "Small Wins",
-    emoji: "",
+    emoji: "🏅",
     date: "2021-11-03",
     shortDescription: "A React Native application to track progress of building new habits",
     longDescriptionMarkdown: `
@@ -113,7 +113,7 @@ I am not using a database at the moment. The whole data is stored as a JSON stri
   },
   {
     title: "File Change Count VS Code Extension",
-    emoji: "",
+    emoji: "🔟",
     date: "2021-10-16",
     shortDescription: "An extension that shows how many times a file has changed in its Git history, to figure out the important files in a project",
     longDescriptionMarkdown: `
@@ -137,7 +137,7 @@ I have made a Visual Studio Code extension that looks at the Git history and cou
   },
   {
     title: "Elm Minesweeper",
-    emoji: "",
+    emoji: "💣",
     date: "2021-10-06",
     shortDescription: "Built this Minesweeper game clone using Elm languange while learning the language and functional style of programming",
     longDescriptionMarkdown: `
@@ -163,7 +163,7 @@ I made use of flex methods to style thing properly. The height and width can be 
   },
   {
     title: "Rust Exercises in Exercism",
-    emoji: "",
+    emoji: "⚙️",
     date: "2021-10-04",
     shortDescription: "Rust code I wrote for the excercises from the coding practice website Exercism",
     longDescriptionMarkdown: `
@@ -184,7 +184,7 @@ best practices. The website had mentors who helped me improve the code further. 
   },
   {
     title: "Phrasal Verbs React SPA",
-    emoji: "",
+    emoji: "📖",
     date: "2021-09-03",
     shortDescription: "Single Page Web Application to practice phrasal verbs, question-answer way",
     longDescriptionMarkdown: `
@@ -202,7 +202,7 @@ I had a question answer dataset. The dataset had only one question and one answe
   },
   {
     title: "Seattle AirBnB Data Analytics",
-    emoji: "",
+    emoji: "📊",
     date: "2021-07-21",
     shortDescription: "Analysing a dataset and presenting findings as part of Udacity Data Scientist Nanodegree",
     longDescriptionMarkdown: `
@@ -229,7 +229,7 @@ the blog post
   },
   {
     title: "Diaster Response ML Pipeline - Udacity",
-    emoji: "",
+    emoji: "📊",
     date: "2021-07-07",
     shortDescription: "A multilabel classification model I built as part of Udacity Data Scientist Nanodegree",
     longDescriptionMarkdown: `
@@ -251,7 +251,7 @@ It is a multilabel classification. The classification uses Bag of Words and TF-I
   },
   {
     title: "CS Concepts Mind Dumps",
-    emoji: "",
+    emoji: "✏️",
     date: "2020-08-17",
     shortDescription: "A blog with an experimental style of writing, to try out the Feynman's advice",
     longDescriptionMarkdown: `
@@ -269,7 +269,7 @@ An experimental style of writing where I try to dump everything in my mind about
   },
   {
     title: "Electron File Manager",
-    emoji: "",
+    emoji: "📁",
     date: "2018-04-19",
     shortDescription: "File manager built on Electron and React using modern HTML/CSS/Js tools with multi tabs",
     longDescriptionMarkdown: `
