@@ -16,7 +16,7 @@ export default function ArticleCard({ article, isSelected, onClick }: ArticleCar
       }`}
       onClick={onClick}
     >
-      <h3 className="text-xl font-semibold mb-2">{article.title}</h3>
+      <h3 className="text-xl font-semibold mb-2 text-gradient">{article.title}</h3>
       {article.date && <p className="text-sm text-gray-600 mb-2">{article.date}</p>}
       {article.shortDescription && <p>{article.shortDescription}</p>}
     </div>

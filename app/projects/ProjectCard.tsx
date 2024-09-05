@@ -15,8 +15,7 @@ export default function ProjectCard({ project, isSelected, onClick }: ProjectCar
       }`}
       onClick={onClick}
     >
-      <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-      <p className="text-sm text-gray-600 mb-2">{project.date}</p>
+      <h3 className="text-xl font-semibold mb-2 text-gradient">{project.title}</h3>
       <p>{project.shortDescription}</p>
     </div>
   );

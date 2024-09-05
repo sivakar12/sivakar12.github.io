@@ -25,9 +25,9 @@ export default function NavigationBar() {
               className={clsx(
                 'text-xl font-semibold transition-all duration-300 ease-in-out',
                 {
-                  'text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 scale-110': 
+                  'scale-110 text-gradient': 
                     pathname === item.href,
-                  'text-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-blue-400 hover:to-green-600 hover:scale-105':
+                  'text-black hover:.text-gradient hover:scale-105':
                     pathname !== item.href,
                 }
               )}

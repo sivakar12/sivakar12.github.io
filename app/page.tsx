@@ -4,7 +4,7 @@ import MarkdownText from './utils/MarkdownText'
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+    <main className="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="md:flex md:items-center md:justify-between">
           <div className="flex-shrink-0">
@@ -18,7 +18,7 @@ export default function Home() {
           </div>
           <div className="mt-8 lg:mt-0 lg:ml-8">
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-blue-800">
+              <span className="block text-gradient">
                 {data.name}
               </span>
             </h1>
