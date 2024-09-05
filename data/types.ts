@@ -59,6 +59,7 @@ export type EducationItem = {
 
 export type ProjectItem = {
   title: string;
+  emoji: string;
   date: string;
   shortDescription: string;
   longDescriptionMarkdown: string;
@@ -71,6 +72,7 @@ export type ProjectItem = {
 
 export type ArticleItem = {
   title: string;
+  emoji: string;
   hidden: boolean;
   date?: string;
   shortDescription?: string;

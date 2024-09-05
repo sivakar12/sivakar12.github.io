@@ -3,6 +3,7 @@ import { ArticleItem } from "./types";
 const articles: ArticleItem[] = [
   {
     title: "Programming is Programming",
+    emoji: "",
     date: "2022-01-20",
     hidden: false,
     shortDescription: "Why I don't limit myself to particular stacks",
@@ -26,6 +27,7 @@ So programming is programming whether it is done for CLIs, web servers, IoT, blo
   },
   {
     title: "Unemployed Months",
+    emoji: "",
     date: "2022-01-25",
     hidden: false,
     shortDescription: "How I used my voluntary unemployment period",
@@ -100,6 +102,7 @@ The relatively good success that I have today is the result of the work I did ma
   },
   {
     title: "Forest App",
+    emoji: "",
     date: "2022-01-27",
     hidden: false,
     shortDescription: "How I turbo-charged my productivity ",
@@ -121,6 +124,7 @@ I have now used this app for three whole years now. It is one of the best lifest
   },
   {
     title: "Journaling",
+    emoji: "",
     shortDescription: "Training for thoughts to words conversion",
     hidden: false,
     contentMarkdown: `
@@ -139,6 +143,7 @@ I don't write to read. But I have a whole stash. I go revisit them sometimes. I 
   },
   {
     title: "Notion",
+    emoji: "",
     shortDescription: "Things thing took a ton of weight off my head",
     hidden: false,
     contentMarkdown: `
@@ -162,30 +167,35 @@ I am now all set to conquer the world of complexity with the new tricks and tech
   },
   {
     title: "Flow State",
+    emoji: "",
     shortDescription: "Work is bliss",
     hidden: false,
     contentMarkdown: ``
   },
   {
     title: "Learning with LLMs",
+    emoji: "",
     shortDescription: "Ask AI to ask questions",
     hidden: false,
     contentMarkdown: ``
   },
   {
     title: "Duolingo",
+    emoji: "",
     shortDescription: "Learning can be addictive",
     hidden: false,
     contentMarkdown: ``
   },
   {
     title: "LLMs forced a paradigm shift on me",
+    emoji: "",
     shortDescription: "No more memorizing",
     hidden: false,
     contentMarkdown: ``
   },
   {
     title: "Juggling",
+    emoji: "",
     shortDescription: "Banking on neuroplasticity",
     hidden: false,
     contentMarkdown: ``
@@ -193,10 +203,11 @@ I am now all set to conquer the world of complexity with the new tricks and tech
 
   {
     title: "Screen Time",
+    emoji: "",
     shortDescription: "I halved it and it feels so good",
     hidden: false,
     contentMarkdown: ``
-  }
+  },
 ];
 
 export default articles;
