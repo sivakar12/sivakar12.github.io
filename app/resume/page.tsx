@@ -19,7 +19,7 @@ const ResumePage: React.FC = () => {
         <p className="text-md mb-4">{resume.personalStatement}</p>
         <div className="text-sm space-y-1">
           <p>Email: {resume.contact.email}</p>
-          <p>Phone: {resume.contact.phone}</p>
+          {/* <p>Phone: {resume.contact.phone}</p> */}
           <p>Website: {websiteLink}</p>
           <p>LinkedIn: {linkedInLink}</p>
           <p>GitHub: {githubLink}</p>
@@ -41,7 +41,7 @@ const ResumePage: React.FC = () => {
         <h2 className="text-2xl font-semibold mb-4">Experience</h2>
         {resume.experiences.map((exp: ExperienceItem, index: number) => (
           <div key={index} className="mb-6">
-            <h3 className="text-xl font-semibold">{exp.jobTitle} at {exp.company}</h3>
+            <h3 className="text-xl font-semibold">{exp.jobTitle} - {exp.company}</h3>
             <p className="text-gray-600 mb-2">{exp.dates}</p>
             <ul className="list-disc pl-5">
               {exp.details.map((detail, detailIndex) => (
