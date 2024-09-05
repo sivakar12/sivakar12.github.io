@@ -43,6 +43,12 @@ const links: LinkItem[] = [
     name: "Instagram",
     url: "https://www.instagram.com/sivakar12/",
     emoji: "🤸‍♂️"
+  },
+  {
+    id: "duolingo",
+    name: "Duolingo",
+    url: "https://www.duolingo.com/profile/sivakar12",
+    emoji: "🦉"
   }
 ]
 
