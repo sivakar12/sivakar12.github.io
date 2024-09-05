@@ -3,9 +3,14 @@ import { ResumeData, SkillGroupItem, ExperienceItem, EducationItem } from '@/dat
 
 // Assume we're importing the data from somewhere
 import resumeData from '@/data/resume';
+import links from '@/data/links';
 
 const ResumePage: React.FC = () => {
   const resume: ResumeData = resumeData;
+
+  const githubLink = links.filter(l => l.id === "github")[0].url;
+  const linkedInLink = links.filter(l => l.id === "linkedin")[0].url;
+  const websiteLink = links.filter(l => l.id === "website")[0].url;
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
@@ -15,11 +20,9 @@ const ResumePage: React.FC = () => {
         <div className="text-sm space-y-1">
           <p>Email: {resume.contact.email}</p>
           <p>Phone: {resume.contact.phone}</p>
-          {Object.entries(resume.links).map(([platform, url]) => (
-            <p key={platform}>
-              {platform}: {url}
-            </p>
-          ))}
+          <p>Website: {websiteLink}</p>
+          <p>LinkedIn: {linkedInLink}</p>
+          <p>GitHub: {githubLink}</p>
         </div>
       </header>
 

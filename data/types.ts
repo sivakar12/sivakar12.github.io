@@ -4,7 +4,7 @@ export type PersonalWebsiteData = {
   bigBio: string;
   smallBio: string;
   contact: ContactData;
-  links: LinksData;
+  links: LinkItem[];
   photoUrl: string;
   resume: ResumeData;
   projects: ProjectItem[];
@@ -17,19 +17,17 @@ export type ContactData = {
   phone: string;
 }
 
-export type LinksData = {
-  website: string;
-  LinkedIn: string;
-  GitHub: string;
-  Twitter?: string;
-  Goodreads?: string;
-  YouTube?: string;
+export type LinkItem = {
+  id: string;
+  name: string;
+  url: string;
+  emoji: string;
 }
 
 export type ResumeData = {
   name: string;
   contact: ContactData;
-  links: LinksData;
+  links: LinkItem[];
   personalStatement: string;
   skills: SkillGroupItem[];
   experiences: ExperienceItem[];
