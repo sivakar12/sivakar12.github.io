@@ -1,24 +1,16 @@
-// app/articles/ArticleCard.tsx
-import React from 'react';
-import { ArticleItem } from '@/data/types';
+import Link from 'next/link'
+import { ArticleItem } from '@/data/types'
 
-interface ArticleCardProps {
-  article: ArticleItem;
-  isSelected?: boolean;
-  onClick: () => void;
-}
-
-export default function ArticleCard({ article, isSelected, onClick }: ArticleCardProps) {
+export default function ArticleCard({ article }: { article: ArticleItem }) {
   return (
-    <div 
-      className={`border p-4 rounded cursor-pointer transition-all duration-300 ${
-        isSelected ? 'bg-blue-100 shadow-lg' : 'hover:shadow-md'
-      }`}
-      onClick={onClick}
-    >
-      <h3 className="text-xl font-semibold mb-2 text-gradient">{article.title}</h3>
-      {article.date && <p className="text-sm text-gray-600 mb-2">{article.date}</p>}
-      {article.shortDescription && <p>{article.shortDescription}</p>}
-    </div>
-  );
+    <Link href={`/articles/${article.title.toLowerCase().replace(/\s+/g, '-')}`}>
+      <div className="bg-white shadow-md rounded-lg p-4 cursor-pointer transition-transform hover:scale-105">
+        <h2 className="text-xl font-bold mb-2 text-gradient">{article.title}</h2>
+        <p className="text-4xl mb-2">{article.emoji}</p>
+        {article.shortDescription && (
+          <p className="text-gray-600">{article.shortDescription}</p>
+        )}
+      </div>
+    </Link>
+  )
 }

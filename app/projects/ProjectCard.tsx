@@ -1,22 +1,21 @@
-import React from 'react';
-import { ProjectItem } from '@/data/types';
+import Link from 'next/link'
+import { ProjectItem } from '@/data/types'
 
 interface ProjectCardProps {
-  project: ProjectItem;
-  isSelected?: boolean;
-  onClick: () => void;
+  project: ProjectItem
 }
 
-export default function ProjectCard({ project, isSelected, onClick }: ProjectCardProps) {
+export default function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <div 
-      className={`border p-4 rounded cursor-pointer transition-all duration-300 ${
-        isSelected ? 'bg-blue-100 shadow-lg' : 'hover:shadow-md'
-      }`}
-      onClick={onClick}
-    >
-      <h3 className="text-xl font-semibold mb-2 text-gradient">{project.title}</h3>
-      <p>{project.shortDescription}</p>
-    </div>
-  );
+    <Link href={`/projects/${project.title.toLowerCase().replace(/\s+/g, '-')}`}>
+      <div className="bg-white shadow-md rounded-lg p-4 cursor-pointer transition-transform hover:scale-105">
+        <div className="flex items-center justify-between mb-2">
+          <h2 className="text-xl font-bold gradient-text">{project.title}</h2>
+          <span className="text-3xl">{project.emoji}</span>
+        </div>
+        <p className="text-gray-600 text-sm mb-2">{project.date}</p>
+        <p className="text-gray-800">{project.shortDescription}</p>
+      </div>
+    </Link>
+  )
 }
