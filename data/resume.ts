@@ -1,6 +1,7 @@
 import { personalStatement } from "./paragraphs"
-import { contactData, linksData } from "./contact"
+import { contactData } from "./contact"
 import { EducationItem, ExperienceItem, ResumeData, SkillGroupItem } from "./types"
+import links from "./links"
 
 const skills: SkillGroupItem[] = [
   {
@@ -129,7 +130,7 @@ const interests: string[] = [
 const resume: ResumeData= {
   name: "Sivakar Sithamparanathan",
   contact: contactData,
-  links: linksData,
+  links: links,
   personalStatement,
   skills,
   experiences,
