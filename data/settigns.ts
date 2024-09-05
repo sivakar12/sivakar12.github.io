@@ -1,4 +1,5 @@
 import exp from "constants";
+import { ColorScheme, WebsiteSettings } from "./types";
 
 const colorScheme: ColorScheme = {
   light: {
