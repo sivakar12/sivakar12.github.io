@@ -65,10 +65,10 @@ export default function NavigationBar() {
         <li key={item.name} className="w-full">
           <Link 
             href={item.href} 
-            className={`block w-full px-4 py-2 text-xl font-semibold text-center transition-all duration-300 ease-in-out
+            className={`block w-full px-4 py-2 text-xl font-semibold text-center transition-all duration-300 ease-in-out hover:scale-105 hover:text-gradient
               ${isActive(item.href) 
                 ? 'text-gradient' 
-                : 'text-black hover:bg-gray-100'
+                : 'text-black'
               }`}
             onClick={() => setIsMenuOpen(false)}
           >
@@ -82,14 +82,14 @@ export default function NavigationBar() {
   return (
     <nav className="w-full py-4">
       {isMobile ? (
-        <div className="relative">
+        <div className="flex justify-end relative items-center">
           <button
             ref={buttonRef}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="p-2 text-black text-2xl float-right"
+            className="p-2 text-black text-4xl"
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >
-            {isMenuOpen ? '❌' : '☰'}
+            ☰
           </button>
           {isMenuOpen && (
             <ul ref={menuRef} className="absolute top-full left-0 w-full bg-white shadow-md py-4 flex flex-col items-center space-y-2 z-50">
