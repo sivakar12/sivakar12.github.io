@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ArticleItem } from '@/data/types'
+import titleToSlug from './titleToSlug';
 
 interface ArticleCardProps {
   article: ArticleItem;
@@ -8,7 +9,7 @@ interface ArticleCardProps {
 
 export default function ArticleCard({ article, className = '' }: ArticleCardProps) {
   return (
-    <Link href={`/articles/${article.title.toLowerCase().replace(/\s+/g, '-')}`} className={`block ${className}`}>
+    <Link href={`/articles/${titleToSlug(article.title)}`} className={`block ${className}`}>
       <div className="bg-white shadow-md rounded-lg p-4 cursor-pointer transition-transform hover:scale-105 h-full flex flex-col">
         <div>
           <h2 className="text-xl font-bold mb-2 text-gradient">{article.title}</h2>

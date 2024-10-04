@@ -2,22 +2,17 @@
 import articles from '@/data/articles'
 import ArticleCard from '@/app/articles/ArticleCard'
 import MarkdownText from '@/app/utils/MarkdownText'
+import titleToSlug from '../titleToSlug'
 
 export function generateStaticParams() {
   return articles.map((article) => ({
-    slug: article.title
-      .toLowerCase()
-      .replace(/\//g, '-')        // Replace forward slashes with hyphens
-      .replace(/[^\w\s-]/g, '')   // Remove all non-word chars except spaces and hyphens
-      .replace(/\s+/g, '-')       // Replace spaces with hyphens
-      .replace(/--+/g, '-')       // Replace multiple hyphens with single hyphen
-      .trim(),                    // Trim hyphens from start and end
+    slug: titleToSlug(article.title)
   }))
 }
 
 export default function ArticlePage({ params }: { params: { slug: string } }) {
   const article = articles.find(
-    (a) => a.title.toLowerCase().replace(/\s+/g, '-') === params.slug
+    (a) => titleToSlug(a.title) === params.slug
   )
 
   if (!article) return <div>Article not found</div>
