@@ -5,7 +5,13 @@ import MarkdownText from '@/app/utils/MarkdownText'
 
 export function generateStaticParams() {
   return articles.map((article) => ({
-    slug: article.title.toLowerCase().replace(/\s+/g, '-'),
+    slug: article.title
+      .toLowerCase()
+      .replace(/\//g, '-')        // Replace forward slashes with hyphens
+      .replace(/[^\w\s-]/g, '')   // Remove all non-word chars except spaces and hyphens
+      .replace(/\s+/g, '-')       // Replace spaces with hyphens
+      .replace(/--+/g, '-')       // Replace multiple hyphens with single hyphen
+      .trim(),                    // Trim hyphens from start and end
   }))
 }
 
@@ -20,7 +26,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
     <div className="flex h-[calc(100vh-4rem)]">
       <aside className="hidden lg:block lg:w-1/4 xl:w-1/5 overflow-y-auto border-r">
         <div className="p-4 space-y-4">
-          {articles.map((a) => (
+          {articles.filter(a => !a.hidden).map((a) => (
             <div key={a.title} className={a.title === article.title ? 'ring-2 ring-blue-500 rounded-lg' : ''}>
               <ArticleCard article={a} />
             </div>
