@@ -10,28 +10,16 @@ const skills: SkillGroupItem[] = [
   },
   {
     title: "Concepts",
-    details: "Web, Design Patterns, Operating Systems, Functional Programming, CI/CD, Microservices, Cloud, AI/Deep Learning, Event-Driven Programming, Test-Driven development",
+    details: "Web, Design Patterns, Relational and Non-relational Databases, Operating Systems, Functional Programming, CI/CD, Microservices, Cloud, AI/Deep Learning, Event-Driven Programming, Test-Driven development",
   },
   {
     title: "Platforms and tools",
-    details: "Node.js, Spring, React, Salesforce, Angular, Vue, MySQL, Firebase, Redis, Git, Docker"
+    details: "Node.js, Spring, React, Salesforce, Angular, Vue, MySQL, Firebase, Redis, InfluxDB, Git, Docker"
   },
   {
-    title: "Quick comprehension",
-    details: "Able to learn new languages, frameworks and concepts in a matter of days and internalising concepts.",
-  },
-  {
-    title: "Articulation",
-    details: "Ability to condense information and ideas for effective communication, documentation, brainstorming and interacting with LLMs",
-  },
-  {
-    title: "Adaptability",
-    details: "Being a lifelong learner, proficient in working with emerging technologies, ensuring that I stay relevant and useful in a world of constant change and disruption.",
-  },
-  {
-    title: "Foresight",
-    details: "Proactive in anticipating future problems and complexities and writing resilient, maintainable code",
-  },
+    title: "Transferable skills",
+    details: "Quick comprehension, Articulation, Adaptability, Foresight"
+  }
 ]
 
 const experiences: ExperienceItem[] = [
@@ -41,20 +29,16 @@ const experiences: ExperienceItem[] = [
     dates: "May 2022 ‐ Present",
     details: [
       {
-        title: "Real-time price chart with complex requirements",
-        description: "Led the development of frontend charts with custom algorithms for efficient fetching, merging, and zooming, backed by rigorous testing"
+        title: "Real-time data visualizations of financial data",
+        description: "Extended React charting libraries with new features to fulfill advanced requirements that is crucial for the launch of the product with latency being less that 1 second."
       },
       {
-        title: "Event-sourcing-based backend features",
-        description: "Took ownership, designed and implemented Spring Boot code, modelling complex business events to generate actionable statistics for data-driven decision-making"
+        title: "Business statistics from event sourcing",
+        description: "Designed and implemented end-to-end features using Spring Boot, PostgresSQL and React code for data-driven decision-making that increased business efficiency by 30%."
       },
       {
-        title: "Code quality",
-        description: "Identifying code organisation issues and fixing critical parts to improve development experience and performance substantially"
-      },
-      {
-        title: "Bug fixing",
-        description: "Fixed hundreds of bugs, within short time (usually within a day), looking for root causes and noticing technical debts and handling them"
+        title: "Optimizations to codebase",
+        description: "Identifying and fixing code organization issues, designing testing strategies and streamlining build process, migrating ot new libraries/frameworks to improve developer productivity at least fivefold."
       }
     ],
   },
@@ -64,25 +48,25 @@ const experiences: ExperienceItem[] = [
     dates: "Feb 2019 ‐ Apr 2021",
     details: [
       {
-        title: "Prototypes/MVPs/Proof of Concepts",
-        description: "Delivered fully interactive prototypes on Salesforce UI platform to A/B testing in taking very short time (2-5 days)"
+        title: "Platform-constrained backend computations",
+        description: "Programmed backend computations on Salesforce instance ensuring strict compliance with platform compute limits including complex validations and triggers."
       },
       {
-        title: "Backend design",
-        description: "Worked on a Salesforce instance with 20+ domain models, adding complicated validations and trigger handling while being mindful of platform constraints"
+        title: "Modernizing UI components",
+        description: "Designing modern, intuitive SPAs on Salesforce framework (similar to Angular) that reduced user interaction time by 80% by avoiding page loads."
       },
       {
-        title: "Implemented DevOps processes for the Salesforce code and configurations",
-        description: "Researched on how to do version controlling, testing, code reviewing considering unique restraints of the Salesforce development platform. Gave a plan on how to incrementally implement the ideas into the workflow"
+        title: "CI/CD workflow research",
+        description: "After noticing recurring time-consuming tasks, presented a CI/CD workflow strategy for Salesforce applications, addressing unique characteristics of the platform."
       },
-      {
-        title: "Cloud Components",
-        description: "Used Microsoft Azure tools to synchronize data between enterprise systems while handling failures and system inconsistencies"
-      },
-      {
-        title: "Data",
-        description: "Generated reports from complex data models for business decisions and ran data transformations"
-      }
+      // {
+      //   title: "Cloud Components",
+      //   description: "Used Microsoft Azure tools to synchronize data between enterprise systems while handling failures and system inconsistencies"
+      // },
+      // {
+      //   title: "Data",
+      //   description: "Generated reports from complex data models for business decisions and ran data transformations"
+      // }
     ],
   },
   {
@@ -91,12 +75,12 @@ const experiences: ExperienceItem[] = [
     dates: "Jun 2017 ‐ Nov 2017",
     details: [
       {
-        title: "Built a MVP for a  single page application",
-        description: "Single-handedly built complete B2B prototype application with business listing, booking and calendar view with Node.js and Angular"
+        title: "Angular MVP development",
+        description: "Single-handedly developed a B2B appointment system featuring business listings, bookings, and calendar views using Node.js and Angular to convince clients to use SPAs."
       },
       {
-        title: "Real time data collection and display",
-        description: "Used Web Extension API to create a web extension that captures changes to data on a certain website and displays the changes in a real-time interactive website. Used Vue.js and Firebase real-time database"
+        // title: "Real time data collection and display",
+        // description: "Used Web Extension API to create a web extension that captures changes to data on a certain website and displays the changes in a real-time interactive website. Used Vue.js and Firebase real-time database"
       }
     ],
   },
