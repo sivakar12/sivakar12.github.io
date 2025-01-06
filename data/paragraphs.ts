@@ -16,5 +16,5 @@ I believe I have more skills than my experience reflects due to limited opportun
 `
 
 export const personalStatement = `
-I am a software developer with a degree in engineering and a proven track record of working with diverse technologies. As a quick learner and first-principles thinker, I approach coding with creativity, organization, and discipline. My communication style is organic and authentic, fostering effective team collaboration. I am seeking challenging opportunities where I can grow and make meaningful contribution.
+I have both theoretical and practical knowledge across a range of computer science topics and a proven ability to quickly internalize new libraries and frameworks by recognizing patterns. With a strong foundation in mathematics, I am confident in my ability to grasp and apply complex technical concepts with ease. My organically developed communication and teamwork skills allow me to thrive in agile, high-demand environments where I bring creativity, organization, and discipline to every challenge.
 `
