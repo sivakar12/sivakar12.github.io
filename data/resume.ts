@@ -30,15 +30,15 @@ const experiences: ExperienceItem[] = [
     details: [
       {
         title: "Real-time data visualizations of financial data",
-        description: "Extended React charting libraries with new features to fulfill advanced requirements that is crucial for the launch of the product with latency being less that 1 second."
+        description: "Extended React charting libraries with new UI features to fulfill advanced requirements (latency being less that 1 second among other things) that is crucial for the launch of the product."
       },
       {
-        title: "Business statistics from event sourcing",
-        description: "Designed and implemented end-to-end features using Spring Boot, PostgresSQL and React code for data-driven decision-making that increased business efficiency by 30%."
+        title: "Event-sourcing based approach for business features",
+        description: "Designed the data models and used Spring Boot and React code to display statistics to enable the business to make data-driven decisions."
       },
       {
         title: "Optimizations to codebase",
-        description: "Identifying and fixing code organization issues, designing testing strategies and streamlining build process, migrating ot new libraries/frameworks to improve developer productivity at least fivefold."
+        description: "Identifying and fixing hundreds of code organization issues, designing testing strategies and streamlining build process, migrating to new libraries/frameworks to improve developer productivity at least fivefold."
       }
     ],
   },
@@ -48,17 +48,21 @@ const experiences: ExperienceItem[] = [
     dates: "Feb 2019 ‐ Apr 2021",
     details: [
       {
-        title: "Platform-constrained backend computations",
+        title: "Platform-constrained backend computations on high-volume data",
         description: "Programmed backend computations on Salesforce instance ensuring strict compliance with platform compute limits including complex validations and triggers."
       },
       {
         title: "Modernizing UI components",
-        description: "Designing modern, intuitive SPAs on Salesforce framework (similar to Angular) that reduced user interaction time by 80% by avoiding page loads."
+        description: "Designing modern, intuitive SPAs on Salesforce framework (similar to Angular) that reduced user interaction time by 80\% by avoiding page loads."
       },
       {
         title: "CI/CD workflow research",
         description: "After noticing recurring time-consuming tasks, presented a CI/CD workflow strategy for Salesforce applications, addressing unique characteristics of the platform."
       },
+      {
+        title: "Integration of legacy systems and modern cloud components",
+        description: "Synchronizing data across multiple systems using Microsoft Azure cloud components."
+      }
       // {
       //   title: "Cloud Components",
       //   description: "Used Microsoft Azure tools to synchronize data between enterprise systems while handling failures and system inconsistencies"
