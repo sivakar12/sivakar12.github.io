@@ -82,10 +82,10 @@ const experiences: ExperienceItem[] = [
         title: "Angular MVP development",
         description: "Single-handedly developed a B2B appointment system featuring business listings, bookings, and calendar views using Node.js and Angular to convince clients to use SPAs."
       },
-      {
+      // {
         // title: "Real time data collection and display",
         // description: "Used Web Extension API to create a web extension that captures changes to data on a certain website and displays the changes in a real-time interactive website. Used Vue.js and Firebase real-time database"
-      }
+      // }
     ],
   },
 ]
