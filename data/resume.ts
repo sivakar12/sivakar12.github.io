@@ -38,7 +38,7 @@ const experiences: ExperienceItem[] = [
       },
       {
         title: "Optimizations to codebase",
-        description: "Identifying and fixing hundreds of code organization issues, designing testing strategies and streamlining build process, migrating to new libraries/frameworks to improve developer productivity at least fivefold."
+        description: "Identified and fixed hundreds of code organization issues, designing testing strategies, streamlining build process and migrating to new libraries/frameworks to improve developer productivity at least fivefold."
       }
     ],
   },
@@ -53,7 +53,7 @@ const experiences: ExperienceItem[] = [
       },
       {
         title: "Modernizing UI components",
-        description: "Designing modern, intuitive SPAs on Salesforce framework (similar to Angular) that reduced user interaction time by 80\% by avoiding page loads."
+        description: "Designed modern, intuitive SPAs on Salesforce framework (similar to Angular) that reduced user interaction time by 80\% by avoiding page loads."
       },
       {
         title: "CI/CD workflow research",
@@ -61,7 +61,7 @@ const experiences: ExperienceItem[] = [
       },
       {
         title: "Integration of legacy systems and modern cloud components",
-        description: "Synchronizing data across multiple systems using Microsoft Azure cloud components."
+        description: "Synchronized data across multiple systems using Microsoft Azure cloud components."
       }
       // {
       //   title: "Cloud Components",
