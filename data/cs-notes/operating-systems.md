@@ -1,0 +1,34 @@
+- What is an OS?
+  - A software providing platform for other softwares and handling low level hardware communications
+  - It is compiled program that is loaded after startup
+    - It can update registries and send and read messages from hardware bus
+    - It passes control to user programs and gain back control using inxt instruction address
+- How it deals with hardware?
+  - It discovers hardware by sending messages on the bus
+  - Gets the ability to talk to any hardware with drivers
+    - OS have standard interfaces on talking to categories of devices
+    - Drivers tranlsate hardware instructions to fit these standard interfaces
+      - Hardware OS needs like mouse, keyboard and monitory need to fit these
+      - Specizlized hardware need not. Some someware can sent just raw messages
+- Components
+  - Hardware interface
+  - Processes management
+  - Device management
+  - File system
+  - Network management
+  - Graphical user interface
+- What are processes?
+  - A compiled program in action
+  - OS gives switch to this code and gain back control with interrupts
+  - OS creates an information space in memory for a process that contain details
+    - Code
+    - Stack
+    - Heap
+- How GUI works?
+  - GUI is another process communicating with other processes
+    - GUI's memory space has what is displayed on screen (the windows and other widgets)
+    - Processes sent messages to GUI to create window and add thigns to window
+      - Lots of defaults and customizations there
+    - GUI process gets inputs from keyboard, mouse, touchscreen etc.
+      - Determines which process to pass the event to passes events
+      - Proceess should have registered handlers with the OS for handling
