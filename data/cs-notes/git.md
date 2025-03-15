@@ -1,0 +1,45 @@
+- What is git
+  - Snapshots of project directory with links for history for version control and collaboration
+- Uses
+  - Easily to experiment knowing you can reset to working state
+    - Have multiple branches in parallel
+  - Many uses work at the same time
+    - Everyone has their own separate local repository, which they sync with a remote
+  - Visual examination of the changes
+  - Maintain multiple versions of the code
+  - Allows CI/CD
+- Concepts
+  - commit
+    - a snapshot of the project directory
+    - has author, parent commit, title and description (optional)
+  - staging area
+    - files are added to staging area before being committed
+  - branch
+    - a pointer to a commit actually
+    - you create a new branch to get a new pointer
+    - when you commit, the pointer advances to the new commit
+      - but not for the other branches
+  - remote
+    - another version of this repository over a network to which changes can be synchronized
+  - stash
+- Commands
+  - add
+    - add file or files to the staging area
+  - commit
+    - make a commit out of the staged files
+  - push
+    - push changes from a local branch to a branch in a remote
+  - pull
+  - stash
+- Internals
+  - Not storing changes but full directory
+    - Each file is stored as object identified by a cache
+      - If a file doesn't change same hash is used
+  - Identification of objects using hash
+    - A file is identified by a content hash
+    - A commit is identified by a hash
+      - Hash of multiple fields
+        - File tree
+        - Commit message
+        - Author information
+- User management
