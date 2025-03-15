@@ -1,3 +1,6 @@
+---
+title: Git
+---
 - What is git
   - Snapshots of project directory with links for history for version control and collaboration
 - Uses
