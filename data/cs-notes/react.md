@@ -1,3 +1,6 @@
+---
+title: React
+---
 - What is React?
   - A JavaScript library that makes rendering HTML elements with state data easy
 - How it works

@@ -1,3 +1,6 @@
+---
+title: Operating Systems
+---
 - What is an OS?
   - A software providing platform for other softwares and handling low level hardware communications
   - It is compiled program that is loaded after startup
