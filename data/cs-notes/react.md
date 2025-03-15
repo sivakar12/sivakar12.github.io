@@ -1,0 +1,47 @@
+- What is React?
+  - A JavaScript library that makes rendering HTML elements with state data easy
+- How it works
+  - There is one root components that have many components
+  - A component may have state, which are passed to children any level deep as props
+    - Props are managed as function variables
+  - React executes all componets rendering steps to make a DOM tree and render
+  - Updates to state has to happen through the React runtime
+  - When state changes, 
+    - React creates another whole render in memory 
+      - but no DOM update
+    - compares snapshots of old DOM state and new DOM state efficiently
+    - Updates the parts of DOM that has to change
+  - Event handlers are what changes the state
+    - They are added to elements
+      - React has a set of definitions
+    - Event handlers passes from top to bottom through props
+      - So events can go up and update state above
+  - There are many features added on top of this.
+- Benefits over directly dealing with DOM
+  - No need to programatically change display items
+      - You mark the model variable change and react changes view automatically
+  - Easy to split components to many files
+      - Comes with tooling that lets you import and export
+      - Functions as components and props
+  - Easy to reason about
+    - Components are modular
+  - Components are modular and self-contained
+- Evolution
+  - Class components and function components
+    - Initally you had class based components
+      - Only these could manage state
+    - Pure functoinal components that only deal with props
+  - Redux for state
+    - React apps with only functional components and state in a global object
+    - Because only using functional components gives many benefits, 
+  - Context
+    - Passing props many levels deep require boiler plate code. This simplified that.
+  - Hooks
+    - Abandoning class components and lifecycles (which were complex)
+  - Suspense
+- Hooks
+  - useState()
+  - useEffect()
+  - useContext()
+  - useCallback()
+- Error Boundaries, Suspense, Server-Side Rendering
