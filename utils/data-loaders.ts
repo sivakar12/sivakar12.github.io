@@ -2,12 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import yaml from 'js-yaml';
-import { Article } from '@/types/Article';
-import { CSNote } from '@/types/CsNote';
-import { HomePageItem } from '@/types/home';
-import { ProjectItem } from '@/types/Project';
-import { LinkItem } from '@/types/Link';
-import { Texts } from '@/types/Texts';
+import { Article, CSNote, HomePageItem, ProjectItem, LinkItem, Texts } from '@/types/types';
 
 // Shared utility function
 function readMarkdownFile(filePath: string) {

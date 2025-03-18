@@ -1,4 +1,4 @@
-import { HomePageItem } from '@/types/home';
+import { HomePageItem } from '@/types/types';
 
 interface HomeCardProps {
   item: HomePageItem;
