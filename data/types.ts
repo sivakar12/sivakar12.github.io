@@ -8,7 +8,6 @@ export type PersonalWebsiteData = {
   photoUrl: string;
   resume: ResumeData;
   projects: ProjectItem[];
-  articles: ArticleItem[];
   settings: WebsiteSettings;
 }
 
@@ -66,15 +65,6 @@ export type ProjectItem = {
     title: string;
     url: string;
   }[]
-}
-
-export type ArticleItem = {
-  title: string;
-  emoji: string;
-  hidden: boolean;
-  date?: string;
-  shortDescription?: string;
-  contentMarkdown: string;
 }
 
 export type ColorScheme = {
