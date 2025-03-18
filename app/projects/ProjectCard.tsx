@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ProjectItem } from '@/data/types'
+import { ProjectItem } from '@/types/Project'
 
 interface ProjectCardProps {
   project: ProjectItem
@@ -7,7 +7,7 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <Link href={`/projects/${project.title.toLowerCase().replace(/\s+/g, '-')}`}>
+    <Link href={`/projects/${project.id}`}>
       <div className="bg-white shadow-md rounded-lg p-4 cursor-pointer transition-transform hover:scale-105 h-64 flex flex-col">
         <div className="flex items-center justify-between mb-2">
           <h2 className="text-xl font-bold text-gradient truncate">{project.title}</h2>
