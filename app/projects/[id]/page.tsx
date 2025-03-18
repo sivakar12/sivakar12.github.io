@@ -1,17 +1,19 @@
-import projects from '@/data/projects'
+import { getAllProjects } from '@/utils/data-loaders'
 import ProjectCard from '@/app/projects/ProjectCard'
 import Link from 'next/link'
 import MarkdownText from '@/components/MarkdownText'
 
 export function generateStaticParams() {
+  const projects = getAllProjects();
   return projects.map((project) => ({
-    slug: project.title.toLowerCase().replace(/\s+/g, '-'),
+    id: project.id,
   }))
 }
 
-export default function ProjectPage({ params }: { params: { slug: string } }) {
+export default function ProjectPage({ params }: { params: { id: string } }) {
+  const projects = getAllProjects();
   const project = projects.find(
-    (p) => p.title.toLowerCase().replace(/\s+/g, '-') === params.slug
+    (p) => p.id === params.id
   )
 
   if (!project) return <div>Project not found</div>
@@ -21,7 +23,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
       <aside className="hidden lg:block lg:w-1/4 xl:w-1/5 overflow-y-auto border-r">
         <div className="p-4 space-y-4">
           {projects.map((p) => (
-            <div key={p.title} className={p.title === project.title ? 'ring-2 ring-blue-500 rounded-lg' : ''}>
+            <div key={p.id} className={p.id === project.id ? 'ring-2 ring-blue-500 rounded-lg' : ''}>
               <ProjectCard project={p} />
             </div>
           ))}

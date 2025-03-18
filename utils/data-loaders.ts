@@ -5,6 +5,7 @@ import yaml from 'js-yaml';
 import { Article } from '@/types/Article';
 import { CSNote } from '@/types/CsNote';
 import { HomePageItem } from '@/types/home';
+import { ProjectItem } from '@/types/Project';
 
 // Shared utility function
 function readMarkdownFile(filePath: string) {
@@ -98,4 +99,42 @@ export function loadHomeContent(): HomePageItem[] {
     console.error('Error loading home content:', error);
     return [];
   }
+}
+
+// Projects data loader
+const projectsDirectory = path.join(process.cwd(), 'data/projects');
+
+export function getAllProjects(): ProjectItem[] {
+  // Get file names under /data/projects
+  const fileNames = fs.readdirSync(projectsDirectory);
+  
+  const allProjectsData = fileNames
+    .filter(fileName => fileName.endsWith('.md'))
+    .map(fileName => {
+      // Remove ".md" from file name to get id
+      const id = fileName.replace(/\.md$/, '');
+
+      // Read markdown file as string
+      const fullPath = path.join(projectsDirectory, fileName);
+      const fileContents = fs.readFileSync(fullPath, 'utf8');
+
+      // Use gray-matter to parse the post metadata section
+      const { data, content } = matter(fileContents);
+
+      // Combine the data with the id
+      return {
+        id,
+        ...data,
+        longDescriptionMarkdown: content,
+      } as ProjectItem;
+    });
+
+  // Sort projects by date in descending order
+  return allProjectsData.sort((a, b) => {
+    if (a.date < b.date) {
+      return 1;
+    } else {
+      return -1;
+    }
+  });
 } 

@@ -1,5 +1,4 @@
 import { bigBio, personalStatement } from "./paragraphs";
-import projects from "./projects";
 import settings from "./settigns";
 import resume from "./resume";
 import contact from "./contact";
@@ -15,7 +14,6 @@ const data: PersonalWebsiteData = {
   links,
   photoUrl: "profile.jpeg",
   resume,
-  projects,
   settings,
 }
 
