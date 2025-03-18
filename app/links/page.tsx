@@ -4,19 +4,13 @@ import React from 'react';
 import links from '@/data/links';
 import { LinkItem } from '@/data/types';
 
-const pastelColors = [
-  'bg-red-200', 'bg-orange-200', 'bg-yellow-200', 'bg-green-200',
-  'bg-teal-200', 'bg-blue-200', 'bg-indigo-200', 'bg-purple-200',
-  'bg-pink-200'
-];
-
-const LinkCard: React.FC<{ link: LinkItem; color: string }> = ({ link, color }) => {
+const LinkCard: React.FC<{ link: LinkItem; }> = ({ link }) => {
   return (
     <a 
       href={link.url} 
       target="_blank" 
       rel="noopener noreferrer" 
-      className={`flex flex-col items-center justify-between p-6 ${color} rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 w-full h-full text-gray-800 animate-shake`}
+      className={`flex flex-col items-center justify-between p-6 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 w-full h-full text-gray-800`}
     >
       <span className="text-5xl mb-4">{link.emoji}</span>
       <span className="text-xl font-bold text-center mb-2">{link.name}</span>
@@ -35,7 +29,6 @@ export default function LinksPage() {
           <div key={link.id} className="h-64">
             <LinkCard 
               link={link}
-              color={pastelColors[index % pastelColors.length]}
             />
           </div>
         ))}

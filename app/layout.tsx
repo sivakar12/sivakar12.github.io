@@ -21,12 +21,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    // <html lang="en">
-    //   <body className={merriweather.className}>
-    //     <NavigationBar/>
-    //     {children}
-    //   </body>
-    // </html>
     <html lang="en">
     <body className={"flex flex-col min-h-screen " + font.className}>
       <nav className="fixed top-0 left-0 right-0 h-16 bg-white shadow z-10">
