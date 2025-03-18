@@ -1,0 +1,33 @@
+- mainPoint: "Lifelong Learner"
+  description: "Constantly expanding my knowledge across various domains, always eager to learn and grow."
+
+- mainPoint: "Full Stack Developer"
+  description: "Passionate about creating elegant solutions to complex problems. Specialized in modern web technologies and cloud architecture."
+
+- mainPoint: "Tech Stack"
+  description:
+    - "React & Next.js for modern web applications"
+    - "TypeScript for type-safe development"
+    - "Node.js & Python for backend solutions"
+    - "AWS for cloud infrastructure"
+
+- mainPoint: "Professional Journey"
+  description: "Over 6 years of experience in software development, working with startups and enterprises alike."
+
+- mainPoint: "Featured Projects"
+  description: "A collection of my best work, from full-stack applications to innovative solutions."
+
+- mainPoint: "Voracious Reader"
+  description: "Always immersed in books, exploring different ideas and perspectives through literature. Reading not just to learn, but to master the art of concentration." 
+
+- mainPoint: "Polyglot"
+  description: "Fluent in English, French, and German - embracing different cultures and perspectives through language."
+
+- mainPoint: "Environmentalist"
+  description: "Committed to sustainable practices and environmental conservation in both personal and professional life."
+
+- mainPoint: "Fitness Enthusiast"
+  description: "Dedicated to maintaining a healthy lifestyle through regular exercise and mindful living."
+
+- mainPoint: "Wannabe Polymath"
+  description: "Driven by curiosity to explore and understand various fields of knowledge, from science to philosophy."
