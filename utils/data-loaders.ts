@@ -6,6 +6,8 @@ import { Article } from '@/types/Article';
 import { CSNote } from '@/types/CsNote';
 import { HomePageItem } from '@/types/home';
 import { ProjectItem } from '@/types/Project';
+import { LinkItem } from '@/types/Link';
+import { Texts } from '@/types/Texts';
 
 // Shared utility function
 function readMarkdownFile(filePath: string) {
@@ -137,4 +139,39 @@ export function getAllProjects(): ProjectItem[] {
       return -1;
     }
   });
+}
+
+export function loadLinks(): LinkItem[] {
+  try {
+    const yamlPath = path.join(process.cwd(), 'data', 'links.yaml');
+    const fileContents = fs.readFileSync(yamlPath, 'utf8');
+    const data = yaml.load(fileContents) as LinkItem[];
+    
+    // Type assertion and validation
+    if (!Array.isArray(data)) {
+      throw new Error('Invalid YAML structure');
+    }
+
+    return data;
+  } catch (error) {
+    console.error('Error loading links:', error);
+    return [];
+  }
+}
+
+export function loadTexts(): Texts {
+  try {
+    const yamlPath = path.join(process.cwd(), 'data', 'texts.yaml');
+    const fileContents = fs.readFileSync(yamlPath, 'utf8');
+    const data = yaml.load(fileContents) as Texts;
+    
+    if (!data || typeof data !== 'object') {
+      throw new Error('Invalid YAML structure');
+    }
+
+    return data;
+  } catch (error) {
+    console.error('Error loading texts:', error);
+    return {};
+  }
 } 
