@@ -17,7 +17,7 @@ export default function Home() {
             width={192}
             height={192}
           />
-          <h1 className="text-4xl font-bold tracking-tight text-gray-900">
+          <h1 className="text-4xl font-extrabold tracking-tight text-gradient text-center w-full">
             {data.name}
           </h1>
         </div>
