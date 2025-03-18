@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import data from '@/data'
 import { loadHomeContent } from '@/utils/data-loaders'
 import HomeCard from '@/components/HomeCard'
 
@@ -13,12 +12,12 @@ export default function Home() {
           <Image
             className="h-48 w-48 rounded-full object-cover mb-6"
             src="/profile.jpeg"
-            alt={data.name}
+            alt="Sivakar Sithamparanathan"
             width={192}
             height={192}
           />
           <h1 className="text-4xl font-extrabold tracking-tight text-gradient text-center w-full">
-            {data.name}
+            Sivakar Sithamparanathan
           </h1>
         </div>
 

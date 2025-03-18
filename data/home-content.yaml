@@ -2,14 +2,15 @@
   description: "Constantly expanding my knowledge across various domains, always eager to learn and grow."
 
 - mainPoint: "Full Stack Developer"
-  description: "Passionate about creating elegant solutions to complex problems. Specialized in modern web technologies and cloud architecture."
+  description: "Passionate about creating elegant solutions to complex problems. Proficient in all aspects of computer science."
 
 - mainPoint: "Tech Stack"
   description:
     - "React & Next.js for modern web applications"
     - "TypeScript for type-safe development"
-    - "Node.js & Python for backend solutions"
-    - "AWS for cloud infrastructure"
+    - "Node.js & Spring for backend solutions"
+    - "Cloud"
+    - "DevOps"
 
 - mainPoint: "Professional Journey"
   description: "Over 6 years of experience in software development, working with startups and enterprises alike."

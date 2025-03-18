@@ -1,8 +1,6 @@
-'use client';
-
 import React from 'react';
-import links from '@/data/links';
-import { LinkItem } from '@/data/types';
+import { LinkItem } from '@/types/Link';
+import { loadLinks } from '@/utils/data-loaders';
 
 const LinkCard: React.FC<{ link: LinkItem; }> = ({ link }) => {
   return (
@@ -22,10 +20,12 @@ const LinkCard: React.FC<{ link: LinkItem; }> = ({ link }) => {
 };
 
 export default function LinksPage() {
+  const links = loadLinks();
+
   return (
     <div className="container mx-auto p-8">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {links.map((link, index) => (
+        {links.map((link) => (
           <div key={link.id} className="h-64">
             <LinkCard 
               link={link}

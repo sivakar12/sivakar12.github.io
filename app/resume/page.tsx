@@ -1,81 +1,32 @@
 import React from 'react';
-import { ResumeData, SkillGroupItem, ExperienceItem, EducationItem } from '@/data/types';
+import fs from 'fs';
+import path from 'path';
+import ReactMarkdown from 'react-markdown';
 
-// Assume we're importing the data from somewhere
-import resumeData from '@/data/resume';
-import links from '@/data/links';
+// Load content at build time
+const resumeContent = fs.readFileSync(
+  path.join(process.cwd(), 'data', 'resume.md'),
+  'utf8'
+);
 
-const ResumePage: React.FC = () => {
-  const resume: ResumeData = resumeData;
-
-  const githubLink = links.filter(l => l.id === "github")[0].url;
-  const linkedInLink = links.filter(l => l.id === "linkedin")[0].url;
-  const websiteLink = links.filter(l => l.id === "website")[0].url;
-
+const ResumePage = () => {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
-      <header className="mb-8">
-        <h1 className="text-4xl font-bold mb-2">{resume.name}</h1>
-        <p className="text-md mb-4">{resume.personalStatement}</p>
-        <div className="text-sm space-y-1">
-          <p>Email: {resume.contact.email}</p>
-          {/* <p>Phone: {resume.contact.phone}</p> */}
-          <p>Website: {websiteLink}</p>
-          <p>LinkedIn: {linkedInLink}</p>
-          <p>GitHub: {githubLink}</p>
-        </div>
-      </header>
-
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-4">Skills</h2>
-        <ul className="list-disc pl-5">
-          {resume.skills.map((skill: SkillGroupItem, index: number) => (
-            <li key={index} className="mb-2">
-              <strong>{skill.title}:</strong> {skill.details}
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-4">Experience</h2>
-        {resume.experiences.map((exp: ExperienceItem, index: number) => (
-          <div key={index} className="mb-6">
-            <h3 className="text-xl font-semibold">{exp.jobTitle} - {exp.company}</h3>
-            <p className="text-gray-600 mb-2">{exp.dates}</p>
-            <ul className="list-disc pl-5">
-              {exp.details.map((detail, detailIndex) => (
-                <li key={detailIndex}>
-                  <strong>{detail.title}:</strong> {detail.description}
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </section>
-
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-4">Education</h2>
-        {resume.education.map((edu: EducationItem, index: number) => (
-          <div key={index} className="mb-4">
-            <h3 className="text-xl font-semibold">{edu.title}</h3>
-            <ul className="list-disc pl-5">
-              {edu.details.map((detail, detailIndex) => (
-                <li key={detailIndex}>{detail}</li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </section>
-
-      <section>
-        <h2 className="text-2xl font-semibold mb-4">Interests</h2>
-        <ul className="list-disc pl-5">
-          {resume.interests.map((interest, index) => (
-            <li key={index}>{interest}</li>
-          ))}
-        </ul>
-      </section>
+      <div className="prose prose-lg dark:prose-invert max-w-none">
+        <ReactMarkdown
+          components={{
+            h1: ({ children }) => <h1 className="text-3xl font-bold mb-4">{children}</h1>,
+            h2: ({ children }) => <h2 className="text-2xl font-bold mt-8 mb-4">{children}</h2>,
+            h3: ({ children }) => <h3 className="text-xl font-semibold mt-6 mb-3">{children}</h3>,
+            ul: ({ children }) => <ul className="list-disc pl-6 mb-4">{children}</ul>,
+            li: ({ children }) => <li className="mb-2">{children}</li>,
+            p: ({ children }) => <p className="mb-4">{children}</p>,
+            strong: ({ children }) => <strong className="font-semibold">{children}</strong>,
+          }}
+        >
+          {resumeContent}
+        </ReactMarkdown>
+      </div>
     </div>
   );
 };
