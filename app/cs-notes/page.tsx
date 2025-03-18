@@ -9,7 +9,7 @@ export default function Home() {
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-6">CS Notes</h1>
       <p className="mb-6">
-        I tried to condense all I know into short notes, inspired by the Feynman Method.
+      "If you can't explain something in simple terms, you don't understand it." Here I am, trying to explain things in simple terms.
       </p>
       <ul className="space-y-4">
         {allNotes.map(({ id, title }) => (
