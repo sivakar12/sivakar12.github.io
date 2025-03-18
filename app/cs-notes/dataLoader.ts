@@ -1,12 +1,8 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import { CSNote } from '@/types/CsNote';
 
-export interface CSNote {
-    id: string;
-    title: string;
-    content: string;
-}
 
 const csNotesDir = path.join(process.cwd(), 'data', 'cs-notes');
 
