@@ -1,8 +1,10 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import yaml from 'js-yaml';
 import { Article } from '@/types/Article';
 import { CSNote } from '@/types/CsNote';
+import { HomePageItem } from '@/types/home';
 
 // Shared utility function
 function readMarkdownFile(filePath: string) {
@@ -77,5 +79,23 @@ export function getCSNoteById(id: string): CSNote {
     id,
     title: data.title,
     content
+  }
+}
+
+export function loadHomeContent(): HomePageItem[] {
+  try {
+    const yamlPath = path.join(process.cwd(), 'data', 'home-content.yaml');
+    const fileContents = fs.readFileSync(yamlPath, 'utf8');
+    const data = yaml.load(fileContents) as HomePageItem[];
+    
+    // Type assertion and validation
+    if (!Array.isArray(data)) {
+      throw new Error('Invalid YAML structure');
+    }
+
+    return data;
+  } catch (error) {
+    console.error('Error loading home content:', error);
+    return [];
   }
 } 
