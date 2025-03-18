@@ -1,4 +1,4 @@
-import { getAllArticles } from './dataLoader'
+import { getAllArticles } from '@/utils/data-loaders'
 import ArticleCard from '@/app/articles/ArticleCard'
 
 export default function ArticlesPage() {

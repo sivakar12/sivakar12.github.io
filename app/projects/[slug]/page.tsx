@@ -1,7 +1,7 @@
 import projects from '@/data/projects'
 import ProjectCard from '@/app/projects/ProjectCard'
 import Link from 'next/link'
-import MarkdownText from '@/app/utils/MarkdownText'
+import MarkdownText from '@/components/MarkdownText'
 
 export function generateStaticParams() {
   return projects.map((project) => ({

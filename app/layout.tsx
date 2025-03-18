@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Open_Sans } from 'next/font/google'
 
 import "./globals.css";
-import NavigationBar from "@/app/components/NavigationBar";
+import NavigationBar from "@/components/NavigationBar";
 
 const font = Open_Sans({
   subsets: ['latin'],

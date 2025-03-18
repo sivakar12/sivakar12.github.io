@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import data from '@/data'
-import MarkdownText from './utils/MarkdownText'
+import MarkdownText from '@/components/MarkdownText'
 
 export default function Home() {
   return (

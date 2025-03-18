@@ -1,6 +1,6 @@
 // app/page.tsx
 import Link from 'next/link';
-import { getAllCSNotes } from './dataLoader';
+import { getAllCSNotes } from '@/utils/data-loaders';
 
 export default function Home() {
   const allNotes = getAllCSNotes();
