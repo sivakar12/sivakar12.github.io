@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ProjectItem } from '@/types/Project'
+import { ProjectItem } from '@/types/types'
 
 interface ProjectCardProps {
   project: ProjectItem

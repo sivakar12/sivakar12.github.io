@@ -1,5 +1,5 @@
 import React from 'react';
-import { LinkItem } from '@/types/Link';
+import { LinkItem } from '@/types/types';
 import { loadLinks } from '@/utils/data-loaders';
 
 const LinkCard: React.FC<{ link: LinkItem; }> = ({ link }) => {
