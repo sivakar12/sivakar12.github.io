@@ -1,6 +1,6 @@
 import Markdown from "react-markdown";
-import { getAllCSNotes, getCSNoteById } from "../dataLoader";
-import MarkdownText from "@/app/utils/MarkdownText";
+import { getAllCSNotes, getCSNoteById } from "@/utils/data-loaders";
+import MarkdownText from "@/components/MarkdownText";
 
 export function generateStaticParams() {
   return getAllCSNotes().map((note) => ({

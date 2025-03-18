@@ -1,7 +1,6 @@
-
 import ArticleCard from '@/app/articles/ArticleCard'
-import MarkdownText from '@/app/utils/MarkdownText'
-import { getAllArticles, getArticleById } from '../dataLoader'
+import MarkdownText from '@/components/MarkdownText'
+import { getAllArticles, getArticleById } from '@/utils/data-loaders'
 
 export function generateStaticParams() {
   return getAllArticles().map((article) => ({
