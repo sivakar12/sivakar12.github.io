@@ -1,5 +1,5 @@
 import { getAllProjects } from '@/utils/data-loaders'
-import ProjectCard from '@/app/projects/ProjectCard'
+import ContentCard from '@/components/ContentCard'
 import Link from 'next/link'
 import MarkdownText from '@/components/MarkdownText'
 
@@ -24,7 +24,7 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
         <div className="p-4 space-y-4">
           {projects.map((p) => (
             <div key={p.id} className={p.id === project.id ? 'ring-2 ring-blue-500 rounded-lg' : ''}>
-              <ProjectCard project={p} />
+              <ContentCard item={p} type="project" />
             </div>
           ))}
         </div>
