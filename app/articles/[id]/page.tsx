@@ -1,4 +1,4 @@
-import ArticleCard from '@/app/articles/ArticleCard'
+import ContentCard from '@/components/ContentCard'
 import MarkdownText from '@/components/MarkdownText'
 import { getAllArticles, getArticleById } from '@/utils/data-loaders'
 
@@ -19,7 +19,7 @@ export default function ArticlePage({ params }: { params: { id: string } }) {
         <div className="p-4 space-y-4">
           {getAllArticles().filter(a => !a.hidden).map((a) => (
             <div key={a.title} className={a.title === article.title ? 'ring-2 ring-blue-500 rounded-lg' : ''}>
-              <ArticleCard article={a} />
+              <ContentCard item={a} type="article" />
             </div>
           ))}
         </div>
