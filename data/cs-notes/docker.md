@@ -1,0 +1,27 @@
+- What is docker?
+  - Light weight virtual machines (containers) from deterministic image description that run on all environments the same way
+- Components
+  - Docker image
+    - Description of what is inside a container
+    - An image runs always the same way
+    - Layers is a way of reusing other images
+  - Container
+    - A running instance of a Docker image
+  - Docker runtime
+    - Runs containers
+    - Provides ports and volumes to containers
+  - Port
+    - A network port on the container mapped to a port in the host OS
+  - Volumes
+    - Make file system independant of the containres
+    - Volumes can outlast containers, making deleting and creating containers 
+  - Image registry
+    -  A repository for versioned Images
+  - Docker Client
+- Why is this lightweight?
+  - A container is mapped to an OS process, unlike virtual machiens
+- What other things this enables?
+  - Container orchestrations
+    - Docker Compose and Kubernetes
+  - DevOps benefits
+  - Cloud computing
