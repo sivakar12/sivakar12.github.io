@@ -11,40 +11,72 @@ function readMarkdownFile(filePath: string) {
 }
 
 // Articles data loader
-const articlesFolder = path.join(process.cwd(), 'data', 'articles');
+const articlesDir = path.join(process.cwd(), 'data', 'articles');
 
 export function getAllArticles(): Article[] {
-  const fileNames = fs.readdirSync(articlesFolder);
+  // Read the order file
+  const orderFilePath = path.join(process.cwd(), 'data', 'articles-order.txt');
+  let orderedIds: string[] = [];
+  try {
+    const orderContent = fs.readFileSync(orderFilePath, 'utf8');
+    orderedIds = orderContent.split('\n').filter(line => line.trim());
+  } catch (error) {
+    console.warn('Could not read articles-order.txt, falling back to alphabetical order');
+  }
+
+  const fileNames = fs.readdirSync(articlesDir);
   const mdFiles = fileNames.filter((fileName) => fileName.endsWith('.md'));
 
   const articles = mdFiles.map((fileName) => {
     const id = fileName.replace('.md', '');
-    const filePath = path.join(articlesFolder, fileName);
+    const filePath = path.join(articlesDir, fileName);
     const { data, content } = readMarkdownFile(filePath);
 
     return {
       id,
       title: data.title,
-      date: data.date,
-      hidden: data.hidden,
+      content,
       shortDescription: data.shortDescription,
-      content
+      hidden: data.hidden || false
     }
-  }).filter(article => article.content && article.title);
+  }).filter(article => article.content && article.title && !article.hidden);
+
+  // Sort articles based on the order file
+  if (orderedIds.length > 0) {
+    articles.sort((a, b) => {
+      const indexA = orderedIds.indexOf(a.id);
+      const indexB = orderedIds.indexOf(b.id);
+      if (indexA === -1) return 1;
+      if (indexB === -1) return -1;
+      return indexA - indexB;
+    });
+  } else {
+    articles.sort((a, b) => a.title.localeCompare(b.title));
+  }
 
   return articles;
 }
 
-export function getArticleById(id: string): Article {
-  const filePath = path.join(articlesFolder, `${id}.md`);
-  const { data, content } = readMarkdownFile(filePath);
-  return {
-    id,
-    title: data.title,
-    date: data.date,
-    hidden: data.hidden,
-    shortDescription: data.shortDescription,
-    content
+export function getArticleById(id: string): Article | null {
+  try {
+    const filePath = path.join(articlesDir, `${id}.md`);
+    const { data, content } = readMarkdownFile(filePath);
+    
+    // Don't return hidden articles
+    if (data.hidden) {
+      return null;
+    }
+
+    return {
+      id,
+      title: data.title,
+      content,
+      shortDescription: data.shortDescription,
+      hidden: false
+    }
+  } catch (error) {
+    console.error(`Error loading article ${id}:`, error);
+    return null;
   }
 }
 
@@ -52,6 +84,16 @@ export function getArticleById(id: string): Article {
 const csNotesDir = path.join(process.cwd(), 'data', 'cs-notes');
 
 export function getAllCSNotes(): CSNote[] {
+  // Read the order file
+  const orderFilePath = path.join(process.cwd(), 'data', 'cs-notes-order.txt');
+  let orderedIds: string[] = [];
+  try {
+    const orderContent = fs.readFileSync(orderFilePath, 'utf8');
+    orderedIds = orderContent.split('\n').filter(line => line.trim());
+  } catch (error) {
+    console.warn('Could not read cs-notes-order.txt, falling back to alphabetical order');
+  }
+
   const fileNames = fs.readdirSync(csNotesDir);
   const mdFiles = fileNames.filter((fileName) => fileName.endsWith('.md'));
 
@@ -67,7 +109,20 @@ export function getAllCSNotes(): CSNote[] {
     }
   }).filter(note => note.content && note.title);
 
-  return csNotes;
+  // Sort notes based on the order file
+  if (orderedIds.length > 0) {
+    return csNotes.sort((a, b) => {
+      const indexA = orderedIds.indexOf(a.id);
+      const indexB = orderedIds.indexOf(b.id);
+      // If an ID is not in the order file, put it at the end
+      if (indexA === -1) return 1;
+      if (indexB === -1) return -1;
+      return indexA - indexB;
+    });
+  }
+
+  // Fallback to alphabetical order if no order file
+  return csNotes.sort((a, b) => a.id.localeCompare(b.id));
 }
 
 export function getCSNoteById(id: string): CSNote {
@@ -99,41 +154,52 @@ export function loadHomeContent(): HomePageItem[] {
 }
 
 // Projects data loader
-const projectsDirectory = path.join(process.cwd(), 'data/projects');
+const projectsDir = path.join(process.cwd(), 'data', 'projects');
 
 export function getAllProjects(): ProjectItem[] {
-  // Get file names under /data/projects
-  const fileNames = fs.readdirSync(projectsDirectory);
-  
-  const allProjectsData = fileNames
-    .filter(fileName => fileName.endsWith('.md'))
-    .map(fileName => {
-      // Remove ".md" from file name to get id
-      const id = fileName.replace(/\.md$/, '');
+  // Read the order file
+  const orderFilePath = path.join(process.cwd(), 'data', 'projects-order.txt');
+  let orderedIds: string[] = [];
+  try {
+    const orderContent = fs.readFileSync(orderFilePath, 'utf8');
+    orderedIds = orderContent.split('\n').filter(line => line.trim());
+  } catch (error) {
+    console.warn('Could not read projects-order.txt, falling back to alphabetical order');
+  }
 
-      // Read markdown file as string
-      const fullPath = path.join(projectsDirectory, fileName);
-      const fileContents = fs.readFileSync(fullPath, 'utf8');
+  const fileNames = fs.readdirSync(projectsDir);
+  const mdFiles = fileNames.filter((fileName) => fileName.endsWith('.md'));
 
-      // Use gray-matter to parse the post metadata section
-      const { data, content } = matter(fileContents);
+  const projects = mdFiles.map((fileName) => {
+    const id = fileName.replace('.md', '');
+    const filePath = path.join(projectsDir, fileName);
+    const { data, content } = readMarkdownFile(filePath);
 
-      // Combine the data with the id
-      return {
-        id,
-        ...data,
-        longDescriptionMarkdown: content,
-      } as ProjectItem;
-    });
-
-  // Sort projects by date in descending order
-  return allProjectsData.sort((a, b) => {
-    if (a.date < b.date) {
-      return 1;
-    } else {
-      return -1;
+    return {
+      id,
+      title: data.title,
+      content,
+      shortDescription: data.shortDescription,
+      emoji: data.emoji,
+      screenshotUrls: data.screenshotUrls || [],
+      links: data.links || []
     }
-  });
+  }).filter(project => project.content && project.title);
+
+  // Sort projects based on the order file
+  if (orderedIds.length > 0) {
+    projects.sort((a, b) => {
+      const indexA = orderedIds.indexOf(a.id);
+      const indexB = orderedIds.indexOf(b.id);
+      if (indexA === -1) return 1;
+      if (indexB === -1) return -1;
+      return indexA - indexB;
+    });
+  } else {
+    projects.sort((a, b) => a.title.localeCompare(b.title));
+  }
+
+  return projects;
 }
 
 export function loadLinks(): LinkItem[] {

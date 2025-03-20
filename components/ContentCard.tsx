@@ -46,9 +46,6 @@ export default function ContentCard({ item, type, className = '' }: ContentCardP
           <h2 className="text-xl font-bold text-gradient truncate">{displayTitle}</h2>
           {'emoji' in item && <span className="text-3xl">{item.emoji}</span>}
         </div>
-        {'date' in item && item.date && (
-          <p className="text-gray-600 text-sm mb-2">{formatDate(item.date)}</p>
-        )}
         {'shortDescription' in item && item.shortDescription && (
           <p className="text-gray-600 text-sm">{item.shortDescription}</p>
         )}

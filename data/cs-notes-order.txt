@@ -1,0 +1,12 @@
+operating-systems
+git
+data-structures
+programming-languages
+docker
+react
+dom
+spring
+authentication
+llm 
+databases
+lan

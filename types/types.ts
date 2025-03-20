@@ -13,30 +13,28 @@ export interface ProjectLink {
   url: string;
 }
 
+export interface Article {
+  id: string;
+  title: string;
+  content: string;
+  shortDescription?: string;
+  hidden?: boolean;
+}
+
 export interface ProjectItem {
   id: string;
   title: string;
-  emoji: string;
-  date: string;
-  shortDescription: string;
-  longDescriptionMarkdown: string;
-  screenshotUrls: string[];
-  links: ProjectLink[];
+  content: string;
+  shortDescription?: string;
+  emoji?: string;
+  screenshotUrls?: string[];
+  links?: { title: string; url: string; }[];
 }
 
 export interface HomePageItem {
   mainPoint: string;
   description: string | string[];  // Can be a single string or array of bullet points
 }
-
-export type Article = {
-  id: string;
-  title: string;
-  date?: string;
-  hidden: boolean;
-  shortDescription: string;
-  content: string;
-};
 
 export type CSNote = {
   id: string;
