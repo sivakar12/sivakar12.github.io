@@ -32,10 +32,9 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
       <article className="flex-1 overflow-y-auto p-4">
         <h1 className="text-2xl font-bold mb-4">{project.title}</h1>
         <p className="text-4xl mb-4">{project.emoji}</p>
-        <p className="text-gray-600 mb-2">Date: {project.date}</p>
         <p className="mb-4">{project.shortDescription}</p>
-        <MarkdownText markdownContent={project.longDescriptionMarkdown}/>
-        {project.screenshotUrls.length > 0 && (
+        <MarkdownText markdownContent={project.content}/>
+        {project.screenshotUrls && project.screenshotUrls.length > 0 && (
           <div className="mb-4">
             <h2 className="text-xl font-bold mb-2">Screenshots</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -45,7 +44,7 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
             </div>
           </div>
         )}
-        {project.links.length > 0 && (
+        {project.links && project.links.length > 0 && (
           <div>
             <h2 className="text-xl font-bold mb-2">Links</h2>
             <ul className="list-disc list-inside">

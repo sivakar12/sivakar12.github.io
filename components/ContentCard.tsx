@@ -23,15 +23,6 @@ export default function ContentCard({ item, type, className = '' }: ContentCardP
     }
   };
 
-  const formatDate = (date: Date | string) => {
-    if (typeof date === 'string') return date;
-    return date.toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
-  };
-
   const isExternalLink = type === 'link';
   const displayTitle = type === 'link' ? (item as LinkItem).name : (item as Article | ProjectItem | CSNote).title;
 
