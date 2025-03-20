@@ -1,0 +1,27 @@
+---
+title: Large Language Models (LLMs)
+---
+- What is a large language model?
+  - AI models that deal with language information trained huge billions of parameters
+- How they work?
+  - Basically matrix multiplication
+- Important concepts
+  - Tokenization
+  - Embedding
+    - Token to vector where the vectors have meaning
+      - Same Similar thi 
+  - Transformers
+    - Use words in the context, to enrich each token with more meaning
+      - Done in many iterations
+  - Attention mechanism
+    - Deciding which words in the context to attend to
+- Types of LLMs
+  - Translators
+    - String of tokens as input and string of tokens as output
+  - Generators
+    - Given a starting piece, predict the next token.
+      - Done recursively to generate long text  
+- Famous models
+  - Word2Vec
+  - BART
+  - GPT
