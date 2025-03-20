@@ -1,0 +1,62 @@
+- What is a programming language?
+  - Something between human language and machine language
+  - Programming language to human language is a set process
+  - Human language to programming language is art
+- What is machine language?
+  - CPU instructions are fixed size and binaries 
+  - They are executed one after the other
+  - They decide on which circuits to use on which binary inputs
+  - Example instructions
+    - Load value from register
+    - Set value to registers
+    - Read value from memory (RAM) address
+    - Send value to I/O device
+- Obviously, it is difficult to code with machine language
+- How programming languages simplify over machine language?
+  - Use variable names to keep track of memory addresses
+  - Make high level data structures and functions that are deterministically transformed to machien instructions
+    - Examples
+      - if condition is basically severl machine instructions
+        - calculate this boolean value to this meorty address
+        - if true jump to this memory address
+        - if false jump to this memory address
+        - in the end of true and false part, jump to the outter address
+  - Allows for evolving layers of abstraction
+- How different programming languages are possible? What support does operating system give?
+  - There are ways to invoke OS functions
+    - A C program, can get C libraries that operating system allows
+      - Create things on heap
+      - Read/write from file
+      - Spawn and talk to other processes
+    - Other compilers also turn to programs to machine code
+    - Interpreters are native programms, that read code from source language to   
+- Compiling
+  - Turn to machine instructions
+  - Different for different CPU/Operating System combinations
+  - Once compiled, thigns are fast
+- Intrepretors
+  - There is a runtime that is a native program which read the code and decides what to do
+    - Read teh code and add things to heap memory 
+- Different types of programming languages
+  - Sequential/Scripting languages
+    - Basic data structures
+    - All about if-then, while/for loops, functions
+  - Object oriented
+    - Objects are data and functions that are in the heap with a lot of connections
+    - Template approach when there is a lot of sharing involved
+  - Functional
+    - Less computer hardware and more mathematical
+    - Description of data and process
+    - Compiler/runtime takes care of turning that to steps
+- What makes a programming language fast?
+- What makes a programming language easy to read?
+- Features
+  - if/then
+  - while
+  - functions
+  - error handling
+  - Type System
+  - Functons as values
+  - Monads
+    - For async
+    - For error handling
