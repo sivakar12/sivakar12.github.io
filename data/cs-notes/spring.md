@@ -1,0 +1,42 @@
+---
+title: Spring
+---
+- What is Spring?
+  - A framework to build servers in Java with dependency injection
+  - What is a server?
+    - Something that listens to on a network port, receives inputs, proceses and sends output back on the port
+- Dependency injection
+  - Why?
+    - Objects depend on many other objects
+    - When you use constructors of Java you get into a mess
+    - Example issues
+      -
+      -
+      -
+  - How it works?
+    - You define classes as beans and what they need
+    - In the main function of the Java program, you initialize Spring containers
+    - Spring container creates objects that are needed by reading the configuration in the runtime files
+    - The initialized beans in the Spring runtime has access to the things they need
+    - You want some bean, you can ask from runtime (but not really used)
+    - Spring has an elaborate initialization logic
+    - Spring can load lots of things, based on what is available in the  runtime
+      - If something is a maven dependency
+- Common component
+  - Controller
+    - When spring initializer sees one, it adds the route conriguration to its routing system nad forward the requests
+    - It can map the variables 
+  - Repositories
+    - You just tell what Entity (Plan Old Java Object) and Spring loads the beans that are Data Access Objecgts
+  - Database connection
+    - Spring reads the database configurations and establishes connections and injects access references
+  - Security
+    - You give pieces of configurations as beans. Spring uses them and gives them to its own beans.
+- Ways of configuring
+  - properties files
+    - Different files for different profiles
+      - Profiles are dev, production, testing etc.
+    - Beans
+      - @Service, @Controller
+    - Just add libraries to pom.xml
+    
