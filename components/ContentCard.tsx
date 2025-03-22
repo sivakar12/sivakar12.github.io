@@ -29,21 +29,24 @@ export default function ContentCard({ item, type, className = '' }: ContentCardP
   return (
     <Link 
       href={getHref()} 
-      className={`block ${className}`}
+      className={`block h-full ${className}`}
       {...(isExternalLink ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
     >
-      <div className="bg-white shadow-md rounded-lg p-4 cursor-pointer transition-transform hover:scale-105 h-full flex flex-col">
-        <div className="flex items-center justify-between mb-2">
-          <h2 className="text-xl font-bold text-gradient truncate">{displayTitle}</h2>
-          {'emoji' in item && <span className="text-3xl">{item.emoji}</span>}
+      <div className={`card group h-full flex flex-col min-h-[160px] ${type === 'cs-note' ? 'justify-center' : ''}`}>
+        <div className={`w-full ${type === 'cs-note' ? 'text-center flex flex-col items-center' : 'flex items-center justify-between'}`}>
+          <h2 className={`text-xl font-bold text-gray-800 group-hover:text-primary-700 transition-colors ${type === 'cs-note' ? 'mb-2' : ''}`}>{displayTitle}</h2>
+          {'emoji' in item && <span className={`text-3xl group-hover:scale-110 transition-transform ${type === 'cs-note' ? 'mt-2' : ''}`}>{item.emoji}</span>}
         </div>
-        {'shortDescription' in item && item.shortDescription && (
-          <p className="text-gray-600 text-sm">{item.shortDescription}</p>
+        {type !== 'cs-note' && (
+          <div className="mt-3">
+            {'shortDescription' in item && item.shortDescription && (
+              <p className="text-gray-700 text-sm">{item.shortDescription}</p>
+            )}
+            {type === 'link' && (
+              <p className="text-gray-600 text-xs mt-2 truncate">{(item as LinkItem).url}</p>
+            )}
+          </div>
         )}
-        {type === 'link' && (
-          <p className="text-gray-500 text-xs mt-2 truncate">{(item as LinkItem).url}</p>
-        )}
-        <div className="flex-grow"></div>
       </div>
     </Link>
   )

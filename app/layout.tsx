@@ -22,8 +22,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-    <body className={"flex flex-col min-h-screen " + font.className}>
-      <nav className="fixed top-0 left-0 right-0 h-16 bg-white shadow z-10">
+    <body className={"flex flex-col min-h-screen bg-surface-background " + font.className}>
+      <nav className="fixed top-0 left-0 right-0 h-16 bg-surface-card z-10">
         <NavigationBar/>
       </nav>
       <main className="flex-grow mt-16">

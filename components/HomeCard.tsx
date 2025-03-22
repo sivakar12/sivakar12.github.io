@@ -6,16 +6,19 @@ interface HomeCardProps {
 
 export default function HomeCard({ item }: HomeCardProps) {
   return (
-    <div className="p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
-      <h2 className="text-xl font-semibold mb-2">{item.mainPoint}</h2>
+    <div className="card">
+      <h2 className="text-xl font-semibold mb-4 text-gray-800">{item.mainPoint}</h2>
       {Array.isArray(item.description) ? (
-        <ul className="list-disc list-inside space-y-1">
+        <ul className="space-y-2">
           {item.description.map((point, index) => (
-            <li key={index} className="text-gray-600">{point}</li>
+            <li key={index} className="text-gray-700 flex items-start">
+              <span className="text-primary-600 mr-2">•</span>
+              <span>{point}</span>
+            </li>
           ))}
         </ul>
       ) : (
-        <p className="text-gray-600">{item.description}</p>
+        <p className="text-gray-700">{item.description}</p>
       )}
     </div>
   );
