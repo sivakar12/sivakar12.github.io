@@ -12,6 +12,20 @@
   .card {
     @apply bg-surface-card rounded-2xl p-6 transition-all duration-300 hover:bg-primary-200;
   }
+
+  .clip-path-right {
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% 100%,
+      0 100%,
+      0 0,
+      100% 0,
+      100% 100%,
+      0 100%
+    );
+    margin-right: -1rem;
+  }
 }
 
 @layer utilities {

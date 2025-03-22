@@ -3,7 +3,7 @@ import ReactMarkdown from 'react-markdown';
 import { Components } from 'react-markdown';
 
 const CustomParagraph: Components['p'] = ({ children, ...props }) => (
-  <p style={{ margin: '0.25em 0' }} {...props}> {/* Reduced margin */}
+  <p style={{ margin: '1em 0' }} {...props}> {/* Increased margin */}
     {children}
   </p>
 );
