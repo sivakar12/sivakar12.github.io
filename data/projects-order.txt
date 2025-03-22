@@ -1,6 +1,6 @@
 copy-queue
 elm-minesweeper
-small-wins 
+small-wins
 wordle-clone
 eye-refresh
 file-change-count-extension
