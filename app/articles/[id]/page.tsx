@@ -41,22 +41,7 @@ export default function ArticlePage({ params }: { params: { id: string } }) {
       <article className="flex-1 overflow-y-auto">
         <div className="max-w-4xl mx-auto p-4 lg:p-8">
           <h1 className="text-2xl font-bold mb-4">{article.title}</h1>
-          <p className="text-4xl mb-4">{article.emoji}</p>
           <MarkdownText markdownContent={article.content}/>
-          {article.links && article.links.length > 0 && (
-            <div>
-              <h2 className="text-xl font-bold mb-2">Links</h2>
-              <ul className="list-disc list-inside">
-                {article.links.map((link, index) => (
-                  <li key={index}>
-                    <Link href={link.url} className="text-blue-500 hover:underline">
-                      {link.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
         </div>
       </article>
     </div>
