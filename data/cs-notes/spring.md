@@ -10,9 +10,6 @@ title: Spring
     - Objects depend on many other objects
     - When you use constructors of Java you get into a mess
     - Example issues
-      -
-      -
-      -
   - How it works?
     - You define classes as beans and what they need
     - In the main function of the Java program, you initialize Spring containers

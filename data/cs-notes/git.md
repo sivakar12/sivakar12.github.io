@@ -6,7 +6,7 @@ title: Git
 - Uses
   - Easily to experiment knowing you can reset to working state
     - Have multiple branches in parallel
-  - Many uses work at the same time
+  - Many users work at the same time
     - Everyone has their own separate local repository, which they sync with a remote
   - Visual examination of the changes
   - Maintain multiple versions of the code
