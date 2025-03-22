@@ -4,30 +4,19 @@
 - mainPoint: "Full Stack Developer"
   description: "Proficient in all aspects of computer science. Have solid theoricail knowledge and extensive practical experience."
 
-- mainPoint: "Tech Stack"
-  description:
-    - "React, Vue and Angular and other fast evolving JavaScript ecosystem "
-    - "Spring Boot and Node.js and anything similar for backend solutions"
-    - "Managing cloud components in Azure"
-    - "Streamling build process for productivity"
-    - "Test driven development"
-
-- mainPoint: "Professional Journey"
-  description: "Writing software professionally for over 6 years. Every day is a different day, every task is different. Learned a lot of tricks and techniques by trial and error."
-
-- mainPoint: "Organic human connections"
-  description: "Former introved, learned to bond well with people from all walks of life and leanred a lot and enriched both our lives."
-
 - mainPoint: "Voracious Reader"
   description: "Always immersed in books, exploring different ideas and perspectives through literature. Reading not just to learn, but to master the art of concentration." 
 
 - mainPoint: "Polyglot"
   description: "Fluent in English, French, and German - embracing different cultures and perspectives through language."
 
+- mainPoint: "Organic human connections"
+  description: "Former introvet, learned to bond well with people from all walks of life."
+
 - mainPoint: "Strong mathematical background"
   description: "Adapted to mathematics like to fish to water in high school. Algebra, geomatry, calculus, statistics, etc."
 
-- mainPoint: "Master note taker"
+- mainPoint: "Specialist note taker"
   description: "Developed a system to keep my mind free of clutter and focus on the most important things."
 
 - mainPoint : "Eye for a good art"
@@ -37,7 +26,7 @@
   description: "Body and mind are not separate. If I want the brain to work well, I need to take care of the body."
 
 - mainPoint: "Environmentalist"
-  description: "Committed to sustainable practices and environmental conservation in both personal and professional life."
+  description: "Striving to do all I can to save the planet from polllution and climate change."
 
 - mainPoint: "Wannabe Polymath"
-  description: "Driven by curiosity to explore and understand various fields of knowledge, from arts to science to philosophy."
+  description: "Want to study and understand about everything under the sun, from arts to science to philosophy."

@@ -3,7 +3,6 @@ title: Journaling
 hidden: false
 shortDescription: Training for thoughts to words conversion
 ---
-[DRAFT 1]
 Journaling transformed my life. I got a lot less stressfull. I got more creative. My ability to plan got a big boost. It was like I have upgraded my hardware. I got more RAM in my head.
 
 I got to articulate thing well. That gave me a breakthrough in my social status and career. I had this problem all my life. I had thoughts and I could not put them to words. I always could get ideas. But I was not getting it across to people.
