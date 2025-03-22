@@ -20,29 +20,10 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
   if (!project) return <div>Project not found</div>
 
   return (
-    <div className="flex h-[calc(100vh-4rem)]">
-      <aside className="hidden lg:block lg:w-1/4 xl:w-1/5 overflow-y-auto border-r">
-        <div className="p-4 space-y-4">
-          {projects.map((p) => (
-            <div 
-              key={p.id} 
-              className={`transition-all duration-300 ${
-                p.id === project.id 
-                  ? 'scale-105 -mr-4' 
-                  : 'hover:scale-[1.02]'
-              }`}
-            >
-              <div className={`${p.id === project.id ? 'clip-path-right' : ''}`}>
-                <ContentCard item={p} type="project" />
-              </div>
-            </div>
-          ))}
-        </div>
-      </aside>
-      <article className="flex-1 overflow-y-auto">
+    <div className="h-[calc(100vh-4rem)]">
+      <article className="h-full overflow-y-auto">
         <div className="max-w-4xl mx-auto p-4 lg:p-8">
           <h1 className="text-2xl font-bold mb-4">{project.title}</h1>
-          <p className="text-4xl mb-4">{project.emoji}</p>
           <MarkdownText markdownContent={project.content}/>
           {project.screenshotUrls && project.screenshotUrls.length > 0 && (
             <ImageGallery images={project.screenshotUrls} />

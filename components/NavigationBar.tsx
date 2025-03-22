@@ -1,6 +1,6 @@
 'use client';
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 type NavItem = {
@@ -19,6 +19,7 @@ const navItems: NavItem[] = [
 
 export default function NavigationBar() {
   const pathname = usePathname();
+  const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const menuRef = useRef<HTMLUListElement>(null);
@@ -61,6 +62,16 @@ export default function NavigationBar() {
     return pathname.startsWith(href);
   };
 
+  const isDetailPage = () => {
+    const pathParts = pathname.split('/').filter(Boolean);
+    return pathParts.length === 2 && ['articles', 'projects', 'cs-notes'].includes(pathParts[0]);
+  };
+
+  const getBackPath = () => {
+    const pathParts = pathname.split('/').filter(Boolean);
+    return `/${pathParts[0]}`;
+  };
+
   const NavItems = () => (
     <>
       {navItems.map((item) => (
@@ -82,7 +93,30 @@ export default function NavigationBar() {
   return (
     <nav className="w-full py-4">
       {isMobile ? (
-        <div className="flex justify-end relative items-center">
+        <div className="flex relative items-center px-4">
+          {isDetailPage() && (
+            <button
+              onClick={() => router.push(getBackPath())}
+              className="p-2 flex items-center justify-center"
+              aria-label="Back to list"
+            >
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                className="h-6 w-6 text-gray-800 hover:text-primary-600 transition-colors" 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke="currentColor"
+              >
+                <path 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  strokeWidth={2} 
+                  d="M10 19l-7-7m0 0l7-7m-7 7h18" 
+                />
+              </svg>
+            </button>
+          )}
+          <div className="flex-1" /> {/* Spacer */}
           <button
             ref={buttonRef}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
