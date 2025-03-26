@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { Open_Sans } from 'next/font/google'
+import { Merriweather } from 'next/font/google'
 
 import "./globals.css";
 import NavigationBar from "@/components/NavigationBar";
 
-const font = Open_Sans({
+const font = Merriweather({
   subsets: ['latin'],
-  weight: ['500', '300', '400', '500', '600'],
-  variable: '--font-open_sans',
+  weight: ['300'],
+  variable: '--font-merriweather',
 })
 
 export const metadata: Metadata = {
