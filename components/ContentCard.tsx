@@ -34,7 +34,7 @@ export default function ContentCard({ item, type, className = '' }: ContentCardP
     >
       <div className={`card group h-full flex flex-col min-h-[160px] ${type === 'cs-note' ? 'justify-center' : ''}`}>
         <div className={`w-full ${type === 'cs-note' ? 'text-center flex flex-col items-center' : 'flex items-center justify-between'}`}>
-          <h2 className={`text-xl font-bold text-gray-800 group-hover:text-primary-700 transition-colors ${type === 'cs-note' ? 'mb-2' : ''}`}>{displayTitle}</h2>
+          <h2 className={`text-xl font-semibold text-gray-800 group-hover:text-primary-700 transition-colors ${type === 'cs-note' ? 'mb-2' : ''}`}>{displayTitle}</h2>
           {'emoji' in item && <span className={`text-3xl group-hover:scale-110 transition-transform ${type === 'cs-note' ? 'mt-2' : ''}`}>{item.emoji}</span>}
         </div>
         {type !== 'cs-note' && (

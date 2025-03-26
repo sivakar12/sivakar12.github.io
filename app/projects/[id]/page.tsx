@@ -23,14 +23,14 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
     <div className="h-[calc(100vh-4rem)]">
       <article className="h-full overflow-y-auto">
         <div className="max-w-4xl mx-auto p-4 lg:p-8">
-          <h1 className="text-2xl font-bold mb-4">{project.title}</h1>
+          <h1 className="text-2xl font-semibold mb-4">{project.title}</h1>
           <MarkdownText markdownContent={project.content}/>
           {project.screenshotUrls && project.screenshotUrls.length > 0 && (
             <ImageGallery images={project.screenshotUrls} />
           )}
           {project.links && project.links.length > 0 && (
             <div>
-              <h2 className="text-xl font-bold mb-2">Links</h2>
+              <h2 className="text-xl font-semibold mb-2">Links</h2>
               <ul className="list-disc list-inside">
                 {project.links.map((link, index) => (
                   <li key={index}>

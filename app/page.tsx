@@ -18,7 +18,7 @@ export default function Home() {
               height={192}
             />
           </div>
-          <h1 className="text-4xl font-extrabold tracking-tight text-gradient text-center">
+          <h1 className="text-5xl font-semibold tracking-tight text-gradient text-center">
             Sivakar Sithamparanathan
           </h1>
         </div>
