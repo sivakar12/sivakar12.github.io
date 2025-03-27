@@ -1,0 +1,70 @@
+---
+title: Next.js
+---
+- What is Next.js?
+  - A framework to build websites which improves over vanilla React, with special features for server-side rendering
+- What features does it provide?
+  - Server-side rendering boilerplate is reduced
+  - Easy to use routing system based on file path
+  - Can be incrementally added to a project
+- Different types of rendering
+  - SSG (Static Site Generation)
+    - Build all pages in the website and serve from CDN/file server
+      - Parameterization possible
+    - Page for the link is rendered but other pages after clicking links are dynamically added
+      - JavaScript is hydrated later
+  - SSR (Server Side Rendering)
+    - Page for each route is rendered in the server where the required JavaScript runs
+    - HTML is returned to the client
+  - Client Side Rendering (CSR)
+    - Normal React
+      - Components at the bottom of the tree usually can behave this way
+  - Incremental Static Regeneration (ISR)
+    - Some websites with too many pages take a long time to build and deploy and occupy a lot of space
+    - Here pieces of the page are build as requests for them come
+    - Cache and invalidation of cache
+- "pages" directory
+  - Oiriginal way to do things. Still used after new method is here
+  - A react component exported from a file, becomes a page
+  - Route based on the path of the file.
+    - index.js is accessible by the route of the folder
+  - API routes
+    - pages/api/ folder has functions that work like Node.js server controllers
+  - getServerSideProps
+    - For SSR
+    - A function of this name has to be exported for SSR components
+    - This function runds for every requests and what it returns is passed to the client render
+  - getStaticProps
+    - This is run at build time for SSG pages
+  - getStaticPaths
+    - Used with getStaticProps to build a batch of parameterized pages in SSG
+    - A file in a parameterized path has this that returnes a list of what the parameters are
+    - Then for each, this is passed to getStaticProps to generate the page
+  - useEffect
+    - You can use this to get data from server but this is not using server side rendering
+- "app" directory
+  - Multiple levels of nesting
+  - page.tsx file in a route is what is rendered
+  - layout.tsx can be added at any point in the view hierarchy and applies as a wrapper at that level
+  - loading.tsx and error.tsx also work like that
+  - Uses React Server Components and Suspense
+    - Suspense is a way to render components "that might not be avilable"
+      - A fallback is provided
+      - Server Compoents fit here well
+    - A server component is run in a server and HTML is returned later
+  - SSR
+    - No need for special methods
+    - The export is an async component
+      - The async functions are run in server and the component is rendered and passed to the client
+  - SSG
+    - You can have a generateStaticParams function in a parametereized route
+      - The pages are used for each of the item
+  - "use client"
+    - All compoennts are server components by default. You have to mark client components
+    - Server components can have client components but not the other way around
+    - Server components can't have useState or useEffect
+      - Server Components are reduced to poain HTML in the end
+- Why do you need special navigation with Link?
+  - You can move to other pages without loading new page 
+- Hydration
+- Code splitting

@@ -4,6 +4,7 @@ data-structures
 programming-languages
 docker
 react
+next-js
 dom
 spring
 authentication
