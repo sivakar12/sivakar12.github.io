@@ -78,7 +78,7 @@ export default function NavigationBar() {
         <li key={item.name} className="w-full">
           <Link
             href={item.href}
-            className={`block w-full px-4 py-2 text-xl font-semibold text-center transition-all duration-300 ease-in-out hover:scale-105 hover:text-gradient whitespace-nowrap ${
+            className={`block w-full px-4 py-2 text-xl text-center transition-all duration-300 ease-in-out hover:scale-105 hover:text-gradient whitespace-nowrap ${
               isActive(item.href) ? 'text-gradient' : 'text-black'
             }`}
             onClick={() => setIsMenuOpen(false)}

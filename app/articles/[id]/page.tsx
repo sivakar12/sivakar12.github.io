@@ -22,7 +22,7 @@ export default function ArticlePage({ params }: { params: { id: string } }) {
     <div className="h-[calc(100vh-4rem)]">
       <article className="h-full overflow-y-auto">
         <div className="max-w-4xl mx-auto p-4 lg:p-8">
-          <h1 className="text-2xl font-semibold mb-4">{article.title}</h1>
+          <h1 className="text-2xl mb-4">{article.title}</h1>
           <MarkdownText markdownContent={article.content}/>
         </div>
       </article>
