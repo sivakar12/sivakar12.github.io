@@ -7,7 +7,7 @@ interface HomeCardProps {
 export default function HomeCard({ item }: HomeCardProps) {
   return (
     <div className="card">
-      <h2 className="text-xl font-semibold mb-4 text-gray-800">{item.mainPoint}</h2>
+      <h2 className="text-xl mb-4 text-gray-800">{item.mainPoint}</h2>
       {Array.isArray(item.description) ? (
         <ul className="space-y-2">
           {item.description.map((point, index) => (
