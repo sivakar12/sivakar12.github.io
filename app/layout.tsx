@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { Instrument_Sans } from 'next/font/google'
+import { Open_Sans } from 'next/font/google'
 
 import "./globals.css";
 import NavigationBar from "@/components/NavigationBar";
 
-const font = Instrument_Sans({
+const font = Open_Sans({
   subsets: ['latin'],
   weight: ['400', '500'],
-  variable: '--font-instrument-sans',
+  variable: '--font-open-sans',
 })
 
 export const metadata: Metadata = {
