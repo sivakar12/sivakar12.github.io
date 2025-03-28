@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { Open_Sans } from 'next/font/google'
+import { Signika } from 'next/font/google'
 
 import "./globals.css";
 import NavigationBar from "@/components/NavigationBar";
 
-const font = Open_Sans({
+const font = Signika({
   subsets: ['latin'],
-  weight: ['400', '500'],
-  variable: '--font-open-sans',
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-signika',
 })
 
 export const metadata: Metadata = {
