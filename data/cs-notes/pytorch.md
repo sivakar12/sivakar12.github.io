@@ -1,0 +1,89 @@
+---
+title: PyTorch
+---
+- What is PyTorch?
+  - Framework for doing tensor computations
+- Components
+  - Tensor procesors
+  - Automatic differentiation engine
+  - Deep learning utility functions
+- What is a tensor?
+  - Numbers in dimensions higher than 2
+    - 0 dimension is a scaler. 1 dimension is a vector. 2 dimensino is a matrix. 
+- How are tensor calculations made efficient? 
+- Automatic differentian engine
+  - autograd
+  - Computation graph is derived from any calculation operation done to tensors
+    - Happens if any one of the terminal node in the graph has requires_grad set to True
+  - grad(L, w) function shows the gradient
+  - loss_tensor.backward() propagates the gradienets of loss backward
+    - w.grad shows you the gradient for that tensor
+
+- Interfaces
+  - Tensor
+    - torch.tensor()
+      - constructor
+    - tensor.dtype
+    - tensor.shape
+    - tensor.reshape(newShape)
+    - tensor.view(shape)
+      - more common way to reshape.
+    - tensor.T
+      - transpose
+    - tensor1.matmul(tensor2) or tensor2 @ tensor2
+  - Module
+    - torch.nn.Module
+    - A piece of the neural network
+    - You implement it and fill in the forward() method and \_\_init\_\_() method
+    - We don't typically implement the backward() method
+    - \_\_init\_\_()
+      - initialize all the other modules and other tensors 
+    - forward()
+      - take in tensor(s), do the operations and return tensor(s)
+    - print(model) gives the summary
+    - calling .parameters give information about parametes.
+      - can call p.numel() and p.requiers_grad to understand pieces inside
+    - Input to output is done with calling hte model. y = model(X)
+    - model.train()
+      - puts in training mode
+    - model.eval()
+      - turns off gradient memory and also dropouts(?) and batch normalization?
+  - Sequential
+    - Modules arranges in order to pipe through
+  - Dataset
+    - \_\_init\_\_()
+    - \_\_get_item\_\_()
+    - \_\_len\_\_()
+  - DataLoader
+    - get accessor by passing dataset and configuratoin options to DataLoder 
+    - enumerage methods 
+    - shuffle
+    - drop_last
+      - the last batch will have smaller number. That can be dropped because it is 
+    - num_loaders
+      - 0 means all in one thread and there will be bottlenecks
+- Typical training loop
+  - Fix dataset and data loader
+  - for each epoch
+    - enumerate over data loader
+      - for each batch
+        - pass input to the model
+        - get the output
+        - get the loss tensor
+        - reset the gradients
+          - optimizer.zero_grad()
+        - do backpropagation
+          - loss.backward()
+        - use optimizer to change weights
+          - optimizer.step()
+      - at certain intervals
+        - get training and validation metrics
+          - add to array to graph
+- Saving and loading models
+  - torch.save(model.state_dict(), path)
+  - a model can be represented as a dictionary
+    - when inflating agian, you get the model with all the inner models and the weights
+- GPU
+  - torch.cuda.is_available()
+  - tensor.to('cuda:0')
+  - torch.backends.mps.is_available()
