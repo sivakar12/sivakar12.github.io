@@ -1,32 +1,32 @@
 - mainPoint: "Lifelong Learner"
-  description: "Constantly expanding my knowledge across various domains, always eager to learn and grow."
+  description: "Always learning something new with intensity."
 
 - mainPoint: "Software Engineer"
-  description: "Proficient in all aspects of computer science. Have solid theoricail knowledge and extensive practical experience."
+  description: "Proficient in all aspects of computer science encompassing theory, languages, tools, practices. Adapting to AI."
 
 - mainPoint: "Voracious Reader"
-  description: "Always immersed in books, exploring different ideas and perspectives through literature. Reading not just to learn, but to master the art of concentration." 
+  description: "Read many hours a day. Read hundreds of books about everything under the sun. Want to be a polymath. " 
 
-- mainPoint: "Polyglot"
-  description: "Fluent in English, French, and German - embracing different cultures and perspectives through language."
+- mainPoint: "Multilingual"
+  description: "Can talk, write and think in English like a native. Rapidly improving my German, French, and few other languages."
 
-- mainPoint: "Organic human connections"
-  description: "Former introvet, learned to bond well with people from all walks of life."
+- mainPoint: "Authentic, enriching relationships"
+  description: "Former introvert, learned to bond well with and learn from people from all walks of life."
 
 - mainPoint: "Strong mathematical background"
-  description: "Adapted to mathematics like to fish to water in high school. Algebra, geomatry, calculus, statistics, etc."
+  description: "Adapted to mathematics like fish to water. Sound knowledge of algebra, geometry, calculus, statistics, etc."
 
-- mainPoint: "Specialist note taker"
-  description: "Developed a system to keep my mind free of clutter and focus on the most important things."
+- mainPoint: "Specialist in note taking"
+  description: "Developed a system to keep my mind free of clutter and get things done efficiently."
 
-- mainPoint : "Eye for a good art"
-  description: "Appreciate good art, music, literature and movies and a visual thinker"
+- mainPoint : "Eye for good art"
+  description: "Loves good art, music, literature and movies. A visual thinker who values good design."
+
+- mainPoint : "Stoic"
+  description: "Follows time tested principles of Stoicism to handle all the challenges life throws at me."
 
 - mainPoint: "Fitness Enthusiast"
   description: "Body and mind are not separate. If I want the brain to work well, I need to take care of the body."
 
 - mainPoint: "Environmentalist"
-  description: "Striving to do all I can to save the planet from polllution and climate change."
-
-- mainPoint: "Wannabe Polymath"
-  description: "Want to study and understand about everything under the sun, from arts to science to philosophy."
+  description: "Striving to do all I can to save the planet from pollution and climate change."
