@@ -2,26 +2,68 @@
 title: Large Language Models (LLMs)
 ---
 - What is a large language model?
-  - AI models that deal with language information trained huge billions of parameters
+  - AI models that deal with language information trained huge billions of parameters. 
+  - Transformers with selt attention is the most successful technique
 - How they work?
   - Basically matrix multiplication
+  - Turn tokens (split words) into vectors, that has meaning in high dimensional space
+    - Word embedding
+  - Process those vectors through different neural network layers
+  - Logits to output text
+    - Have to output one token at a time
+  - Pretraining and fine-tuning
+    - Tranined to predict one word given a list of word
+    - Then some of the layers can be changed and trained with smaller data for different use cases
+  - Can be part of a multimodal neural network
 - Important concepts
   - Tokenization
+    - Token to ID (number) mapping
+    - The map  kept in memory as the same one is used for input and outputs
   - Embedding
-    - Token to vector where the vectors have meaning
-      - Same Similar thi 
+    - Token ID to vector where the vectors have meaning
+      - token("queen") - token("female") + token("male") = token("king")
+      - token("Paris") - token("France") + token("Italy") = token("Rome")
+  - Attention mechanism
+    - Given a list of tokens, generating a table (like a heatamp) of which 
   - Transformers
     - Use words in the context, to enrich each token with more meaning
       - Done in many iterations
-  - Attention mechanism
-    - Deciding which words in the context to attend to
+    - KQV
+      - For each token you get __key__, __query__ and __value__ transformation
+      - To find the __attention score__ for a token, you get the key for that word and query for the other word and get the product of the vectors
+      - Attention scores can be made to weights by normalization
+      - To transform the word, multiple all the token embeddings in the context with the attention score for that and add them up
+    - Multi-head attention
+      - Multiple attention head. Another dimension is added.
 - Types of LLMs
   - Translators
     - String of tokens as input and string of tokens as output
+    - Encode with in one step with transformers, and decode until "endotext" token
   - Generators
     - Given a starting piece, predict the next token.
       - Done recursively to generate long text  
+  - Classifiers
+    - Like normal feed forward networks on top of attention head
+  - Chatbots
+    - Make a next word predictor
+    - Then fine tune with question and answer as one single text
+    - The whole conversation is one file that is recursively put to generate one token at a time
+- Pretraining
+  - Take a long corpus of text
+    - [a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q]
+  - Make list of input and output for the context length
+    - [[a, b, c, d], [b, c, d, e]], [[e, f, g, h], [f, g, h, i]]
+  - Get [X, y] pairs for neural network
+    - [[a, *, *, *], b], [[a, b, *, *], c], ....
+      - * is a padding to have causal attention
+  - Calculate loss with something like categorical crossentropy
+  - Backpropogate loss and adjust weights
+  - The model then can predict the next word give a list of word
+- Finetuning for 
 - Famous models
   - Word2Vec
   - BART
   - GPT
+- Older ideas
+  - RNN
+  - LLM
