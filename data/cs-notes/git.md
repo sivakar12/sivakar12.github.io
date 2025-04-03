@@ -2,7 +2,8 @@
 title: Git
 ---
 - What is git
-  - Snapshots of project directory with links for history for version control and collaboration
+  - Storing snapshots(commits) of project directory with links for parent commit
+  - For version control and collaboration
 - Uses
   - Easily to experiment knowing you can reset to working state
     - Have multiple branches in parallel
@@ -15,16 +16,38 @@ title: Git
   - commit
     - a snapshot of the project directory
     - has author, parent commit, title and description (optional)
+    - identified by a hash
+    - many things can point to a commit (hash)
+      - head
+      - a branch
+      - a tag
   - staging area
     - files are added to staging area before being committed
   - branch
     - a pointer to a commit actually
     - you create a new branch to get a new pointer
-    - when you commit, the pointer advances to the new commit
+    - When you commit, the pointer advances to the new commit
       - but not for the other branches
   - remote
     - another version of this repository over a network to which changes can be synchronized
   - stash
+  - head
+    - reference to the current commit
+    - when you commit, the head also advance to the latest commit
+  - __merging__ and different situations
+    - happens in different circumstances
+      - apply changes from different branch to this
+      - bring change from a remote branch (pull)
+    - When different files are changed since the last common commit
+      - newest files from both branches are used
+      - a new merge commit is created
+        - this has two parent commits
+    - When a file is changed by both branch since last commit
+      - Tries auto merging, but if the software cannot, file with both code as put in workign director
+      - You have to choose the code, add to staging area and commit
+    - Rebasing
+      - End result is same as merging but flattened to one line
+      - Changes are interleaved which might produce code that is not inconsidtent in the middle commits
 - Commands
   - add
     - add file or files to the staging area
