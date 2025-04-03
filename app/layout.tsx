@@ -3,6 +3,7 @@ import { Signika } from 'next/font/google'
 
 import "./globals.css";
 import NavigationBar from "@/components/NavigationBar";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 const font = Signika({
   subsets: ['latin'],
@@ -23,6 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
     <body className={"flex flex-col min-h-screen bg-surface-background " + font.className}>
+      <GoogleAnalytics GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || ''} />
       <nav className="fixed top-0 left-0 right-0 h-16 bg-surface-card z-10">
         <NavigationBar/>
       </nav>
