@@ -2,7 +2,7 @@
 title: React
 ---
 - What is React?
-  - A JavaScript library that makes rendering HTML elements with state data easy
+  - A JavaScript library that makes it easy to render HTML elements based on view state 
 - How it works
   - There is one root components that have many components
   - A component may have state, which are passed to children any level deep as props
