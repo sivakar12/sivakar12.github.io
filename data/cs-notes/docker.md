@@ -23,7 +23,7 @@ title: Docker
   - Docker Client
 - Why is this lightweight?
   - A container is mapped to an OS process, unlike virtual machiens
-- What other things this enables?
+- What other things does this enable?
   - Container orchestrations
     - Docker Compose and Kubernetes
   - DevOps benefits
