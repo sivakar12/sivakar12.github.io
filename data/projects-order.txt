@@ -5,8 +5,6 @@ wordle-clone
 eye-refresh
 file-change-count-extension
 electron-file-manager
-cs-concepts-mind-dumps
 disaster-response-ml
 seattle-airbnb
-phrasal-verbs
 rust-exercises
