@@ -23,6 +23,12 @@ title: Large Language Models (LLMs)
     - Token ID to vector where the vectors have meaning
       - token("queen") - token("female") + token("male") = token("king")
       - token("Paris") - token("France") + token("Italy") = token("Rome")
+  - Positional encoding
+    - Add to the embedding vector numbers from which transformer knows the Positional
+      - Addition is minimal so that it doesn't affect the meaning of the embedding
+    - Sine and cosine functions with increasing frequency for each dimension of the embedding
+      - The waves rotate at different speeds like how digits in number move
+        - Tens move faster than ones, thousands move faster than hundreds
   - Attention mechanism
     - Given a list of tokens, generating a table (like a heatamp) of which 
   - Transformers
