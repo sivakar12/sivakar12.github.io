@@ -1,35 +1,51 @@
 - mainPoint: "Lifelong Learner"
-  description: "Always learning something new with intensity. Compound effect of learning something new every day is immense."
+  emoji: "🧠"
+  description: "Always learning something new with intensity. The compound effect of learning something new every day is immense."
 
 - mainPoint: "Software Engineer"
-  description: "Proficient in all aspects of computer science encompassing theory, languages, tools, practices."
+  emoji: "💻"
+  description: "Proficient in all aspects of computer science, encompassing theory, languages, tools, and practices."
 
 - mainPoint: "Voracious Reader"
-  description: "Read many hours a day. Read hundreds of books about everything under the sun. Want to be a polymath. " 
+  emoji: "📚"
+  description: "I read many hours a day and have read hundreds of books on diverse subjects, aspiring to be a polymath."
+
+- mainPoint: "Ready to work with AI"
+  emoji: "🤖"
+  description: "I have understanding of the concepts and know new protocols and tools to build application on top of AI."
 
 - mainPoint: "Multilingual"
-  description: "Can talk, write and think in English like a native. Rapidly improving my German, French, and few other languages."
+  emoji: "🌍"
+  description: "I can talk, write, and think in English like a native. I am also rapidly improving my German, French, and a few other languages."
 
 - mainPoint: "Authentic, enriching relationships"
-  description: "Former introvert, learned to bond well with and learn from people from all walks of life."
+  emoji: "🤝"
+  description: "As a former introvert, I have learned to bond well with and learn from people from all walks of life, cultivating authentic and enriching relationships."
 
 - mainPoint: "Strong mathematical background"
-  description: "Adapted to mathematics like fish to water. Sound knowledge of algebra, geometry, calculus, statistics, etc."
+  emoji: "📊"
+  description: "With a natural aptitude for mathematics, I have a sound knowledge of algebra, geometry, calculus, statistics, and more."
 
 - mainPoint: "Generalist"
-  description: "AI is opening up new frontiers and I believe generalist will have an edge there."
+  emoji: "💡"
+  description: "The world is changing too fast and my solution to staying relavant is to have multiple career options open."
 
 - mainPoint: "Specialist in note taking"
-  description: "Developed a system to keep my mind free of clutter and get things done efficiently."
+  emoji: "✍️"
+  description: "I have developed a specialized note-taking system to keep my mind free of clutter and enhance efficiency in getting things done."
 
-- mainPoint : "Eye for good art"
-  description: "Loves good art, music, literature and movies. A visual thinker who values good design."
+- mainPoint: "Eye for good art"
+  emoji: "🎨"
+  description: "I love good art, music, literature, and movies. As a visual thinker, I also highly value good design."
 
-- mainPoint : "Stoic"
-  description: "Follows time tested principles of Stoicism to handle all the challenges life throws at me."
+- mainPoint: "Stoic"
+  emoji: "🛡️"
+  description: "I follow time-tested principles of Stoicism to handle the challenges life throws at me with resilience."
 
 - mainPoint: "Fitness Enthusiast"
-  description: "Body and mind are not separate. If I want the brain to work well, I need to take care of the body."
+  emoji: "💪"
+  description: "Believing that body and mind are not separate, I understand that to ensure my brain works well, I need to take care of my body."
 
 - mainPoint: "Environmentalist"
-  description: "Striving to do all I can to save the planet from pollution and climate change."
+  emoji: "🌱"
+  description: "I am committed to environmentalism, striving to do all I can to help save the planet from pollution and combat climate change."
