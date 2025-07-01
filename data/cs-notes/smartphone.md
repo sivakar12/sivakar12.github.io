@@ -1,0 +1,102 @@
+---
+title: Smartphone
+---
+- What is a smart phone?
+  - A portable small computer with a multiple input and output endpotints and relies of networks to become the next big thing since personal computers
+- What new features did it bring?
+  - Touch screen to make controls depend on the context
+    - Before this devices had fixed buttons. Other phones had limited variable options.
+    - Swipe gestures make searchign a lot easier
+    - On screen keyboard freed up space for display
+  - Location services
+  - New input and output
+    - Hapitc output, gyroscope, accelerometer
+  - Camera
+- What is an app?
+  - Simple sortware, isolated and distributed trusted store, frequent updates, 
+  - Apps are run and pauses and usually takes up all the screne
+  - Multiple apps can be launhed and switched between quickly
+- Notifications
+  - Apps sent alerts and information to the common feed that uses see and get alerted about
+  - Push notifications are sent from any server backing the app through channels like those of Apple and Google
+- File system
+  - A common files system is allowed to be used by the apps
+  - Apps can also store files internally which is privete to the app
+    - Music apps don't add the songs to the file system
+    - Ebooks app don't always have to add the books to storage
+  - The OS things are not viaible. Not mounted.
+- Games
+- Control centre
+  - A panel to control things like volume, display, rotation, etc.
+- Navigation
+  - There is a launcher or home screen which is in essentially another app that knows about apps in the phone
+    - Going home, takes you to this app
+  - There is a way to see a gallery-like view of running app
+  - Back button is handled by app
+    - Android has this system of activities. Activies create activities adding to the stack. Back removes one after another.
+- Media controls
+  - When an app start playing something, it can give the status of the things to the OS which the OS displays to the things.
+  - When OS media controls is used to play, pause or change track, the information is passed to the app
+  - When 
+- Links between apps
+  - Some apps can register to be handlers of certain kinds of URs
+  - Android has this thing where you choose which app to use as default, settings you can probably change later
+  - Apps can display different screens based on what it was launched to
+- Lock screen
+  - Waking from standby gets to this, and after security check is completed only, other things can be accessed
+    - Probably, a variable is there somewhere that checks if unlocked, otherwise no other screen is shown
+    - Unlocks takes to the last app state and app is resumed
+  - Types of security
+    - PIN/pattersn
+    - Fingerprint or face
+      - How are they stored safely?
+        - Apple stores in a different hardware unit. Not in RAM. So that information is one way only. Not taken out.
+- Connecting to other devices
+  - Sound outputs
+    - Sound is output to speaker or headset or wireless device
+    - OS knows what is available and presents to user
+  - App specific hardware
+- Camera
+  - Multiple lenses and specialized GPU chips to quickly capture and apply effeccts
+  - How can apps uses camera
+  - They ask OS for camera acces and if permission is given frmo user, they get access to feed
+  - More like they get bitmaps at some rate. Can erad the bitmap from some memory location
+- Settings
+  - One place for global phone settings like network, display
+  - Permissions for app level are maintained
+- Keyboard
+  - Keyboard is provided by OS
+    - When app uses input modules that are provided by OS, OS knows that keyboards has to be opened
+    - The input is passes as event to the app
+  - Apps rezise when keyboard is open
+  - Keyboars can input all kinds of things
+  - Customized keyboards for drawing input, emoji input
+  - Autocorrect
+  - In OS level settings, you can see different settings for each keyboard
+- Status bar and icons there
+  - Battery, networks nad notification statuse aer shown
+  - Smoe app hides them
+    - They go and come back on sliding sometimes
+- Different hardware units of the smartphone
+  - System on a Chip
+    - CPU, RAM, GPUs, modems
+  - Battery
+    - Sends information about charge
+  - Camera
+    - Puts the bitmap feed of the input on some place in RAM or special memory chip for faster processing
+  - Gyroscope, accelerometer, compass
+    - Stores events in some memory chip. OS maybe receive interrupts if it is listening for it
+  - NFC
+    - sending signals to read cards and stuff. Does it also receive?
+  - Buttons on phone
+    - Lock, volume rockers, camera
+  - Ambient light sensors
+  - 
+- Widgets and live activities
+  - Both show information and clicking takes you to some place in the app
+  - App has services running that send thigns to thsee
+  - Widgets live in home screen and/or lock screen and live activities live aloneside notifications
+    - Basically these are stored with configuration in the memory of the lock screen ahd notification apps
+- Services
+  - Apps can start processes that run in background
+  - The services can send messages to OS or g  
