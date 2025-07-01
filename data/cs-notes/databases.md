@@ -1,0 +1,24 @@
+---
+title: Databases
+---
+- What is a database?
+  - Somethign where you put information and expect that to stay forever.
+  - Provides data and interface for operations that can be done on them.
+- Why is persistence important?
+  - Process start and store information in memory and when thye end the data is gone
+  - To survive process dying and machine shutting down and getting up
+- Data stored as files bu implementaton hiddne
+- Types
+  - Relational 
+    - Tables with strict schem
+    - Reduce duplicatoin and all kinds of queries possible
+  - Document
+    - One document stored as itself.
+    - Tree structure
+  - Column database
+    - Given a key you can find the value of that in each column there is?
+  - Graph databse
+  - Key-Value stores
+- CAP theorem
+  - You can't have all three of consistency, availability and partitian telerence
+- 

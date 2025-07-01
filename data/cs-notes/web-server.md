@@ -1,0 +1,38 @@
+---
+title: Web Server
+---
+- What is a web server?
+  - They get HTTP requests and return HTTP responses
+- What are they used for?
+  - Website displaying lots of pages
+  - Rendering dynamic content from database. CRUD things.
+  - REST is also similar. They just send data and don't bother about presentation.
+- What happens for each request?
+  - HTTP is just text. That is parsed to become object.
+  - Security is checked
+    - Is there a session in the cookie?
+    - Is there a token in the header?
+  - Route is understood and parameters are parsed
+  - Backend models are queried or updates
+  - Response is sent
+- Code organization
+  - Controllers
+    - List of routes and what to do for the routes
+  - Services
+    - Domain logic as actions
+  - Database handlers
+    - Object to relational mapper and simlar things.
+  - List of middleware
+    - Things to run on all requests
+      - Load session information
+      - Check authenticated user
+  - Configuration
+    - Database identifiers
+    - URLS and tokens for external sevices
+  - Models
+    - Types 
+- Web socket
+  - After a connection is made to an http endpoint, a new connection through a different port is established. THis is long lasting and bi directions. The connection is presented to the server. The server can run processes that can many times send messages through the websocket connection.
+  - No security check afer connection. Connection happened through HTTP path where the authentication was handled.
+- Multiple therads or processes
+    

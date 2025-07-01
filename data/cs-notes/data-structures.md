@@ -1,0 +1,20 @@
+---
+title: Data Structures
+---
+- What is a data structure?
+  - Using memory address feature of heap to navigable connections through things in memory
+- Arrays
+  - Identified by starting address and size of one item and total number of items
+- List
+  - Abstract type of linear items 
+    - Can be a linked list or array list
+      - Array list is look up quick but insert slow
+- Map
+  - Given a key, store some kind of object for each key
+  - HashMap
+    - Fast lookup with a key
+- Tree
+  - Each item has chilred of variable or fixed lentgh
+- Graph
+  - Nodes representing objects and edges representing connection information
+-  s
