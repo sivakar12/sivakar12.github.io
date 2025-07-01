@@ -1,0 +1,14 @@
+---
+title: numpy, matplotlib and scikit-learn
+---
+- What is numpy?
+  - Storing arrays and matrices efficiently with C code and providing methods to access them
+  - Array is the primitive provided. This can be any shapre.
+  - They are all of the same type and therefore, traveser and operations on all of them are easy
+  - Methods to apply things to all elements together.
+- What is pandas?
+  - An abstractino over numpy to give column names and easy to use utility functions
+- What is matplotlib?
+  - Draw graphs (which are combinations of different elements) based on data
+- What is sciki-learn?
+  - Interfaces and utility methods to do work with machine learning models and pipelines and preprocessing and evaluation.
