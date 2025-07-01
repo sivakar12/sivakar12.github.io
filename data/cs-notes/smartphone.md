@@ -61,6 +61,7 @@ title: Smartphone
   - How can apps uses camera
   - They ask OS for camera acces and if permission is given frmo user, they get access to feed
   - More like they get bitmaps at some rate. Can erad the bitmap from some memory location
+  - Front and back are available
 - Settings
   - One place for global phone settings like network, display
   - Permissions for app level are maintained
@@ -91,7 +92,8 @@ title: Smartphone
   - Buttons on phone
     - Lock, volume rockers, camera
   - Ambient light sensors
-  - 
+  - Port
+    - When something is connected an interrupt is given to OS
 - Widgets and live activities
   - Both show information and clicking takes you to some place in the app
   - App has services running that send thigns to thsee
@@ -99,4 +101,47 @@ title: Smartphone
     - Basically these are stored with configuration in the memory of the lock screen ahd notification apps
 - Services
   - Apps can start processes that run in background
-  - The services can send messages to OS or g  
+  - The services can do what?
+- How OS UI components are provided to the apps?
+  - Apps are giving a bitmap of the UI or telling OS to draw objects in a way OS understand?
+- Gallary or Photos Library
+  - iOS
+    - One big steram of photos. Flat
+    - Ordered in default by date added
+    - Albums are somethign on top of that
+    - Not available on filesystem
+  - Android
+    - Photos are in different places of the filesystem
+- Backup
+  - iOS to iCloud
+  - Android to Google
+  - To third party services
+- How animations works?
+  - Animations are basically slowing down transition of UI
+  - The state of the UI change to something else. Instead of immediately changing, extrapolate and find in between states and update the screen on a short intervals to feel like naimations
+  - Sometimes touch input are also shared to make the animations react immediatly to the hand gesture. 
+    - Everything is about deciding at any given time what the bitmaps are
+- What happens when the phone is in locked state?
+  - App UI processes do not run at all. They are paused
+  - Services run. 
+    - Audio played are part of services. They send to sound module.
+    - Listeners for things run. Maybe not frequently. But they respond to events and they may wake phone if needed.
+- AI assistancts
+  - Separate app like thing that run as a drawing on top of any app
+    - OS which renders the things makes special cases
+    - Input it passed ot models and calls made by models are offered as options or run
+- Share widget
+  - Apps register with the OS what they can receive
+  - When share things, OS provides a list of things. 
+    - Intelligent suggestions based on history and things
+    - Not only app is an options, a contact inside an app, a task in an app
+- Smartwatches
+  - Phone can send messages through bluetooth or WiFi to control app
+  - Companion apps are there
+  - Smartwatches are registered to receive the notifications. Things done to the notification are received back by phone.
+- System update
+  - OS is made up of components and processes that are run. They are all modules. New versions come. The things are changed. 
+- Foldable phones
+  - Apps just tell the OS what to draw. OS can draw one app or two apps
+  - Special apps can know that they are in a foldable phone and behave differently
+  - Apps layout are designed so that they work on any screen sizes. Usually.
