@@ -18,4 +18,24 @@
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-primary-800;
   }
+  
+  /* Custom CSS for the hamburger-to-cross animation */
+  .hamburger-line {
+    width: 32px;
+    height: 2px;
+    background-color: black;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+
+  .hamburger-line.open-top {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .hamburger-line.open-middle {
+    opacity: 0;
+  }
+
+  .hamburger-line.open-bottom {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
 }
