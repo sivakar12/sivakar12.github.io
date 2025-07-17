@@ -1,0 +1,38 @@
+---
+title: Android App
+---
+- What is an Android app?
+  - A collection of Activities, Services, Content Providers, Broadcase Receivers, resources like layouts, images and fonts that are packaged and given to install. OS can start activity, service etc. and it runs as a process and user interacts with it.
+- What is Android SDK?
+- Activity
+  - Something that used the screen, adding widgets and event listeners, reacting to events and communicating with the other components
+  - Extend a class and implement onCreate method where you tell how to draw the layout
+  - How to start an activity?
+    - Launcher activity runs when it is clicked from the launcher
+    - Other activities can be launched by intents
+  - Lifecycle
+    - onCreate and onDestroy run when app is created or stopped
+    - onStart and onStop run when app goes out of screen and backs
+    - onPause and onResume when something covers the screen
+  - Starting an activity for a result
+  - Jetpack Compose is the modern way to do layouts
+  - Previously there were XML resource files
+    - Different layouts where you can specify the configuration in the name
+    - Have to use ids to search and find components to change or add listener
+    - Fragments are no longer important with Jetpack Compose.
+      - Fragments add lifecycle to subsection of activity
+- Database (Room)
+  - Write entity classes, write DAO methods and make a Database class giving the entities and DAOs in annotation
+  - Can get an instance of database anywhere from there you get the DAO
+  - Call method onf DAO
+  - Migration
+    - There is a version number on the Database
+    - You can add scripts for migration with 'from' and 'to' version numbers.
+    - Some migration don't need SQL but simple annotation for renames, deletes, etc.
+- Service
+- Broadcast Receiver
+- Content Provider
+- Jetpack Compose
+- Widgets
+- What is a context?
+
