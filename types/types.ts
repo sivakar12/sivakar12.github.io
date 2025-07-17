@@ -40,4 +40,10 @@ export type CSNote = {
   id: string;
   title: string;
   content: string;
-}; 
+};
+
+export interface Profile {
+  name: string;
+  imageSrc: string;
+  imageAlt: string;
+} 

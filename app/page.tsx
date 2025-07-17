@@ -1,7 +1,8 @@
-import { loadHomeContent } from '@/utils/data-loaders'
+import { loadHomeContent, loadProfile } from '@/utils/data-loaders'
 import HomePage from '@/components/layout/HomePage'
 
 export default function Home() {
   const homeContent = loadHomeContent();
-  return <HomePage homeContent={homeContent} />;
+  const profile = loadProfile();
+  return <HomePage homeContent={homeContent} profile={profile} />;
 }

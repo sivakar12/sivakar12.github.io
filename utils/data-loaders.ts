@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import yaml from 'js-yaml';
-import { Article, CSNote, HomePageItem, ProjectItem, LinkItem, Texts } from '@/types/types';
+import { Article, CSNote, HomePageItem, ProjectItem, LinkItem, Texts, Profile } from '@/types/types';
 
 // Shared utility function
 function readMarkdownFile(filePath: string) {
@@ -234,5 +234,26 @@ export function loadTexts(): Texts {
   } catch (error) {
     console.error('Error loading texts:', error);
     return {};
+  }
+}
+
+export function loadProfile(): Profile {
+  try {
+    const yamlPath = path.join(process.cwd(), 'data', 'profile.yaml');
+    const fileContents = fs.readFileSync(yamlPath, 'utf8');
+    const data = yaml.load(fileContents) as Profile;
+    
+    if (!data || typeof data !== 'object') {
+      throw new Error('Invalid YAML structure');
+    }
+
+    return data;
+  } catch (error) {
+    console.error('Error loading profile:', error);
+    return {
+      name: "Sivakar Sithamparanathan",
+      imageSrc: "/profile.jpeg",
+      imageAlt: "Sivakar Sithamparanathan"
+    };
   }
 } 
