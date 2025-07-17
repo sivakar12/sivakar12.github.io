@@ -8,16 +8,11 @@ type NavItem = {
   href: string;
 };
 
-const navItems: NavItem[] = [
-  { name: 'Home', href: '/' },
-  { name: 'Resume', href: '/resume' },
-  { name: 'CS Notes', href: '/cs-notes' },
-  { name: 'Projects', href: '/projects' },
-  { name: 'Blog', href: '/articles' },
-  { name: 'Links', href: '/links' },
-];
+interface NavigationBarProps {
+  navItems: NavItem[];
+}
 
-export default function NavigationBar() {
+export default function NavigationBar({ navItems }: NavigationBarProps) {
   const pathname = usePathname();
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);

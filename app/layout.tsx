@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { Signika } from 'next/font/google'
 
 import "./globals.css";
-import NavigationBar from "@/components/NavigationBar";
-import GoogleAnalytics from "@/components/GoogleAnalytics";
+import RootLayout from "@/components/layout/RootLayout";
 
 const font = Signika({
   subsets: ['latin'],
@@ -11,27 +10,34 @@ const font = Signika({
   variable: '--font-signika',
 })
 
+const navItems = [
+  { name: 'Home', href: '/' },
+  { name: 'Resume', href: '/resume' },
+  { name: 'CS Notes', href: '/cs-notes' },
+  { name: 'Projects', href: '/projects' },
+  { name: 'Blog', href: '/articles' },
+  { name: 'Links', href: '/links' },
+];
+
 export const metadata: Metadata = {
   title: "Sivakar Sithamparanthan",
   description: "Software Engineer | Fullstack Developer | Writer",
 };
 
-export default function RootLayout({
+export default function Layout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
-    <body className={"flex flex-col min-h-screen bg-surface-background " + font.className}>
-      <GoogleAnalytics GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || ''} />
-      <nav className="fixed top-0 left-0 right-0 h-16 bg-surface-card z-10">
-        <NavigationBar/>
-      </nav>
-      <main className="flex-grow mt-16">
+      <RootLayout 
+        navItems={navItems}
+        fontClassName={font.className}
+        gaMeasurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || ''}
+      >
         {children}
-      </main>
-    </body>
-  </html>
+      </RootLayout>
+    </html>
   );
 }

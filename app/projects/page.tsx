@@ -1,16 +1,7 @@
 import { getAllProjects } from '@/utils/data-loaders'
-import ContentCard from '@/components/ContentCard'
+import ProjectsPage from '@/components/layout/ProjectsPage'
 
-export default function ProjectsPage() {
+export default function Projects() {
   const projects = getAllProjects();
-
-  return (
-    <div className="container mx-auto p-4">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {projects.map((project) => (
-          <ContentCard key={project.title} item={project} type="project" className="h-full" />
-        ))}
-      </div>
-    </div>
-  )
+  return <ProjectsPage projects={projects} />;
 }
