@@ -1,0 +1,21 @@
+---
+title: Rust
+---
+- What is Rust?
+  - Compiled programming language that is fast and safe
+  - No runtime
+    - No garbage collection
+  - Special features for concurrency
+    - Ways to prevent memory leaks and race condition
+  - Modern type system
+- Safety features
+  - All variables are immutable by default
+  - Ownership and borrowing
+    - Each variable has an owner and then passed across threads, owner changes and that access is limited to prevent 
+  - Strict type system bring down number of errors
+- Why is it fast?
+  - It is compiled
+  - There is no garbage collection
+- Code organization
+- Ownership and borrowing
+  - 
