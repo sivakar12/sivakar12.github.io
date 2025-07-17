@@ -8,8 +8,8 @@ export default function Links() {
   
   return (
     <PageContainer>
-      <GridLayout cols={{ sm: 1, md: 2, lg: 3, xl: 4 }}>
-        {links.map((link) => (
+      <GridLayout>
+        {links.map((link, index) => (
           <DetailedCard 
             key={link.id}
             title={link.name}
@@ -18,7 +18,6 @@ export default function Links() {
             emoji={link.emoji}
             href={link.url}
             external={true}
-            className="h-full"
           />
         ))}
       </GridLayout>

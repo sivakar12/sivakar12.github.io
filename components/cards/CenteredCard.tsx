@@ -4,14 +4,15 @@ interface CenteredCardProps {
   title: string;
   emoji?: string;
   href: string;
-  className?: string;
+  style?: React.CSSProperties;
 }
 
-export default function CenteredCard({ title, emoji, href, className = '' }: CenteredCardProps) {
+export default function CenteredCard({ title, emoji, href, style }: CenteredCardProps) {
   return (
     <Link 
       href={href} 
-      className={`block h-full ${className}`}
+      className="block h-full animate-card-entrance"
+      style={style}
     >
       <div className="card group h-full flex flex-col min-h-[160px] justify-center">
         <div className="text-center flex flex-col items-center">

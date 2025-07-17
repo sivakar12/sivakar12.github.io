@@ -8,14 +8,13 @@ export default function Articles() {
   
   return (
     <PageContainer>
-      <GridLayout cols={{ sm: 1, md: 2, lg: 3, xl: 4 }}>
-        {articles.filter(article => !article.hidden).map((article) => (
+      <GridLayout>
+        {articles.filter(article => !article.hidden).map((article, index) => (
           <SimpleCard 
             key={article.title} 
             title={article.title}
             description={article.shortDescription}
             href={`/articles/${article.id}`}
-            className="h-full" 
           />
         ))}
       </GridLayout>

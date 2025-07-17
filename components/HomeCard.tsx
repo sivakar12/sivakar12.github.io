@@ -2,11 +2,15 @@ import { HomePageItem } from '@/types/types';
 
 interface HomeCardProps {
   item: HomePageItem;
+  style?: React.CSSProperties;
 }
 
-export default function HomeCard({ item }: HomeCardProps) {
+export default function HomeCard({ item, style }: HomeCardProps) {
   return (
-    <div className="card">
+    <div 
+      className="card animate-card-entrance"
+      style={style}
+    >
       <h2 className="text-xl mb-4 text-gray-800">{item.mainPoint}</h2>
       {Array.isArray(item.description) ? (
         <ul className="space-y-2">

@@ -13,14 +13,13 @@ export default function CSNotes() {
       <p className="mb-6">
         "If you can't explain something in simple terms, you don't understand it." Here I am, trying to explain computer science concepts in simple terms.
       </p>
-      <GridLayout cols={{ sm: 1, md: 2, lg: 3, xl: 4 }} className="auto-rows-fr">
-        {allNotes.map((note) => (
+      <GridLayout>
+        {allNotes.map((note, index) => (
           <CenteredCard 
             key={note.id} 
             title={note.title}
             emoji={(note as any).emoji}
             href={`/cs-notes/${note.id}`}
-            className="h-full" 
           />
         ))}
       </GridLayout>

@@ -6,8 +6,8 @@ interface DetailedCardProps {
   url: string;
   emoji?: string;
   href: string;
-  className?: string;
   external?: boolean;
+  style?: React.CSSProperties;
 }
 
 export default function DetailedCard({ 
@@ -16,8 +16,8 @@ export default function DetailedCard({
   url, 
   emoji, 
   href, 
-  className = '', 
-  external = false 
+  external = false,
+  style
 }: DetailedCardProps) {
   const linkProps = external ? {
     target: "_blank" as const,
@@ -27,7 +27,8 @@ export default function DetailedCard({
   return (
     <Link 
       href={href} 
-      className={`block h-full ${className}`}
+      className="block h-full animate-card-entrance"
+      style={style}
       {...linkProps}
     >
       <div className="card group h-full flex flex-col min-h-[160px]">

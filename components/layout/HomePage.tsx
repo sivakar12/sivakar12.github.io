@@ -18,7 +18,7 @@ export default function HomePage({ homeContent, profile }: HomePageProps) {
           imageAlt={profile.imageAlt}
         />
 
-        <GridLayout cols={{ sm: 1, md: 2 }}>
+        <GridLayout variant="wide">
           {homeContent.map((item, index) => (
             <HomeCard key={index} item={item} />
           ))}
