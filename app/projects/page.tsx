@@ -8,14 +8,13 @@ export default function Projects() {
   
   return (
     <PageContainer>
-      <GridLayout cols={{ sm: 1, md: 2, lg: 3, xl: 4 }}>
-        {projects.map((project) => (
+      <GridLayout>
+        {projects.map((project, index) => (
           <SimpleCard 
             key={project.title} 
             title={project.title}
             description={project.shortDescription}
             href={`/projects/${project.id}`}
-            className="h-full" 
           />
         ))}
       </GridLayout>
