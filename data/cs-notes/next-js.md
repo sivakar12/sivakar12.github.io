@@ -2,29 +2,35 @@
 title: Next.js
 ---
 - What is Next.js?
-  - A framework to build websites which improves over vanilla React, with special features for server-side rendering
+  - A framework to build websites which improves over vanilla React, along with special features for server-side rendering
 - What features does it provide?
   - Server-side rendering boilerplate is reduced
+    - Server Side Rendering is when you need Search Engine Optimization and fast first render
   - Easy to use routing system based on file path
   - Can be incrementally added to a project
+  - Convention over configuration
+  - JSX based components are easy to write and read
 - Different types of rendering
   - SSG (Static Site Generation)
-    - Build all pages in the website and serve from CDN/file server
+    - Build all pages in the website once in compile time and serve from CDN/file server
       - Parameterization possible
-    - Page for the link is rendered but other pages after clicking links are dynamically added
-      - JavaScript is hydrated later
+        - You can give a template file and give a list of data for dynamic content from source.
+          - The source is used only in compile time.
+    - When first visit, the page for the URL is made and HTML is sent to client
+        - JavaScript is hydrated later
+        - Subsequent link clicks change the UI without reload, working like as single-page application
   - SSR (Server Side Rendering)
     - Page for each route is rendered in the server where the required JavaScript runs
     - HTML is returned to the client
   - Client Side Rendering (CSR)
-    - Normal React
+    - Normal React with useState and useEffect
       - Components at the bottom of the tree usually can behave this way
   - Incremental Static Regeneration (ISR)
     - Some websites with too many pages take a long time to build and deploy and occupy a lot of space
     - Here pieces of the page are build as requests for them come
     - Cache and invalidation of cache
 - "pages" directory
-  - Oiriginal way to do things. Still used after new method is here
+  - Oiriginal way to do things. (Still used afte release of app directory approach)
   - A react component exported from a file, becomes a page
   - Route based on the path of the file.
     - index.js is accessible by the route of the folder
@@ -57,8 +63,11 @@ title: Next.js
     - The export is an async component
       - The async functions are run in server and the component is rendered and passed to the client
   - SSG
-    - You can have a generateStaticParams function in a parametereized route
-      - The pages are used for each of the item
+    - Put a generateStaticParams function in a page.tsx parametereized route
+      - The function should return a list of params to be passed
+      - A page is created for each item
+      - If the route is app/projects/\[id\]/page.tsx
+        - in the file have the function generate a list of objects like [{id: 'a'}, [{ id: 'b' }]
   - "use client"
     - All compoennts are server components by default. You have to mark client components
     - Server components can have client components but not the other way around
