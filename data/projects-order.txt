@@ -1,8 +1,8 @@
+eye-refresh
 copy-queue
 elm-minesweeper
 small-wins
 wordle-clone
-eye-refresh
 file-change-count-extension
 electron-file-manager
 disaster-response-ml
