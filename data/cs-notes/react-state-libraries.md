@@ -2,9 +2,62 @@
 title: React State Libraries
 ---
 - What are the things?
+  - Basic state
+    - Each component can have a state
+    - State when changed causes the component and children to rerender
+    - State can be encapsulated in a component.
+    - In some situations state being all over the place is hard to maintain with lots of props passing
+    - With hooks, useState and useReducer is available
+      - useState for simple state update
+      - useReducer when changes affect complex objects
   - Redux
-    - 
+    - Big picture
+      - Make one or more store
+      - Access parts of the store any component directly
+      - Dispatch events to store from anywhere that updates the store state
+      - Store updates caues the components that use the state to rerender
+    - Reducer, actions and store
+      - Reducer is a pure function that takes in the state and actions and return new state
+        - Usually there is a switching logic based on action name
+      - Action is like event name and payload
+        - Action creators are sometimes-useful functions that tkae parameter and return action objects
+      - Store is data stored like react state in a high level component and dispatched events edit this
+    - Before hooks
+      - State is created an a provider wraps the component tree
+      - Components are wrapped by a function and the required part of state and dispatcher function are received by the component as props
+    - After hooks
+      - Make a provider
+      - Get the part of store and the dispatch function by calling a hook
   - Redux Thunk
+    - Basic redux is all pure functions and no side-effects
+      - The actions are plain objects that are dispatched immediately
+    - With Redux Thunk, actions need not be objects and can be functions that when excuted produce data object actions asynchrnously
+      - The events go to the store as dispatch when they are complete
   - Redux Saga
+    - Saga is a primitive that does work and waits for things
+      - A generator functin
+      - Generator can pause execution and resume execution when what it waited for is available
+      - If it yields for an action, is is paused and when that action happens, it executes
+      - It can yield other sagas
+      - It can yield
   - Redux Toolkit
+    - A library to reduce boilerplate with redux, creating action creators, reducers and thunk actions automatically
+    - Break store into components like slices
+      - You create slices first
+      - Combine slices into store
+      - Give the store to the store provider on top of the component tree
+    - Slices can contain state and reducers
+      - State is basic JavaScript object
+      - Reducer is a function. Use normal JavaScript syntax but mutation doesn't happen
+    - From the file, you export reducers and action creators
+      - You give the slice configuration to a function createSlice and it gives you reducers and action creators
+    - In the consuming components, you can get dispatcher and staet from hooks useDispatch and useSelector
+    - Side effects with thunk
+      - useAsyncThunk crates a thunk with a name globally
+      - in a slice, in the section extraReducers, you can add event handler for the success, loading and error cases of a thunk that can update the slice state from the return of the thunk
+      - Thunk is not connected to a slice but slices react to events from thunk
+      -
   - Zustand
+    - Simpler than Redux toolkit where you don't need a provider
+    - Create a store in a file and export as object. This is a singleton.
+    - State and functions are put together
