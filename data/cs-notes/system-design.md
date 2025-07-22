@@ -1,0 +1,50 @@
+---
+title: System Design
+---
+- What is System Design?
+  - Deciding on the servers in a backend system and how they communicate
+- Load Balancing
+  - One server cannot handle all request when traffic is high
+  - Load balancer receives the request and sends to the 
+  - Some situation require stickiness 
+    - Same client always has to connect to the same server for a session
+      - Load balancer with a good cache algorith can do that based on inputs
+    - If it is possible to avoid this, the better
+      - Can use JWT reduce the need for server state
+- Cache
+  - How they help?
+    - Reduce database queries which require disk access and 
+  - In Memory Caches
+    - Redis
+  - Cache policies
+    - What to throw away when cache is full
+- Database scaling
+  - Sharding
+    - Separate data based on certain fields. And putting in different servers
+    - Not always possible to cleanly separate if there are dependencies
+      - Possible ways to separate are user, tenant, region etc.
+  - CAP theorem
+    - When you want partition tolerence, (which is always), you can either have availability or consistency
+    - Eventual consistence is accepting brief periods of stale data
+    - Consensus algorithms
+- API manager
+  - Multiple functions
+    - Security checks
+    - Presenting client end points and access multiple services for tha
+    - Rate limiting and user procing
+- Event bus
+  - Decouplesd ways to have multiple servers keep in sync
+  - System can put post events and move on to other ways
+  - Events are stored safely in database until they are delivered
+  - Event sourcing based data modeling
+    - Immutable events are added
+    - State can be derived anytime and if lost
+- CQRS
+  - Fanout
+    - Data is stored in one database and what is needed for the view is put in another database
+    - Social media posts are parts of write database and read databases handle news feed
+- Failure handling
+- Notifications systems
+- Chat systems
+  - Need to keep live sessions
+    - Call web server to get a URL to the live server, then connect to that
