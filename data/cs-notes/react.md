@@ -42,9 +42,34 @@ title: React
   - Hooks
     - Abandoning class components and lifecycles (which were complex)
   - Suspense
+    - Easy way to handle loading by letting components inside throw promises
+    - When component inside throw a promise,
+      - suspense gets the promise and runs the async
+      - suspense renders the fallback component passed to it
+      - when promise is fulfilled, render like normal
+      - can be used for data as well as loading modules (react components, especially)
+    - This allows for components to be in different bundle
+      - Lazy function that wraps a component allows the component to be not available in memory
+      - This makes it possible for component to be in multiple bundles and speed up first load
+    - The benefits are that loading state need not be tracked and put in conditional statement
+      - If an outer component is suspense, anything deep into it throwing, makes all the things inside suspense go to fallback state
+  - Error boundary
+    - Similar to suspense. Catches errors and render fallback
+  - Concurrent mode
+    - Allows to skip update of state (going to suspense fallback) until any async call finishes
+    - If some async function is called wrapped by startTransition, fallback to suspense doesn't happen and UI is updated only after promise completes
+    - useTransition gives back startTransition and isPending
+      - isPending is a reactable state that tells if an operation is going on in the background
 - Hooks
+  - rules of hook
+    - names start with "use"
+    - only at the top of the file and not inside the conditions
+      - not inside the conditions because order is what decided which item the hook is referring to
+        - always have to be the same run in each run
+    - hooks can be called only from components and other hooks
+      - a hook is therefore associated with a component always
   - useState()
   - useEffect()
   - useContext()
   - useCallback()
-- Error Boundaries, Suspense, Server-Side Rendering
+- React Server Components
