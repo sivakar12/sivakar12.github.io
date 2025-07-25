@@ -1,0 +1,35 @@
+---
+title: MCP (Model Context Procotol)
+---
+- What is MCP?
+  - Giving tools and information to model so we can give it context about us and tools to execute
+  - As long as an AI component provide an interface to MCP, any piece of software can talk to any others
+  - Solves the M x N problem
+- Primitives
+  - Tools
+  - Resources
+  - Prompts
+- Components
+  - Server
+    - An independent process in host's computer or remote server that provides tools and resourses and prompts
+    - Give code and configuration to an SDK and then you can run a command to start a process
+  - Client
+    - In the host, for each connection to a server, a new client is created
+    - Manages the protocol level things
+      - Serializing and deserializing
+      - Getting a list of tools availabing by querying
+    - List of clients is given to host in configuration file as a JSON file
+      - Can give a SSH link or the command to run locally
+  - Host
+    - Any someware that uses AI models and wants to connect to MCP services
+    - Has access to an LLM
+    - Gets the inputs from users, gets information from MCP servers and coordinates the messages with LLM
+    - If LLM wants to make a tool execution, it will give information to host, host calls the tool through MCP
+    - List of MCP given to 
+- How to identify an MCP
+  - From a remote URL
+  - The command, with a path to file, to call and run the process locally
+    - Here the STDIO is used to communicate
+- SDK
+  - Python
+  - JavaScript

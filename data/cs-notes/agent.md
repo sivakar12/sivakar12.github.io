@@ -1,0 +1,24 @@
+---
+title: Agent
+---
+- What is an Agent?
+  - Agent is like a server that 
+    - can talk with 
+      - the user
+      - language model
+      -  tools 
+    - to make decisions and execute actions
+- How to crate an agent?
+  - Frameworks let you configure and run
+    - Give system instruction
+    - Give list of tools to use
+- WHere is it hosted?
+  - Cloud platforms
+- Google Agent2Agent protocol
+  - Open source
+- Agent workflows
+  - Each agent with limited tasks
+  - Can pipe agenets in different topologies
+  - Can specify input format and output format
+  - Agenst can be allowed to talk to other agenst
+- How to identify an agent's location?
