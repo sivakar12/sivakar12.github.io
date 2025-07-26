@@ -33,6 +33,44 @@ title: Android App
 - Broadcast Receiver
 - Content Provider
 - Jetpack Compose
+  - View framework like React
+  - Composed of Composable
+    - Composables are functions annotated with @Composable
+      - They take data and draw other Componsalbes
+        - Other Composables also draw other Composables
+        - It is like a depth-first tree traversal
+      - They can maintain their own state
+        - val stateVariable by remember { mutableStateOf(initialValue) }
+    - You put modifier, onClick, text and enabled in the parantheses
+      - Childrend in braces
+  - SDK provided Composables
+    - Basic things like Button, Checkbox, Text, Card
+    - Pull to refresh
+      - Content is in this.
+      - Pulling activates handlers
+    - Bottom Sheets
+    - Date Pickers
+    - TopAppBar and BottomAppBar
+    - Resources
+      - Text, images and data from XML files
+    - Scaffold
+      - Provides top bar, bottom bar and main action button
+        - We create composable for these and assign to the fields
+      - Then in the middle area, we can put other things
+    - Surface
+      - Like a container
+      - Can give color, padding and things, 
+    - TimePicker
+      - Quite complex
+    - Dialog
+      - Displayed over other thigns and while this is active other thing become non-interactive
+      - Can contain anything
+      - Have callback for confirm and dismiss
+  - Configuration
+    - Layout
+    - Colors
+  - Theming
+    - 
 - Widgets
 - What is a context?
 
