@@ -1,7 +1,8 @@
 'use client'
 
 import Image from 'next/image'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { createPortal } from 'react-dom'
 
 interface ImageGalleryProps {
   images: string[]
@@ -9,6 +10,11 @@ interface ImageGalleryProps {
 
 export default function ImageGallery({ images }: ImageGalleryProps) {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <div className="mb-4">
@@ -27,32 +33,27 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
               className="object-cover transition-transform duration-300 group-hover:scale-105"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
-            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-opacity duration-300 flex items-center justify-center">
-              <span className="text-gray-200 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                Click to view
-              </span>
-            </div>
           </div>
         ))}
       </div>
 
       {/* Lightbox Modal */}
-      {selectedImage && (
+      {selectedImage && mounted && createPortal(
         <div 
-          className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4"
+          className="fixed top-0 left-0 w-screen h-screen bg-black z-[9999]"
+          style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh' }}
           onClick={() => setSelectedImage(null)}
         >
-          <div className="relative max-w-7xl w-full h-full flex items-center justify-center">
+          <div className="relative w-full h-full">
             <Image
               src={'/' + selectedImage}
               alt="Full size screenshot"
-              className="max-h-full max-w-full object-contain"
-              width={1920}
-              height={1080}
+              fill
+              className="object-contain"
               priority
             />
             <button
-              className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors"
+              className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors z-10"
               onClick={() => setSelectedImage(null)}
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -60,7 +61,8 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
               </svg>
             </button>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   )
