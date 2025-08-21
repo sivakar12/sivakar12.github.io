@@ -1,0 +1,33 @@
+---
+title: Apple SDK and Swift UI
+---
+- Swift language
+  - Modern language style
+    - Strong typed but type inferred
+  - camel Case
+  - File names start with uppercase letters
+  - New features
+    - optinoal, if-let and guard-let
+    - defer
+    - Procotols
+    - Delegates
+    - Closures
+      - To get a closure from named function,
+        - remove func keyword and function name
+        - move the opening brace to the beginning
+        - after tye types, put an in keyword
+      - Can remove names and use $0, $1, etc.
+      - Can remove return
+      - Trailing closure
+        - If a closure is the final argument of a function, that can stand outside the parantheses
+    - Structures
+    - Properties
+    - argument labels in function
+    - Tuples have lables
+    - weak reference
+      - the memory management counter doesn't count this reference
+      - this way the original variable can be removed from memory even if this particule referring object exists
+- View Controllers
+
+- Navigation
+  - 
