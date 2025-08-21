@@ -32,8 +32,8 @@ export default function DetailedCard({
       {...linkProps}
     >
       <div className="card group h-full flex flex-col min-h-[160px]">
-        <div className="h-16 flex items-start justify-between">
-          <h2 className="text-2xl text-gray-800 group-hover:text-primary-700 transition-colors leading-tight">
+        <div className="h-20 flex items-start justify-between">
+          <h2 className="text-2xl text-gray-900 group-hover:text-primary-700 transition-colors leading-tight">
             {title}
           </h2>
           {emoji && (
@@ -42,9 +42,9 @@ export default function DetailedCard({
             </span>
           )}
         </div>
-        <div className="mt-3">
-          <p className="text-gray-700 text-sm">{description}</p>
-          <p className="text-gray-600 text-xs mt-2 truncate">{url}</p>
+        <div className="flex-1 flex flex-col justify-start">
+          <p className="text-gray-600 text-base leading-relaxed">{description}</p>
+          <p className="text-gray-500 text-sm mt-2 truncate">{url}</p>
         </div>
       </div>
     </Link>

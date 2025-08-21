@@ -27,45 +27,25 @@ const CustomListItem: Components['li'] = ({ children, ...props }) => (
 );
 
 const CustomHeading1: Components['h1'] = ({ children, ...props }) => (
-  <h1 style={{ 
-    fontSize: '2em',
-    fontWeight: 600,
-    margin: '1em 0 0.5em',
-    color: '#2d3748'
-  }} {...props}>
+  <h1 className="text-2xl font-semibold my-4 text-gray-900" {...props}>
     {children}
   </h1>
 );
 
 const CustomHeading2: Components['h2'] = ({ children, ...props }) => (
-  <h2 style={{ 
-    fontSize: '1.5em',
-    fontWeight: 600,
-    margin: '0.83em 0 0.5em',
-    color: '#2d3748'
-  }} {...props}>
+  <h2 className="text-xl font-semibold my-3 text-gray-800" {...props}>
     {children}
   </h2>
 );
 
 const CustomHeading3: Components['h3'] = ({ children, ...props }) => (
-  <h3 style={{ 
-    fontSize: '1.17em',
-    fontWeight: 600,
-    margin: '0.67em 0 0.5em',
-    color: '#4a5568'
-  }} {...props}>
+  <h3 className="text-lg font-semibold my-2 text-gray-700" {...props}>
     {children}
   </h3>
 );
 
 const CustomHeading4: Components['h4'] = ({ children, ...props }) => (
-  <h4 style={{ 
-    fontSize: '1em',
-    fontWeight: 600,
-    margin: '0.5em 0',
-    color: '#4a5568'
-  }} {...props}>
+  <h4 className="text-base font-semibold my-2 text-gray-700" {...props}>
     {children}
   </h4>
 );

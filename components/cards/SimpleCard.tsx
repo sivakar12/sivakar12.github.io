@@ -15,14 +15,14 @@ export default function SimpleCard({ title, description, href, style }: SimpleCa
       style={style}
     >
       <div className="card group h-full flex flex-col min-h-[160px]">
-        <div className="h-16 flex items-start justify-between">
-          <h2 className="text-2xl text-gray-800 group-hover:text-primary-700 transition-colors leading-tight">
+        <div className="h-20 flex items-start justify-between">
+          <h2 className="text-3xl text-gray-900 group-hover:text-primary-700 transition-colors leading-tight">
             {title}
           </h2>
         </div>
-        <div className="mt-3">
+        <div className="flex-1 flex items-start">
           {description && (
-            <p className="text-gray-700 text-sm">{description}</p>
+            <p className="text-gray-500 text-base leading-relaxed">{description}</p>
           )}
         </div>
       </div>

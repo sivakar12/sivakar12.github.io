@@ -12,7 +12,7 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
 
   return (
     <div className="mb-4">
-      <h2 className="text-xl mb-2">Screenshots</h2>
+      <h2 className="text-xl mb-2 text-gray-900">Screenshots</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {images.map((url, index) => (
           <div 
@@ -28,7 +28,7 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
             <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-opacity duration-300 flex items-center justify-center">
-              <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span className="text-gray-200 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 Click to view
               </span>
             </div>

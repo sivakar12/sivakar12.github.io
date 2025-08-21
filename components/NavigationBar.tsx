@@ -74,7 +74,7 @@ export default function NavigationBar({ navItems }: NavigationBarProps) {
           <Link
             href={item.href}
             className={`block w-full px-4 py-2 text-xl text-center transition-all duration-300 ease-in-out hover:scale-105 hover:text-gradient whitespace-nowrap ${
-              isActive(item.href) ? 'text-gradient' : 'text-black'
+              isActive(item.href) ? 'text-gradient' : 'text-gray-500'
             }`}
             onClick={() => setIsMenuOpen(false)}
           >
@@ -97,7 +97,7 @@ export default function NavigationBar({ navItems }: NavigationBarProps) {
             >
               <svg 
                 xmlns="http://www.w3.org/2000/svg" 
-                className="h-6 w-6 text-gray-800 hover:text-primary-600 transition-colors" 
+                className="h-6 w-6 text-gray-600 hover:text-primary-600 transition-colors" 
                 fill="none" 
                 viewBox="0 0 24 24" 
                 stroke="currentColor"
@@ -120,19 +120,19 @@ export default function NavigationBar({ navItems }: NavigationBarProps) {
           >
             {/* Top line */}
             <span
-              className={`block w-8 h-0.5 bg-black transition-transform duration-300 ${
+              className={`block w-8 h-0.5 bg-gray-600 transition-transform duration-300 ${
                 isMenuOpen ? 'rotate-45 translate-y-2' : ''
               }`}
             ></span>
             {/* Middle line */}
             <span
-              className={`block w-8 h-0.5 bg-black transition-opacity duration-300 ${
+              className={`block w-8 h-0.5 bg-gray-600 transition-opacity duration-300 ${
                 isMenuOpen ? 'opacity-0' : ''
               }`}
             ></span>
             {/* Bottom line */}
             <span
-              className={`block w-8 h-0.5 bg-black transition-transform duration-300 ${
+              className={`block w-8 h-0.5 bg-gray-600 transition-transform duration-300 ${
                 isMenuOpen ? '-rotate-45 -translate-y-2' : ''
               }`}
             ></span>
