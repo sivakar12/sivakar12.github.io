@@ -9,6 +9,7 @@ screenshotUrls:
 links:
   - title: "Repository"
     url: "https://github.com/sivakar12/copy-queue"
+hidden: false
 ---
 
 A better UI/UX for those who copy and paste a lot of files and folders.

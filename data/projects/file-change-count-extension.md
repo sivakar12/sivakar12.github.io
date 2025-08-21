@@ -10,6 +10,7 @@ links:
     url: "https://github.com/sivakar12/file-change-count-vscode-extension"
   - title: "Extension in Visual Studio Marketplace"
     url: "https://marketplace.visualstudio.com/items?itemName=sivakar12.file-change-count"
+hidden: false
 ---
 
 When looking at a new code repository, you may want to know what are the important files of the project. One heuristic to know what the important files are is by looking at how many modifications that particular file has been through. 

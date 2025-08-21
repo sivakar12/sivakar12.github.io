@@ -12,6 +12,7 @@ links:
     url: "https://github.com/sivakar12/small-wins"
   - title: "Hosted on Expo platform"
     url: "exp://exp.host/@sivakar12/small-wins"
+hidden: false
 ---
 
 Instant gratification is what makes you keep building habits. I want to make an app to keep count of doing good things. Seeing progress gives you the happy chemicals. That motivate you to keep doing. I have been using a counter app myself for my own progrss. And I use this app called Forest for counting productive time. I took the data visualizations inspiration from that.

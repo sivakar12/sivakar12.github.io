@@ -8,6 +8,7 @@ screenshotUrls:
   - 'projects-screenshots/electron-file-manager-2.png'
   - 'projects-screenshots/electron-file-manager-3.png'
 links: []
+hidden: false
 ---
 
 I wanted to have a file manager with multiple tabs because Windows didn't have one. I wanted to make use of the full suite of tools modern web development offered.

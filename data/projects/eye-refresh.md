@@ -11,6 +11,7 @@ screenshotUrls:
 links:
   - title: "Repository"
     url: "https://github.com/sivakar12/EyeRefresh"
+hidden: false
 ---
 
 20-20-20 rule is a solution to reducing eye strain when one looks at screens for long. Every twenty minutes, you look at someting twenty feet away for twenty seconds.

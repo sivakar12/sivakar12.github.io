@@ -11,6 +11,7 @@ links:
     url: "https://github.com/sivakar12/seattle-airbnb-nanodegree-project/blob/main/CRISP-DM.ipynb"
   - title: "Blog Post"
     url: "https://sivakar12.github.io/seattle-airbnb-nanodegree-project/seattle-airbnb/"
+hidden: true
 ---
 
 A data exploration blog post I am doing as part of the Udacity Data Scientist Nanodegree This is a dataset of AirBnB listings in Seattle. It has details about the prices, ratings, host information, amenities provided by the property etc. I looked at the amenities provided and also see how they react with price and ratings. 

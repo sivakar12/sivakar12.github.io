@@ -12,6 +12,7 @@ links:
     url: "https://github.com/sivakar12/elm-minesweeper"
   - title: "Live site"
     url: "https://elm-minesweeper-sivakar12.netlify.app/"
+hidden: false
 ---
 
 I have for a long time been fascinated by functional programming. I have never done a full project with functional style, using only immutable data structures, pure functions etc. So I took this as a challenge to see how I can model this game under functional constraints. I learned the systax, which is a lot of work but also very rewarding. 

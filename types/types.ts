@@ -29,6 +29,7 @@ export interface ProjectItem {
   emoji?: string;
   screenshotUrls?: string[];
   links?: { title: string; url: string; }[];
+  hidden?: boolean;
 }
 
 export interface HomePageItem {

@@ -9,7 +9,7 @@ export default function Projects() {
   return (
     <PageContainer>
       <GridLayout>
-        {projects.map((project, index) => (
+        {projects.filter(project => !project.hidden).map((project, index) => (
           <SimpleCard 
             key={project.title} 
             title={project.title}

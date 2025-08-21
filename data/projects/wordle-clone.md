@@ -12,6 +12,7 @@ links:
     url: "https://github.com/sivakar12/wordle-clone"
   - title: "Live App"
     url: "https://wordle-sivakar12.netlify.app/"
+hidden: false
 ---
 
 I wanted to see how quickly I can make a clone of the Wordle game that went viral. Used React and vanilla CSS and coded it in under five hours. 

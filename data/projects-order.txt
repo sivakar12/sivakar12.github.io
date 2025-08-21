@@ -5,6 +5,3 @@ small-wins
 wordle-clone
 file-change-count-extension
 electron-file-manager
-disaster-response-ml
-seattle-airbnb
-rust-exercises

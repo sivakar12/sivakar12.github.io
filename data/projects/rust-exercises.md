@@ -9,6 +9,7 @@ links:
     url: "https://github.com/sivakar12/exercism-solutions"
   - title: "Exercism profile"
     url: "https://exercism.org/profiles/sivakar12"
+hidden: true
 ---
 
 I did some exercises in the website Exercism while learning the Rust language. I wrote idiomatic Rust code, following 

@@ -9,6 +9,7 @@ links:
     url: "https://github.com/sivakar12/udacity-disaster-response-ml-project"
   - title: "Jupyter Notebook"
     url: "https://github.com/sivakar12/udacity-disaster-response-ml-project/blob/main/Exploration.ipynb"
+hidden: false
 ---
 
 This is a project I am doing as part of the Udacity Data Scientist Nanodegree program The core of this project is a machine learning classifier that reads messages coming during a disaster and classifies them into categories so they can be routed to the appropriate responder.

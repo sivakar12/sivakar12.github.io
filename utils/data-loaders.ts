@@ -182,9 +182,10 @@ export function getAllProjects(): ProjectItem[] {
       shortDescription: data.shortDescription,
       emoji: data.emoji,
       screenshotUrls: data.screenshotUrls || [],
-      links: data.links || []
+      links: data.links || [],
+      hidden: data.hidden || false
     }
-  }).filter(project => project.content && project.title);
+  }).filter(project => project.content && project.title && !project.hidden);
 
   // Sort projects based on the order file
   if (orderedIds.length > 0) {
@@ -200,6 +201,32 @@ export function getAllProjects(): ProjectItem[] {
   }
 
   return projects;
+}
+
+export function getProjectById(id: string): ProjectItem | null {
+  try {
+    const filePath = path.join(projectsDir, `${id}.md`);
+    const { data, content } = readMarkdownFile(filePath);
+    
+    // Don't return hidden projects
+    if (data.hidden) {
+      return null;
+    }
+
+    return {
+      id,
+      title: data.title,
+      content,
+      shortDescription: data.shortDescription,
+      emoji: data.emoji,
+      screenshotUrls: data.screenshotUrls || [],
+      links: data.links || [],
+      hidden: false
+    }
+  } catch (error) {
+    console.error(`Error loading project ${id}:`, error);
+    return null;
+  }
 }
 
 export function loadLinks(): LinkItem[] {

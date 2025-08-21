@@ -1,4 +1,4 @@
-import { getAllProjects } from '@/utils/data-loaders'
+import { getAllProjects, getProjectById } from '@/utils/data-loaders'
 import ProjectDetailPage from '@/components/layout/ProjectDetailPage'
 
 export function generateStaticParams() {
@@ -9,8 +9,7 @@ export function generateStaticParams() {
 }
 
 export default function ProjectPage({ params }: { params: { id: string } }) {
-  const projects = getAllProjects();
-  const project = projects.find((p) => p.id === params.id)
+  const project = getProjectById(params.id)
 
   if (!project) return <div>Project not found</div>
 
