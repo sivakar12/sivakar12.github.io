@@ -5,6 +5,7 @@
 @layer base {
   body {
     @apply bg-surface-background;
+    font-family: var(--font-signika), sans-serif;
   }
 }
 

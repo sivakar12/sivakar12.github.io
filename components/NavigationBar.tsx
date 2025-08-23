@@ -1,6 +1,4 @@
 'use client';
-import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 type NavItem = {
@@ -10,11 +8,21 @@ type NavItem = {
 
 interface NavigationBarProps {
   navItems: NavItem[];
+  currentPath?: string;
+  onNavigate?: (href: string) => void;
+  showBackButton?: boolean;
+  backPath?: string;
+  onBackClick?: () => void;
 }
 
-export default function NavigationBar({ navItems }: NavigationBarProps) {
-  const pathname = usePathname();
-  const router = useRouter();
+export default function NavigationBar({ 
+  navItems, 
+  currentPath = '/',
+  onNavigate,
+  showBackButton = false,
+  backPath = '/',
+  onBackClick
+}: NavigationBarProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const menuRef = useRef<HTMLUListElement>(null);
@@ -52,34 +60,38 @@ export default function NavigationBar({ navItems }: NavigationBarProps) {
 
   const isActive = (href: string) => {
     if (href === '/') {
-      return pathname === href;
+      return currentPath === href;
     }
-    return pathname.startsWith(href);
+    return currentPath.startsWith(href);
   };
 
-  const isDetailPage = () => {
-    const pathParts = pathname.split('/').filter(Boolean);
-    return pathParts.length === 2 && ['articles', 'projects', 'cs-notes'].includes(pathParts[0]);
+  const handleNavigate = (href: string) => {
+    if (onNavigate) {
+      onNavigate(href);
+    }
+    setIsMenuOpen(false);
   };
 
-  const getBackPath = () => {
-    const pathParts = pathname.split('/').filter(Boolean);
-    return `/${pathParts[0]}`;
+  const handleBackClick = () => {
+    if (onBackClick) {
+      onBackClick();
+    } else if (onNavigate) {
+      onNavigate(backPath);
+    }
   };
 
   const NavItems = () => (
     <>
       {navItems.map((item) => (
         <li key={item.name} className="w-full">
-          <Link
-            href={item.href}
+          <button
+            onClick={() => handleNavigate(item.href)}
             className={`block w-full px-4 py-2 text-xl text-center transition-all duration-300 ease-in-out hover:scale-105 hover:text-gradient whitespace-nowrap ${
               isActive(item.href) ? 'text-gradient' : 'text-gray-500'
             }`}
-            onClick={() => setIsMenuOpen(false)}
           >
             {item.name}
-          </Link>
+          </button>
         </li>
       ))}
     </>
@@ -89,9 +101,9 @@ export default function NavigationBar({ navItems }: NavigationBarProps) {
     <nav className="w-full py-4">
       {isMobile ? (
         <div className="flex relative items-center px-4">
-          {isDetailPage() && (
+          {showBackButton && (
             <button
-              onClick={() => router.push(getBackPath())}
+              onClick={handleBackClick}
               className="p-2 flex items-center justify-center"
               aria-label="Back to list"
             >
