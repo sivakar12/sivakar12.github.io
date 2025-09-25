@@ -111,7 +111,7 @@ export default function FontOptionsExperiment() {
       {/* Big Gradient Banner Preview */}
       <div className="py-12 text-center">
         <h1
-          className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight bg-gradient-to-r from-sky-500 via-blue-500 to-indigo-500 bg-clip-text text-transparent"
+          className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-sky-500 via-blue-500 to-indigo-500 bg-clip-text text-transparent"
           style={{ fontFamily: `'${selectedFont}', sans-serif` }}
         >
           Sivakar

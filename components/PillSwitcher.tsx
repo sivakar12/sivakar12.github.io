@@ -1,5 +1,7 @@
 'use client';
 
+import ExperimentPillLabel from './ExperimentPillLabel';
+
 interface PillOption {
   id: string;
   name: string;
@@ -67,14 +69,14 @@ export default function PillSwitcher({
   return (
     <div className={`mb-8 ${className}`}>
       {label && (
-        <h2 className="text-xl font-semibold text-gray-900 mb-4">{label}</h2>
+        <ExperimentPillLabel>{label}</ExperimentPillLabel>
       )}
       
       {showCategories && Object.keys(categories).length > 0 ? (
         <div className="space-y-6">
           {Object.entries(categories).map(([categoryName, categoryOptions]) => (
             <div key={categoryName}>
-              <div className="text-xs uppercase tracking-wider text-gray-500 mb-2">{categoryName}</div>
+              <ExperimentPillLabel className="text-base">{categoryName}</ExperimentPillLabel>
               {renderPills(categoryOptions)}
             </div>
           ))}

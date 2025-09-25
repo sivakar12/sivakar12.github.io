@@ -460,7 +460,6 @@ export default function WebsitePersonalityExperiment() {
   return (
     <div className="min-h-screen bg-gray-50 p-8">
       <div className="max-w-5xl mx-auto space-y-12">
-        <h1 className="text-4xl font-bold text-gray-900">Experiment 002 — Website Personality</h1>
 
         {/* Personality Selection */}
         <PillSwitcher
@@ -473,12 +472,6 @@ export default function WebsitePersonalityExperiment() {
 
         {/* Selected Personality Preview */}
         <section>
-          <h2 className="text-2xl text-gray-900" style={{ fontFamily: `'${SELECTED_FONTS[selectedPersonality as keyof typeof SELECTED_FONTS]}', serif` }}>
-            {personalityOptions.find(p => p.value === selectedPersonality)?.name}
-          </h2>
-          <div className="text-xs text-gray-500 mb-4">
-            Font: {SELECTED_FONTS[selectedPersonality as keyof typeof SELECTED_FONTS]}
-          </div>
           {getPersonalityContent(selectedPersonality)}
         </section>
       </div>

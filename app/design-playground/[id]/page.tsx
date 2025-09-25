@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import { promises as fs } from 'fs';
 import { join } from 'path';
-import Link from 'next/link';
+import ExperimentHeader from '@/components/ExperimentHeader';
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -13,7 +13,7 @@ export default async function ExperimentPage({ params }: PageProps) {
   // Try to import the experiment component
   let ExperimentComponent;
   try {
-    const experimentPath = join(process.cwd(), 'app/design-system/experiments', `${id}.tsx`);
+    const experimentPath = join(process.cwd(), 'app/design-playground/experiments', `${id}.tsx`);
     await fs.access(experimentPath);
     
     // Dynamic import of the experiment component
@@ -27,6 +27,7 @@ export default async function ExperimentPage({ params }: PageProps) {
     notFound();
   }
 
+  const experimentNumber = id.split('-')[0];
   const displayName = id
     .split('-')
     .slice(1) // Remove the number prefix
@@ -35,26 +36,11 @@ export default async function ExperimentPage({ params }: PageProps) {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <div className="bg-white border-b border-gray-200 px-8 py-4">
-        <div className="max-w-6xl mx-auto flex items-center justify-between">
-          <div>
-            <Link 
-              href="/design-system" 
-              className="text-blue-600 hover:text-blue-800 text-sm font-medium"
-            >
-              ← Back to Design System
-            </Link>
-            <h1 className="text-2xl font-bold text-gray-900 mt-1">
-              {displayName}
-            </h1>
-          </div>
-          <div className="text-sm text-gray-500">
-            Experiment ID: {id}
-          </div>
-        </div>
-      </div>
-
+      <ExperimentHeader 
+        experimentNumber={experimentNumber}
+        experimentName={displayName} 
+      />
+      
       {/* Experiment Content */}
       <div className="max-w-6xl mx-auto p-8">
         <ExperimentComponent />

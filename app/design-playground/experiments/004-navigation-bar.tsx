@@ -147,11 +147,6 @@ const NavigationBarExperiment = () => {
   return (
     <div className="min-h-screen bg-gray-50 p-8">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Navigation Bar Design Experiment</h1>
-          <p className="text-gray-600">Test navigation styles and view them in different screen sizes</p>
-        </div>
-
         {/* Navigation Style Selection */}
         <PillSwitcher
           options={navigationOptions}
@@ -170,9 +165,6 @@ const NavigationBarExperiment = () => {
 
         {/* Preview Container */}
         <div className="mb-8">
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">
-            {isMobileView ? 'Mobile' : 'Desktop'} Preview
-          </h2>
           
           <div className={`bg-white rounded-lg border border-gray-200 overflow-hidden ${
             isMobileView ? 'w-80 mx-auto h-96' : 'w-full'
