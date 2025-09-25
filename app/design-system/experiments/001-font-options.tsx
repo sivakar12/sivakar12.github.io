@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import PillSwitcher from '@/components/PillSwitcher';
 
 // Font tiers for categorization while keeping behavior the same
 export const FONT_TIER_GREAT = [
@@ -73,70 +74,39 @@ export default function FontOptionsExperiment() {
     };
   }, []);
 
+  const fontCategories = {
+    'Great': FONT_TIER_GREAT.map(font => ({
+      id: `great-${font}`,
+      name: font,
+      value: font,
+      style: { fontFamily: `'${font}', sans-serif` }
+    })),
+    'OK': FONT_TIER_OK.map(font => ({
+      id: `ok-${font}`,
+      name: font,
+      value: font,
+      style: { fontFamily: `'${font}', sans-serif` }
+    })),
+    "Won't fit": FONT_TIER_WONT_FIT.map(font => ({
+      id: `wont-${font}`,
+      name: font,
+      value: font,
+      style: { fontFamily: `'${font}', sans-serif` }
+    }))
+  };
+
   return (
     <div className="space-y-8">
       {/* Font Selection Pills by Tiers */}
-      <div className="space-y-6">
-        <div>
-          <div className="text-xs uppercase tracking-wider text-gray-500 mb-2">Great</div>
-          <div className="flex flex-wrap gap-3">
-            {FONT_TIER_GREAT.map((font) => (
-              <button
-                key={`great-${font}`}
-                onClick={() => setSelectedFont(font)}
-                className={`px-4 py-2 rounded border ${
-                  selectedFont === font
-                    ? 'bg-gray-900 text-white'
-                    : 'bg-white text-gray-900 border-gray-300'
-                }`}
-                style={{ fontFamily: `'${font}', sans-serif` }}
-              >
-                {font}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        <div>
-          <div className="text-xs uppercase tracking-wider text-gray-500 mb-2">OK</div>
-          <div className="flex flex-wrap gap-3">
-            {FONT_TIER_OK.map((font) => (
-              <button
-                key={`ok-${font}`}
-                onClick={() => setSelectedFont(font)}
-                className={`px-4 py-2 rounded border ${
-                  selectedFont === font
-                    ? 'bg-gray-900 text-white'
-                    : 'bg-white text-gray-900 border-gray-300'
-                }`}
-                style={{ fontFamily: `'${font}', sans-serif` }}
-              >
-                {font}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        <div>
-          <div className="text-xs uppercase tracking-wider text-gray-500 mb-2">Won't fit</div>
-          <div className="flex flex-wrap gap-3">
-            {FONT_TIER_WONT_FIT.map((font) => (
-              <button
-                key={`wont-${font}`}
-                onClick={() => setSelectedFont(font)}
-                className={`px-4 py-2 rounded border ${
-                  selectedFont === font
-                    ? 'bg-gray-900 text-white'
-                    : 'bg-white text-gray-900 border-gray-300'
-                }`}
-                style={{ fontFamily: `'${font}', sans-serif` }}
-              >
-                {font}
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
+      <PillSwitcher
+        options={[]}
+        selectedValue={selectedFont}
+        onSelect={setSelectedFont}
+        showCategories={true}
+        categories={fontCategories}
+        layout="wrap"
+        size="md"
+      />
 
       {/* Big Gradient Banner Preview */}
       <div className="py-12 text-center">

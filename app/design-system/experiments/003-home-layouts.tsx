@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { FONT_TIER_GREAT } from './001-font-options';
+import PillSwitcher from '@/components/PillSwitcher';
 
 // Font definitions
 const FONTS = {
@@ -283,6 +284,12 @@ const HomeLayouts = () => {
 
   };
 
+  const layoutOptions = Object.entries(layouts).map(([key, layout]) => ({
+    id: key,
+    name: layout.name,
+    value: key
+  }));
+
   return (
     <div className="min-h-screen bg-gray-50 py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -292,23 +299,14 @@ const HomeLayouts = () => {
         </div>
 
         {/* Layout Selector */}
-        <div className="mb-8">
-          <div className="flex flex-wrap gap-2 justify-center">
-            {Object.entries(layouts).map(([key, layout]) => (
-              <button
-                key={key}
-                onClick={() => setSelectedLayout(key)}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                  selectedLayout === key
-                    ? 'bg-blue-600 text-white'
-                    : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-300'
-                }`}
-              >
-                {layout.name}
-              </button>
-            ))}
-          </div>
-        </div>
+        <PillSwitcher
+          options={layoutOptions}
+          selectedValue={selectedLayout}
+          onSelect={setSelectedLayout}
+          label="Layout Options"
+          className="text-center"
+          layout="wrap"
+        />
 
         {/* Selected Layout */}
         <div className="bg-white rounded-2xl shadow-lg p-8">

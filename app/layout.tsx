@@ -3,21 +3,13 @@ import { Signika } from 'next/font/google'
 
 import "./globals.css";
 import RootLayout from "@/components/layout/RootLayout";
+import { navItems } from "@/data/navigation";
 
 const font = Signika({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
   variable: '--font-signika',
 })
-
-const navItems = [
-  { name: 'Home', href: '/' },
-  { name: 'Resume', href: '/resume' },
-  { name: 'CS Notes', href: '/cs-notes' },
-  { name: 'Projects', href: '/projects' },
-  { name: 'Blog', href: '/articles' },
-  { name: 'Links', href: '/links' },
-];
 
 export const metadata: Metadata = {
   title: "Sivakar Sithamparanthan",

@@ -1,6 +1,7 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import PillSwitcher from '@/components/PillSwitcher';
 
 const SELECTED_FONTS = {
   classic: 'Merriweather',
@@ -35,22 +36,44 @@ function CardsGrid({ children }: { children: React.ReactNode }) {
 }
 
 export default function WebsitePersonalityExperiment() {
+  const [selectedPersonality, setSelectedPersonality] = useState('classic');
+
   useEffect(() => {
     loadGoogleFonts(ALL_FONTS);
   }, []);
 
-  return (
-    <div className="min-h-screen bg-gray-50 p-8">
-      <div className="max-w-5xl mx-auto space-y-12">
-        <h1 className="text-4xl font-bold text-gray-900">Experiment 002 — Website Personality</h1>
+  const personalityOptions = [
+    { id: 'classic', name: 'Classic', value: 'classic' },
+    { id: 'bookish', name: 'Book-like', value: 'bookish' },
+    { id: 'pastel', name: 'Pastel', value: 'pastel' },
+    { id: 'vibrant', name: 'Vibrant', value: 'vibrant' },
+    { id: 'brutalist', name: 'Brutalist Mono', value: 'brutalist' },
+    { id: 'editorial', name: 'Newspaper Editorial', value: 'editorial' },
+    { id: 'swiss', name: 'Swiss Minimal', value: 'swiss' },
+    { id: 'glass', name: 'Neo-Glass', value: 'glass' },
+    { id: 'duotone', name: 'Duotone Poster', value: 'duotone' },
+    { id: 'notebook', name: 'Handcrafted Notebook', value: 'notebook' },
+    { id: 'terminal', name: 'Code Terminal', value: 'terminal' },
+    { id: 'blob', name: 'Playful Blob', value: 'blob' },
+    { id: 'stripe', name: 'Stripey Sections', value: 'stripe' },
+    { id: 'mosaic', name: 'Tile Mosaic', value: 'mosaic' },
+    { id: 'vintage', name: 'Vintage Library', value: 'vintage' },
+    { id: 'tabs', name: 'Skeuomorphic Tabs', value: 'tabs' },
+    { id: 'numerals', name: 'Big Numerals', value: 'numerals' },
+    { id: 'slabs', name: 'Gradient Slabs', value: 'slabs' },
+    { id: 'mono', name: 'Monochrome Accent', value: 'mono' },
+    { id: 'airmail', name: 'Airmail Border', value: 'airmail' },
+  ];
 
-        {/* Classic */}
-        <section>
-          <h2 className="text-2xl text-gray-900" style={{ fontFamily: `'${SELECTED_FONTS.classic}', serif` }}>Classic</h2>
-          <div className="text-xs text-gray-500 mb-4">Font: Merriweather</div>
+  const getPersonalityContent = (personality: string) => {
+    const font = SELECTED_FONTS[personality as keyof typeof SELECTED_FONTS];
+    
+    switch (personality) {
+      case 'classic':
+  return (
           <CardsGrid>
             {sampleCards.map((c, idx) => (
-              <div key={`classic-${idx}`} className="h-full" style={{ fontFamily: `'${SELECTED_FONTS.classic}', serif` }}>
+              <div key={`classic-${idx}`} className="h-full" style={{ fontFamily: `'${font}', serif` }}>
                 <div className="h-full p-6 bg-white rounded-2xl border border-gray-200">
                   <h3 className="text-xl font-semibold text-gray-900 tracking-tight">{c.title}</h3>
                   <p className="text-gray-700 mt-2 leading-relaxed">{c.desc}</p>
@@ -58,15 +81,13 @@ export default function WebsitePersonalityExperiment() {
               </div>
             ))}
           </CardsGrid>
-        </section>
+        );
 
-        {/* Book-like */}
-        <section>
-          <h2 className="text-2xl text-gray-900" style={{ fontFamily: `'${SELECTED_FONTS.bookish}', serif` }}>Book-like</h2>
-          <div className="text-xs text-gray-500 mb-4">Font: Gelasio</div>
+      case 'bookish':
+        return (
           <CardsGrid>
             {sampleCards.map((c, idx) => (
-              <div key={`book-${idx}`} className="h-full" style={{ fontFamily: `'${SELECTED_FONTS.bookish}', serif` }}>
+              <div key={`book-${idx}`} className="h-full" style={{ fontFamily: `'${font}', serif` }}>
                 <div className="h-full p-6 rounded-2xl" style={{ backgroundColor: '#fffdf7' }}>
                   <h3 className="text-xl font-semibold text-gray-900">{c.title}</h3>
                   <p className="text-gray-800 mt-2 leading-8">{c.desc}</p>
@@ -74,20 +95,17 @@ export default function WebsitePersonalityExperiment() {
               </div>
             ))}
           </CardsGrid>
-        </section>
+        );
 
-        {/* Pastel */}
-        <section>
-          <h2 className="text-2xl text-gray-900" style={{ fontFamily: `'${SELECTED_FONTS.pastel}', sans-serif` }}>Pastel</h2>
-          <div className="text-xs text-gray-500 mb-4">Font: Public Sans</div>
+      case 'pastel':
+        return (
           <CardsGrid>
             {[
               { key: 'pastel-green', bg: '#ecfdf5', border: '#a7f3d0', head: '#065f46', body: '#065f46' },
               { key: 'pastel-blue', bg: '#eff6ff', border: '#bfdbfe', head: '#1e3a8a', body: '#1e3a8a' },
               { key: 'pastel-peach', bg: '#fff7ed', border: '#fed7aa', head: '#9a3412', body: '#9a3412' },
-              { key: 'pastel-lilac', bg: '#faf5ff', border: '#e9d5ff', head: '#5b21b6', body: '#5b21b6' },
             ].map((tone, idx) => (
-              <div key={tone.key} className="h-full" style={{ fontFamily: `'${SELECTED_FONTS.pastel}', sans-serif` }}>
+              <div key={tone.key} className="h-full" style={{ fontFamily: `'${font}', sans-serif` }}>
                 <div className="h-full p-6 rounded-2xl border" style={{ backgroundColor: tone.bg, borderColor: tone.border }}>
                   <h3 className="text-xl font-semibold" style={{ color: tone.head }}>{sampleCards[idx % sampleCards.length].title}</h3>
                   <p className="mt-2 leading-relaxed" style={{ color: tone.body, opacity: 0.8 }}>{sampleCards[idx % sampleCards.length].desc}</p>
@@ -95,20 +113,17 @@ export default function WebsitePersonalityExperiment() {
               </div>
             ))}
           </CardsGrid>
-        </section>
+        );
 
-        {/* Vibrant */}
-        <section>
-          <h2 className="text-2xl text-gray-900" style={{ fontFamily: `'${SELECTED_FONTS.vibrant}', sans-serif` }}>Vibrant</h2>
-          <div className="text-xs text-gray-500 mb-4">Font: Nunito</div>
+      case 'vibrant':
+        return (
           <CardsGrid>
             {[
               { key: 'vibrant-sky', bg: '#0ea5e9', tint: 'rgba(255,255,255,0.92)' },
               { key: 'vibrant-indigo', bg: '#4f46e5', tint: 'rgba(255,255,255,0.92)' },
               { key: 'vibrant-rose', bg: '#e11d48', tint: 'rgba(255,255,255,0.92)' },
-              { key: 'vibrant-emerald', bg: '#10b981', tint: 'rgba(255,255,255,0.92)' },
             ].map((tone, idx) => (
-              <div key={tone.key} className="h-full" style={{ fontFamily: `'${SELECTED_FONTS.vibrant}', sans-serif` }}>
+              <div key={tone.key} className="h-full" style={{ fontFamily: `'${font}', sans-serif` }}>
                 <div className="h-full p-6" style={{ backgroundColor: tone.bg, borderRadius: 0 }}>
                   <h3 className="text-xl font-semibold" style={{ color: tone.tint }}>{sampleCards[idx % sampleCards.length].title}</h3>
                   <p className="mt-2 leading-relaxed" style={{ color: tone.tint, opacity: 0.9 }}>{sampleCards[idx % sampleCards.length].desc}</p>
@@ -116,12 +131,10 @@ export default function WebsitePersonalityExperiment() {
               </div>
             ))}
           </CardsGrid>
-        </section>
+        );
 
-        {/* Brutalist Mono */}
-        <section>
-          <h2 className="text-2xl text-gray-900" style={{ fontFamily: `'Public Sans', sans-serif` }}>Brutalist Mono</h2>
-          <div className="text-xs text-gray-500 mb-4">Font: Public Sans (bold)</div>
+      case 'brutalist':
+        return (
           <CardsGrid>
             {sampleCards.map((c, idx) => (
               <div key={`brut-${idx}`} className="h-full" style={{ fontFamily: `'Public Sans', sans-serif` }}>
@@ -132,12 +145,10 @@ export default function WebsitePersonalityExperiment() {
               </div>
             ))}
           </CardsGrid>
-        </section>
+        );
 
-        {/* Newspaper Editorial */}
-        <section>
-          <h2 className="text-2xl text-gray-900" style={{ fontFamily: `'Merriweather', serif` }}>Newspaper Editorial</h2>
-          <div className="text-xs text-gray-500 mb-4">Fonts: Merriweather (title) + Public Sans (body)</div>
+      case 'editorial':
+        return (
           <CardsGrid>
             {sampleCards.map((c, idx) => (
               <div key={`editorial-${idx}`} className="h-full" style={{ fontFamily: `'Merriweather', serif` }}>
@@ -148,12 +159,10 @@ export default function WebsitePersonalityExperiment() {
               </div>
             ))}
           </CardsGrid>
-        </section>
+        );
 
-        {/* Swiss Minimal */}
-        <section>
-          <h2 className="text-2xl text-gray-900" style={{ fontFamily: `'Public Sans', sans-serif` }}>Swiss Minimal</h2>
-          <div className="text-xs text-gray-500 mb-4">Font: Public Sans</div>
+      case 'swiss':
+        return (
           <CardsGrid>
             {sampleCards.map((c, idx) => (
               <div key={`swiss-${idx}`} className="h-full" style={{ fontFamily: `'Public Sans', sans-serif` }}>
@@ -164,12 +173,10 @@ export default function WebsitePersonalityExperiment() {
               </div>
             ))}
           </CardsGrid>
-        </section>
+        );
 
-        {/* Neo-Glass */}
-        <section>
-          <h2 className="text-2xl text-gray-900" style={{ fontFamily: `'Nunito', sans-serif` }}>Neo-Glass</h2>
-          <div className="text-xs text-gray-500 mb-4">Font: Nunito</div>
+      case 'glass':
+        return (
           <div className="relative rounded-2xl overflow-hidden">
             <div
               className="absolute inset-0"
@@ -201,12 +208,10 @@ export default function WebsitePersonalityExperiment() {
               </CardsGrid>
             </div>
           </div>
-        </section>
+        );
 
-        {/* Duotone Poster */}
-        <section>
-          <h2 className="text-2xl text-gray-900" style={{ fontFamily: `'Nunito', sans-serif` }}>Duotone Poster</h2>
-          <div className="text-xs text-gray-500 mb-4">Font: Nunito</div>
+      case 'duotone':
+        return (
           <CardsGrid>
             {[
               { bg: 'linear-gradient(135deg,#0ea5e9,#4f46e5)', tint: 'rgba(255,255,255,0.92)' },
@@ -221,12 +226,10 @@ export default function WebsitePersonalityExperiment() {
               </div>
             ))}
           </CardsGrid>
-        </section>
+        );
 
-        {/* Handcrafted Notebook */}
-        <section>
-          <h2 className="text-2xl text-gray-900" style={{ fontFamily: `'Gelasio', serif` }}>Handcrafted Notebook</h2>
-          <div className="text-xs text-gray-500 mb-4">Font: Gelasio</div>
+      case 'notebook':
+        return (
           <CardsGrid>
             {sampleCards.map((c, idx) => (
               <div key={`notebook-${idx}`} className="h-full" style={{ fontFamily: `'Gelasio', serif` }}>
@@ -237,39 +240,31 @@ export default function WebsitePersonalityExperiment() {
               </div>
             ))}
           </CardsGrid>
-        </section>
+        );
 
-        {/* Code Terminal */}
-        <section>
-          <h2 className="text-2xl text-gray-900" style={{ fontFamily: `'Public Sans', sans-serif` }}>Code Terminal</h2>
-          <div className="text-xs text-gray-500 mb-4">Fonts: Public Sans (section) + Monospace (content)</div>
+      case 'terminal':
+        return (
           <CardsGrid>
             {sampleCards.map((c, idx) => (
               <div key={`terminal-${idx}`} className="h-full" style={{ fontFamily: `'Public Sans', sans-serif` }}>
                 <div
                   className="h-full rounded-md overflow-hidden"
                   style={{
-                    background:
-                      'linear-gradient(180deg,#0b1020 0%,#0a0f1c 100%)',
-                    boxShadow:
-                      'inset 0 0 0 1px rgba(255,255,255,0.06), 0 1px 2px rgba(0,0,0,0.3)'
+                    background: 'linear-gradient(180deg,#0b1020 0%,#0a0f1c 100%)',
+                    boxShadow: 'inset 0 0 0 1px rgba(255,255,255,0.06), 0 1px 2px rgba(0,0,0,0.3)'
                   }}
                 >
-                  {/* Window bar */}
                   <div className="px-3 py-2 flex items-center gap-2" style={{ background: '#0f1529', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
                     <span className="inline-block h-3 w-3 rounded-full" style={{ background: '#ef4444' }} />
                     <span className="inline-block h-3 w-3 rounded-full" style={{ background: '#f59e0b' }} />
                     <span className="inline-block h-3 w-3 rounded-full" style={{ background: '#22c55e' }} />
                     <span className="ml-2 text-xs" style={{ color: 'rgba(255,255,255,0.6)' }}>terminal</span>
                   </div>
-                  {/* Scanlines + grid backdrop */}
                   <div className="relative h-full">
                     <div
                       className="absolute inset-0 pointer-events-none"
                       style={{
-                        background:
-                          'repeating-linear-gradient(0deg, rgba(255,255,255,0.03) 0 1px, transparent 1px 3px),\
-                           linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)',
+                        background: 'repeating-linear-gradient(0deg, rgba(255,255,255,0.03) 0 1px, transparent 1px 3px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)',
                         backgroundSize: 'auto, 24px 100%'
                       }}
                     />
@@ -290,12 +285,10 @@ export default function WebsitePersonalityExperiment() {
               </div>
             ))}
           </CardsGrid>
-        </section>
+        );
 
-        {/* Playful Blob */}
-        <section>
-          <h2 className="text-2xl text-gray-900" style={{ fontFamily: `'Nunito', sans-serif` }}>Playful Blob</h2>
-          <div className="text-xs text-gray-500 mb-4">Font: Nunito</div>
+      case 'blob':
+        return (
           <CardsGrid>
             {sampleCards.map((c, idx) => {
               const variants = [
@@ -318,12 +311,10 @@ export default function WebsitePersonalityExperiment() {
               );
             })}
           </CardsGrid>
-        </section>
+        );
 
-        {/* Stripey Sections */}
-        <section>
-          <h2 className="text-2xl text-gray-900" style={{ fontFamily: `'Signika', sans-serif` }}>Stripey Sections</h2>
-          <div className="text-xs text-gray-500 mb-4">Font: Signika</div>
+      case 'stripe':
+        return (
           <CardsGrid>
             {sampleCards.map((c, idx) => (
               <div key={`stripe-${idx}`} className="h-full" style={{ fontFamily: `'Signika', sans-serif` }}>
@@ -334,12 +325,10 @@ export default function WebsitePersonalityExperiment() {
               </div>
             ))}
           </CardsGrid>
-        </section>
+        );
 
-        {/* Tile Mosaic */}
-        <section>
-          <h2 className="text-2xl text-gray-900" style={{ fontFamily: `'Public Sans', sans-serif` }}>Tile Mosaic</h2>
-          <div className="text-xs text-gray-500 mb-4">Font: Public Sans</div>
+      case 'mosaic':
+        return (
           <CardsGrid>
             {sampleCards.map((c, idx) => (
               <div key={`mosaic-${idx}`} className="h-full" style={{ fontFamily: `'Public Sans', sans-serif` }}>
@@ -350,12 +339,10 @@ export default function WebsitePersonalityExperiment() {
               </div>
             ))}
           </CardsGrid>
-        </section>
+        );
 
-        {/* Vintage Library */}
-        <section>
-          <h2 className="text-2xl text-gray-900" style={{ fontFamily: `'Merriweather', serif` }}>Vintage Library</h2>
-          <div className="text-xs text-gray-500 mb-4">Font: Merriweather</div>
+      case 'vintage':
+        return (
           <CardsGrid>
             {sampleCards.map((c, idx) => (
               <div key={`vintage-${idx}`} className="h-full" style={{ fontFamily: `'Merriweather', serif` }}>
@@ -366,12 +353,10 @@ export default function WebsitePersonalityExperiment() {
               </div>
             ))}
           </CardsGrid>
-        </section>
+        );
 
-        {/* Skeuomorphic Tabs */}
-        <section>
-          <h2 className="text-2xl text-gray-900" style={{ fontFamily: `'Nunito', sans-serif` }}>Skeuomorphic Tabs</h2>
-          <div className="text-xs text-gray-500 mb-4">Font: Nunito</div>
+      case 'tabs':
+        return (
           <CardsGrid>
             {sampleCards.map((c, idx) => (
               <div key={`tabs-${idx}`} className="h-full" style={{ fontFamily: `'Nunito', sans-serif` }}>
@@ -382,12 +367,10 @@ export default function WebsitePersonalityExperiment() {
               </div>
             ))}
           </CardsGrid>
-        </section>
+        );
 
-        {/* Big Numerals */}
-        <section>
-          <h2 className="text-2xl text-gray-900" style={{ fontFamily: `'Gelasio', serif` }}>Big Numerals</h2>
-          <div className="text-xs text-gray-500 mb-4">Fonts: Gelasio (numerals) + Public Sans (body)</div>
+      case 'numerals':
+        return (
           <CardsGrid>
             {[0,1,2].map((n, idx) => (
               <div key={`nums-${idx}`} className="h-full" style={{ fontFamily: `'Public Sans', sans-serif` }}>
@@ -399,20 +382,15 @@ export default function WebsitePersonalityExperiment() {
               </div>
             ))}
           </CardsGrid>
-        </section>
+        );
 
-        {/* Gradient Slabs */}
-        <section>
-          <h2 className="text-2xl text-gray-900" style={{ fontFamily: `'Nunito', sans-serif` }}>Gradient Slabs</h2>
-          <div className="text-xs text-gray-500 mb-4">Font: Nunito</div>
+      case 'slabs':
+        return (
           <CardsGrid>
             {[
               'linear-gradient(135deg,#667eea 0%,#764ba2 100%)',
               'linear-gradient(135deg,#f093fb 0%,#f5576c 100%)',
               'linear-gradient(135deg,#4facfe 0%,#00f2fe 100%)',
-              'linear-gradient(135deg,#43e97b 0%,#38f9d7 100%)',
-              'linear-gradient(135deg,#fa709a 0%,#fee140 100%)',
-              'linear-gradient(135deg,#a8edea 0%,#fed6e3 100%)'
             ].map((bg, idx) => (
               <div key={`slab-${idx}`} className="h-full" style={{ fontFamily: `'Nunito', sans-serif` }}>
                 <div className="h-full p-6 rounded-xl" style={{ background: bg }}>
@@ -422,12 +400,10 @@ export default function WebsitePersonalityExperiment() {
               </div>
             ))}
           </CardsGrid>
-        </section>
+        );
 
-        {/* Monochrome Accent */}
-        <section>
-          <h2 className="text-2xl text-gray-900" style={{ fontFamily: `'Public Sans', sans-serif` }}>Monochrome Accent</h2>
-          <div className="text-xs text-gray-500 mb-4">Font: Public Sans</div>
+      case 'mono':
+        return (
           <CardsGrid>
             {[
               { bg: '#eef2ff', color: '#3730a3' },
@@ -442,12 +418,10 @@ export default function WebsitePersonalityExperiment() {
               </div>
             ))}
           </CardsGrid>
-        </section>
+        );
 
-        {/* Airmail Border */}
-        <section>
-          <h2 className="text-2xl text-gray-900" style={{ fontFamily: `'Public Sans', sans-serif` }}>Airmail Border</h2>
-          <div className="text-xs text-gray-500 mb-4">Font: Public Sans</div>
+      case 'airmail':
+        return (
           <CardsGrid>
             {sampleCards.map((c, idx) => (
               <div key={`airmail-${idx}`} className="h-full" style={{ fontFamily: `'Public Sans', sans-serif` }}>
@@ -465,10 +439,49 @@ export default function WebsitePersonalityExperiment() {
               </div>
             ))}
           </CardsGrid>
+        );
+
+      default:
+        return (
+          <CardsGrid>
+            {sampleCards.map((c, idx) => (
+              <div key={`default-${idx}`} className="h-full" style={{ fontFamily: `'${font}', sans-serif` }}>
+                <div className="h-full p-6 bg-white rounded-2xl border border-gray-200">
+                  <h3 className="text-xl font-semibold text-gray-900 tracking-tight">{c.title}</h3>
+                  <p className="text-gray-700 mt-2 leading-relaxed">{c.desc}</p>
+                </div>
+              </div>
+            ))}
+          </CardsGrid>
+        );
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-gray-50 p-8">
+      <div className="max-w-5xl mx-auto space-y-12">
+        <h1 className="text-4xl font-bold text-gray-900">Experiment 002 — Website Personality</h1>
+
+        {/* Personality Selection */}
+        <PillSwitcher
+          options={personalityOptions}
+          selectedValue={selectedPersonality}
+          onSelect={setSelectedPersonality}
+          label="Personality Style"
+          layout="wrap"
+        />
+
+        {/* Selected Personality Preview */}
+        <section>
+          <h2 className="text-2xl text-gray-900" style={{ fontFamily: `'${SELECTED_FONTS[selectedPersonality as keyof typeof SELECTED_FONTS]}', serif` }}>
+            {personalityOptions.find(p => p.value === selectedPersonality)?.name}
+          </h2>
+          <div className="text-xs text-gray-500 mb-4">
+            Font: {SELECTED_FONTS[selectedPersonality as keyof typeof SELECTED_FONTS]}
+          </div>
+          {getPersonalityContent(selectedPersonality)}
         </section>
       </div>
     </div>
   );
 }
-
-
