@@ -1,137 +1,212 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+
+// Font tiers for categorization while keeping behavior the same
+export const FONT_TIER_GREAT = [
+  'Besley',
+  'Signika',
+  'National Park',
+  'Nunito',
+  'Cabin',
+  'Lato',
+  'Merriweather',
+  'Public Sans',
+  'Domine',
+  'Gelasio',
+];
+
+export const FONT_TIER_OK = [
+  'Sniglet',
+  'Barlow',
+  'Winky Sans',
+  'Crimson Text',
+  'Lora',
+  'Libre Baskerville',
+  'EB Garamond',
+  'Arvo',
+  'Commissioner',
+  'Open Sans',
+  'Work Sans',
+  'Nunito Sans',
+];
+
+export const FONT_TIER_WONT_FIT = [
+  'Varela Round',
+  'Outfit',
+  'Fredoka',
+  'Alan Sans',
+  'Signika Nagative',
+  'Dosis',
+  'Comfortaa',
+  'Poppins',
+  'Raleway',
+  'Noto',
+];
+
+const FONT_OPTIONS = [
+  ...FONT_TIER_GREAT,
+  ...FONT_TIER_OK,
+  ...FONT_TIER_WONT_FIT,
+];
+
 export default function FontOptionsExperiment() {
+  const [selectedFont, setSelectedFont] = useState('Signika');
+
+  useEffect(() => {
+    // Load Google Fonts dynamically - Option 1: Individual font links
+    FONT_OPTIONS.forEach(font => {
+      const link = document.createElement('link');
+      link.href = `https://fonts.googleapis.com/css2?family=${font.replace(/\s+/g, '+')}:wght@400;600;700&display=swap`;
+      link.rel = 'stylesheet';
+      document.head.appendChild(link);
+    });
+    
+    return () => {
+      // Clean up links when component unmounts
+      const links = document.querySelectorAll('link[href*="fonts.googleapis.com"]');
+      links.forEach(link => {
+        if (link.parentNode) {
+          link.parentNode.removeChild(link);
+        }
+      });
+    };
+  }, []);
+
   return (
-    <div className="space-y-12">
-      <div className="text-center">
-        <h2 className="text-3xl font-bold text-gray-900 mb-4">
-          Font Options Experiment
-        </h2>
-        <p className="text-lg text-gray-600">
-          Testing different font combinations and weights for the personal website
-        </p>
+    <div className="space-y-8">
+      {/* Font Selection Pills by Tiers */}
+      <div className="space-y-6">
+        <div>
+          <div className="text-xs uppercase tracking-wider text-gray-500 mb-2">Great</div>
+          <div className="flex flex-wrap gap-3">
+            {FONT_TIER_GREAT.map((font) => (
+              <button
+                key={`great-${font}`}
+                onClick={() => setSelectedFont(font)}
+                className={`px-4 py-2 rounded border ${
+                  selectedFont === font
+                    ? 'bg-gray-900 text-white'
+                    : 'bg-white text-gray-900 border-gray-300'
+                }`}
+                style={{ fontFamily: `'${font}', sans-serif` }}
+              >
+                {font}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <div className="text-xs uppercase tracking-wider text-gray-500 mb-2">OK</div>
+          <div className="flex flex-wrap gap-3">
+            {FONT_TIER_OK.map((font) => (
+              <button
+                key={`ok-${font}`}
+                onClick={() => setSelectedFont(font)}
+                className={`px-4 py-2 rounded border ${
+                  selectedFont === font
+                    ? 'bg-gray-900 text-white'
+                    : 'bg-white text-gray-900 border-gray-300'
+                }`}
+                style={{ fontFamily: `'${font}', sans-serif` }}
+              >
+                {font}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <div className="text-xs uppercase tracking-wider text-gray-500 mb-2">Won't fit</div>
+          <div className="flex flex-wrap gap-3">
+            {FONT_TIER_WONT_FIT.map((font) => (
+              <button
+                key={`wont-${font}`}
+                onClick={() => setSelectedFont(font)}
+                className={`px-4 py-2 rounded border ${
+                  selectedFont === font
+                    ? 'bg-gray-900 text-white'
+                    : 'bg-white text-gray-900 border-gray-300'
+                }`}
+                style={{ fontFamily: `'${font}', sans-serif` }}
+              >
+                {font}
+              </button>
+            ))}
+          </div>
+        </div>
       </div>
 
-      {/* Typography Scale */}
-      <section className="space-y-8">
-        <h3 className="text-2xl font-semibold text-gray-800 border-b border-gray-200 pb-2">
-          Typography Scale
-        </h3>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Default Font Stack */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-medium text-gray-700">Default Font Stack</h4>
-            <div className="space-y-3">
-              <h1 className="text-4xl font-bold text-gray-900">Heading 1</h1>
-              <h2 className="text-3xl font-semibold text-gray-800">Heading 2</h2>
-              <h3 className="text-2xl font-medium text-gray-700">Heading 3</h3>
-              <h4 className="text-xl font-medium text-gray-600">Heading 4</h4>
-              <p className="text-base text-gray-600 leading-relaxed">
-                Body text with normal weight and good line height for readability.
-              </p>
-              <p className="text-sm text-gray-500">
-                Small text for captions and secondary information.
-              </p>
-            </div>
-          </div>
+      {/* Big Gradient Banner Preview */}
+      <div className="py-12 text-center">
+        <h1
+          className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight bg-gradient-to-r from-sky-500 via-blue-500 to-indigo-500 bg-clip-text text-transparent"
+          style={{ fontFamily: `'${selectedFont}', sans-serif` }}
+        >
+          Sivakar
+        </h1>
+      </div>
 
-          {/* Alternative Font Stack */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-medium text-gray-700">Alternative Font Stack</h4>
-            <div className="space-y-3 font-serif">
-              <h1 className="text-4xl font-bold text-gray-900">Heading 1</h1>
-              <h2 className="text-3xl font-semibold text-gray-800">Heading 2</h2>
-              <h3 className="text-2xl font-medium text-gray-700">Heading 3</h3>
-              <h4 className="text-xl font-medium text-gray-600">Heading 4</h4>
-              <p className="text-base text-gray-600 leading-relaxed">
-                Body text with serif font for a more traditional feel.
-              </p>
-              <p className="text-sm text-gray-500">
-                Small serif text for captions and secondary information.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Font Weight Variations */}
-      <section className="space-y-8">
-        <h3 className="text-2xl font-semibold text-gray-800 border-b border-gray-200 pb-2">
-          Font Weight Variations
-        </h3>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="p-6 bg-white rounded-lg shadow-sm border">
-            <h4 className="text-lg font-light text-gray-700 mb-3">Light Weight</h4>
-            <p className="font-light text-gray-600">
-              This is light weight text that feels airy and modern.
+      {/* Content with Selected Font */}
+      <div style={{ fontFamily: `'${selectedFont}', sans-serif` }} className="space-y-8">
+        {/* Home Content Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="p-6 border">
+            <div className="text-3xl mb-3">🧠</div>
+            <h4 className="text-lg font-semibold mb-2">Lifelong Learner</h4>
+            <p className="text-gray-600 leading-relaxed">
+              Always learning something new with intensity. The compound effect of learning something new every day is immense.
             </p>
           </div>
-          
-          <div className="p-6 bg-white rounded-lg shadow-sm border">
-            <h4 className="text-lg font-normal text-gray-700 mb-3">Normal Weight</h4>
-            <p className="font-normal text-gray-600">
-              This is normal weight text that's easy to read and versatile.
+          <div className="p-6 border">
+            <div className="text-3xl mb-3">💻</div>
+            <h4 className="text-lg font-semibold mb-2">Software Engineer</h4>
+            <p className="text-gray-600 leading-relaxed">
+              Proficient in all aspects of computer science, encompassing theory, languages, tools, and practices.
             </p>
           </div>
-          
-          <div className="p-6 bg-white rounded-lg shadow-sm border">
-            <h4 className="text-lg font-semibold text-gray-700 mb-3">Semibold Weight</h4>
-            <p className="font-semibold text-gray-600">
-              This is semibold text that draws attention and adds emphasis.
+          <div className="p-6 border">
+            <div className="text-3xl mb-3">📚</div>
+            <h4 className="text-lg font-semibold mb-2">Voracious Reader</h4>
+            <p className="text-gray-600 leading-relaxed">
+              I read many hours a day and have read hundreds of books on diverse subjects, aspiring to be a polymath.
             </p>
           </div>
         </div>
-      </section>
 
-      {/* Code Font Testing */}
-      <section className="space-y-8">
-        <h3 className="text-2xl font-semibold text-gray-800 border-b border-gray-200 pb-2">
-          Code Font Testing
-        </h3>
-        
-        <div className="bg-gray-900 p-6 rounded-lg">
-          <pre className="text-green-400 font-mono text-sm">
-            <code>{`// Code font example
-function greetUser(name) {
-  return \`Hello, \${name}!\`;
-}
-
-const message = greetUser("World");
-console.log(message);`}</code>
-          </pre>
+        {/* Blog Post */}
+        <div className="p-6 border">
+          <h4 className="text-xl font-bold mb-3">Flow State</h4>
+          <p className="leading-relaxed">
+            Flow state is the antidote to all my weaknesses that get in the way of me collecting all the skills and knowledge I have now.
+          </p>
+          <p className="leading-relaxed mt-3">
+            My weaknesses are aplenty. I am lazy. I daydream. I don't like to follow timetables. I am easily distracted and very often go down the Internet rabbit hole. There are voices that tell me all the way things will go wrong. Despite all of these, I can be super productive for hours at a stretch and that is how I have, well, what I have.
+          </p>
+          <p className="leading-relaxed mt-3">
+            Mihaly Csikszentmihaly gave it this name and popularized it as a concept. I knew this feeling before I heard about this man who's name I can't pronounce but he is the one named it and you and I can talk about this easily.
+          </p>
         </div>
-      </section>
 
-      {/* Font Pairing Examples */}
-      <section className="space-y-8">
-        <h3 className="text-2xl font-semibold text-gray-800 border-b border-gray-200 pb-2">
-          Font Pairing Examples
-        </h3>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="p-6 bg-gradient-to-br from-blue-50 to-indigo-100 rounded-lg">
-            <h4 className="text-xl font-bold text-indigo-900 mb-3">Sans-Serif + Mono</h4>
-            <h5 className="text-lg font-semibold text-indigo-800 mb-2">Clean and Modern</h5>
-            <p className="text-indigo-700 mb-4">
-              Perfect for technical content and modern interfaces.
-            </p>
-            <code className="bg-indigo-200 text-indigo-900 px-2 py-1 rounded text-sm font-mono">
-              const example = "code";
-            </code>
-          </div>
-          
-          <div className="p-6 bg-gradient-to-br from-purple-50 to-pink-100 rounded-lg">
-            <h4 className="text-xl font-bold text-purple-900 mb-3 font-serif">Serif + Sans</h4>
-            <h5 className="text-lg font-semibold text-purple-800 mb-2">Elegant and Readable</h5>
-            <p className="text-purple-700 mb-4">
-              Great for articles and long-form content with personality.
-            </p>
-            <span className="bg-purple-200 text-purple-900 px-2 py-1 rounded text-sm">
-              Sans-serif accent
-            </span>
+        {/* CS Note */}
+        <div className="p-6 border">
+          <h4 className="text-lg font-semibold mb-3">React</h4>
+          <div className="space-y-2">
+            <p><strong>What is React?</strong></p>
+            <p>• A JavaScript library that makes it easy to render HTML elements based on view state</p>
+            <p className="mt-3"><strong>How it works:</strong></p>
+            <p>• There is one root component that have many components</p>
+            <p>• A component may have state, which are passed to children any level deep as props</p>
+            <p>• Props are managed as function variables</p>
+            <p>• React executes all components rendering steps to make a DOM tree and render</p>
+            <p>• Updates to state has to happen through the React runtime</p>
+            <p>• When state changes, React creates another whole render in memory but no DOM update</p>
+            <p>• Compares snapshots of old DOM state and new DOM state efficiently</p>
+            <p>• Updates the parts of DOM that has to change</p>
           </div>
         </div>
-      </section>
+      </div>
     </div>
   );
 }
