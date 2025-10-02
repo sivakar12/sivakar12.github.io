@@ -31,9 +31,9 @@ export default function RootLayout({
   };
 
   return (
-    <body className={`flex flex-col min-h-screen bg-surface-background ${fontClassName}`}>
+    <body className={`flex flex-col min-h-screen bg-peach-background ${fontClassName}`}>
       <GoogleAnalytics GA_MEASUREMENT_ID={gaMeasurementId} />
-      <nav className="fixed top-0 left-0 right-0 h-16 bg-surface-card z-10">
+      <nav className="fixed top-0 left-0 right-0 h-16 bg-peach-card z-10">
         <NavigationBar
           navItems={navItems}
           currentPath={pathname}

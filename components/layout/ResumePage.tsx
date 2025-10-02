@@ -26,7 +26,7 @@ export default function ResumePage({ resumeContent }: ResumePageProps) {
           components={{
             h1: ({ children }) => (
               <h1 
-                className="text-3xl font-semibold mb-4 animate-card-entrance text-gray-900"
+                className="text-3xl font-semibold mb-4 animate-card-entrance text-black"
                 style={{ animationDelay: `${getAnimationDelay('h1')}ms` }}
               >
                 {children}
@@ -34,7 +34,7 @@ export default function ResumePage({ resumeContent }: ResumePageProps) {
             ),
             h2: ({ children }) => (
               <h2 
-                className="text-2xl font-semibold mt-8 mb-4 animate-card-entrance text-gray-800"
+                className="text-2xl font-semibold mt-8 mb-4 animate-card-entrance text-black"
                 style={{ animationDelay: `${getAnimationDelay('h2')}ms` }}
               >
                 {children}
@@ -42,7 +42,7 @@ export default function ResumePage({ resumeContent }: ResumePageProps) {
             ),
             h3: ({ children }) => (
               <h3 
-                className="text-xl font-semibold mt-6 mb-3 animate-card-entrance text-gray-700"
+                className="text-xl font-semibold mt-6 mb-3 animate-card-entrance text-black"
                 style={{ animationDelay: `${getAnimationDelay('h3')}ms` }}
               >
                 {children}
@@ -50,7 +50,7 @@ export default function ResumePage({ resumeContent }: ResumePageProps) {
             ),
             ul: ({ children }) => (
               <ul 
-                className="list-disc pl-6 mb-4 animate-card-entrance text-gray-600"
+                className="list-disc pl-6 mb-4 animate-card-entrance text-black"
                 style={{ animationDelay: `${getAnimationDelay('ul')}ms` }}
               >
                 {children}
@@ -58,7 +58,7 @@ export default function ResumePage({ resumeContent }: ResumePageProps) {
             ),
             li: ({ children }) => (
               <li 
-                className="mb-2 animate-card-entrance text-gray-600"
+                className="mb-2 animate-card-entrance text-black"
                 style={{ animationDelay: `${getAnimationDelay('li')}ms` }}
               >
                 {children}
@@ -66,13 +66,13 @@ export default function ResumePage({ resumeContent }: ResumePageProps) {
             ),
             p: ({ children }) => (
               <p 
-                className="mb-4 animate-card-entrance text-gray-600"
+                className="mb-4 animate-card-entrance text-black"
                 style={{ animationDelay: `${getAnimationDelay('p')}ms` }}
               >
                 {children}
               </p>
             ),
-            strong: ({ children }) => <strong className="font-semibold text-gray-800">{children}</strong>,
+            strong: ({ children }) => <strong className="font-semibold text-black">{children}</strong>,
           }}
         >
           {resumeContent}

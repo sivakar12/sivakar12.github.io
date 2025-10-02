@@ -19,14 +19,7 @@ export default function ProfileSection({ name, imageSrc, imageAlt }: ProfileSect
           height={192}
         />
       </div>
-      <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center break-words px-4" 
-          style={{ 
-            background: 'linear-gradient(to right, black, #6b7280, black)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
-            lineHeight: '1.2'
-          }}>
+      <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center break-words px-4 text-black">
         {name}
       </h1>
     </div>
