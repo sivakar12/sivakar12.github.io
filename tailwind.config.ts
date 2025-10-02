@@ -8,29 +8,16 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'besley': ['var(--font-besley)', 'serif'],
+      },
       colors: {
-        primary: {
-          50: '#FDF6F0',
-          100: '#F9E8DA',
-          200: '#F5D5BE',
-          300: '#F0BFA0',
-          400: '#EBA983',
-          500: '#E69366',
-          600: '#D97B4A',
-          700: '#C06438',
-          800: '#A54E2A',
-          900: '#8A3B1E',
+        peach: {
+          background: '#FFF8F0',
+          card: '#FFFFFF',
         },
-        surface: {
-          50: '#FAF9F7',
-          100: '#F5F3EF',
-          200: '#EBE7E1',
-          300: '#E0DAD2',
-          400: '#D6CEC3',
-          500: '#CCC2B4',
-          card: '#F5D5BE',
-          background: '#FDFBF9',
-        },
+        black: '#000000',
+        white: '#FFFFFF',
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -51,12 +38,8 @@ const config: Config = {
         'xl': '1.25rem',
         '2xl': '1.5rem',
         '3xl': '1.75rem',
-      },
-      boxShadow: {
-        'elevation-1': '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.04)',
-        'elevation-2': '0 3px 6px rgba(0,0,0,0.15), 0 2px 4px rgba(0,0,0,0.06)',
-        'elevation-3': '0 10px 20px rgba(0,0,0,0.15), 0 3px 6px rgba(0,0,0,0.08)',
-        'elevation-4': '0 15px 25px rgba(0,0,0,0.15), 0 5px 10px rgba(0,0,0,0.09)',
+        '4xl': '2rem',
+        '5xl': '2.5rem',
       },
       spacing: {
         '18': '4.5rem',

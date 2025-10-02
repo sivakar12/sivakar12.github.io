@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { Signika } from 'next/font/google'
+import { Besley } from 'next/font/google'
 
 import "./globals.css";
 import RootLayout from "@/components/layout/RootLayout";
 import { navItems } from "@/data/navigation";
 
-const font = Signika({
+const font = Besley({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-signika',
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-besley',
 })
 
 export const metadata: Metadata = {

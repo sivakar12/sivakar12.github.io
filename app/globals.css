@@ -4,20 +4,20 @@
 
 @layer base {
   body {
-    @apply bg-surface-background;
-    font-family: var(--font-signika), sans-serif;
+    @apply bg-peach-background;
+    font-family: var(--font-besley), serif;
   }
 }
 
 @layer components {
   .card {
-    @apply bg-surface-card rounded-2xl p-6 transition-all duration-300 hover:bg-primary-200 shadow-elevation-1 hover:shadow-elevation-2;
+    @apply bg-peach-card rounded-5xl p-6 border-2 border-black;
   }
 }
 
 @layer utilities {
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-primary-800;
+    @apply text-black;
   }
   
   /* Card entrance animations */
