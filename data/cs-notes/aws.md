@@ -1,0 +1,29 @@
+---
+title: Amazon Web Services (AWS)
+---
+- What is AWS?
+  - Cloud Components to run servers, databases, and other components
+- AWS Account
+  - All resources live in the AWS Account. No more grouping
+  - One billing entity
+  - Create separately for devlopment, staging and production
+- Identify and Access Management
+  - Policies are attaches to Users, Groups or Roles
+    - Effect, Action, Resource
+  - One IAM instance for one AWS Account
+- AWS CLI
+- EC2
+- S3
+  - Simple Object Storage
+- Lambda
+  - Function as a service. Code gets run somewhere
+- Serverless Application Model (SAM)
+  - A TOML file with components that is deployed together
+  - Separate CLI for this
+- CloudFormation
+  - Just a template?
+- Secret Manager
+  - One Secret Manager for one AWS Account
+  - Can be string, JSON object or blob
+  - Versioning is done
+  - Limited to region. Region has to be given when querying.
