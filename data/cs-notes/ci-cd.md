@@ -1,0 +1,29 @@
+---
+title: CI/CD
+---
+- What is CI/CD?
+  - We work on editing the code only and the deployments happen automatically
+- Tools Needed
+  - Repository
+    - Single source of truth
+  - Pipeline
+    - Steps that are executed on commit, merge, pull request etc.
+  - Automated testing
+  - CI/CD Provider
+- Environment
+  - A running instance of the application
+  - We need different environments for local, development, staging and production
+    - We have an application tested in dev and then in staging before allowing it in production
+    - Very frequent updates in dev, less as we go in the hierarchy
+- Variables and Secrets
+  - We can store on multiple levels
+    - Organisation level
+    - Repository level
+    - Environment level
+  - Precedence based on what is closest
+  - .env files for local
+    - .env is not commmitted in the repository. .env.example is commited.
+  - Names in uppercase with words separated by underscores
+    - No mention of environment in names. For each enviornemnt, same names are used.
+    - There should be a variable called ENV that is the environment
+  - How to version control the requirements and types of the variables and secrets?
