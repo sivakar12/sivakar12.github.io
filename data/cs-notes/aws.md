@@ -11,7 +11,15 @@ title: Amazon Web Services (AWS)
   - Policies are attaches to Users, Groups or Roles
     - Effect, Action, Resource
   - One IAM instance for one AWS Account
+  - Role is created and added to users, resources, external things
+    - Roles are identified by names
+    - Roles have permissions
+    - A user "assumes" a role
 - AWS CLI
+  - Profile is stored in the home directory file
+  - One profile for a user, an AWS account and a CLI
+    - You give a URL and use the CLI to open the browser and login that gives AWS the tokens
+  - Define profiles in ~/.aws/config file
 - EC2
 - S3
   - Simple Object Storage
