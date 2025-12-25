@@ -47,4 +47,9 @@ export interface Profile {
   name: string;
   imageSrc: string;
   imageAlt: string;
-} 
+}
+
+export interface MiscPage {
+  id: string;
+  content: string;
+}

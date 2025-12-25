@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import yaml from 'js-yaml';
-import { Article, CSNote, HomePageItem, ProjectItem, LinkItem, Texts, Profile } from '@/types/types';
+import { Article, CSNote, HomePageItem, ProjectItem, LinkItem, Texts, Profile, MiscPage } from '@/types/types';
 
 // Shared utility function
 function readMarkdownFile(filePath: string) {
@@ -283,4 +283,46 @@ export function loadProfile(): Profile {
       imageAlt: "Sivakar Sithamparanathan"
     };
   }
-} 
+}
+
+// Misc Pages data loader
+const miscPagesDir = path.join(process.cwd(), 'data', 'misc-pages');
+
+export function getAllMiscPages(): MiscPage[] {
+  if (!fs.existsSync(miscPagesDir)) {
+    return [];
+  }
+  const fileNames = fs.readdirSync(miscPagesDir);
+  const mdFiles = fileNames.filter((fileName) => fileName.endsWith('.md'));
+
+  const pages = mdFiles.map((fileName) => {
+    const id = fileName.replace('.md', '');
+    const filePath = path.join(miscPagesDir, fileName);
+    const { content } = readMarkdownFile(filePath);
+
+    return {
+      id,
+      content
+    }
+  }).filter(page => page.content);
+
+  return pages.sort((a, b) => a.id.localeCompare(b.id));
+}
+
+export function getMiscPageById(id: string): MiscPage | null {
+  try {
+    const filePath = path.join(miscPagesDir, `${id}.md`);
+    if (!fs.existsSync(filePath)) {
+      return null;
+    }
+    const { content } = readMarkdownFile(filePath);
+    
+    return {
+      id,
+      content
+    }
+  } catch (error) {
+    console.error(`Error loading misc page ${id}:`, error);
+    return null;
+  }
+}
