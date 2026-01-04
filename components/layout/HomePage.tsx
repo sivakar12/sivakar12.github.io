@@ -10,14 +10,14 @@ interface HomePageProps {
 
 export default function HomePage({ homeContent, profile }: HomePageProps) {
   return (
-    <main className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 bg-peach-background">
-      <div className="max-w-4xl mx-auto">
-        <ProfileSection 
-          name={profile.name}
-          imageSrc={profile.imageSrc}
-          imageAlt={profile.imageAlt}
-        />
+    <main className="min-h-screen bg-peach-background">
+      <ProfileSection 
+        name={profile.name}
+        imageSrc={profile.imageSrc}
+        imageAlt={profile.imageAlt}
+      />
 
+      <div className="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <GridLayout variant="wide">
           {homeContent.map((item, index) => (
             <HomeCard key={index} item={item} />
