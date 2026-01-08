@@ -1,46 +1,15 @@
 ---
 title: Learning with LLMs
-hidden: true
-shortDescription: Cruising with batch of questions
+hidden: false
+shortDescription: "My super-productive learning method: batches of questions."
 ---
 
-Ideas
-- It is trial and error. Got to a super efficient system.
-- I have a database of doubts in Notion
-- The output is usually a lot and not really needed. Way too obvious. If you ask, you get mini-Wikipedia. That is not a big problem. THat is how I used to learn before.
-- But now we have something so much better. So much more productive.
-- Ask specific things. Explain what I know. Guessing when I have to. Mistakes are ok. Give a lot of information. Mind dump basically. With guesses, questions and sometimes stating the obvious.
-- Then it answers with what I am missing and what I need to know.
-- Reading that I get more questions. I add to the next batch of questions.
-- This is an active process. Not passive reading. More excitement. More change of being in the flow state. Better to commit to memory.
-- I get to guess. That is creativity. This is exercise in bringing back fuzzy memories.
-- I consolidate what I know already. Repitition helps. Smart repition. I get more confident with what I know. They are brought up in cache or soemthing.
-- Language and articulation skills improve. Richard Feynman said that that you don't know unless you can explain in simple terms.
+I knew LLMs were going to change the way I learn. I knew it the first time I used it. I was using it to learn for a long time. But it took a few years for me to crack the most effective way of doing it. I finally have a system and I am now cruising. Very fast I am moving, filling the gaps in my knowledge.
 
+The process works like this. I have a database of doubts I have in my note-taking system. Each entry is a question, a single statement or a concept. I get into a chat session only when I am in the right mood and pick one off the database. I use bullet points in all my chats. I get all that is in my mind at that moment into many bullet points. Questions, questions related to the previous question, guesses of answers, my own hypotheses, names of concepts etc.. I get more questions as I write questions. Mistakes are OK. Stating the obvious is fine. Then I send all of it into the LLM. It replies with big text. As I read, I start the other batch of bullet points. I write more questions these cause in me. I paraphrase things that I just read. I type as I read. Then I may add even more things. Basically every batch is a big brain dump. Then I send. It replies with answers. This thing repeats a fair number of times. When I know I have a clear picture, I stop and cross the topic off the database. I don't let it go too long. If I get doubts in the future, they go as new entries and a new chat. In the new chat things might repeat, but that is fine. I type and type and typing is where most time is spent. LLM processes it pretty quickly. It is as if I am the one doing most of the work.
 
-## Draft #1
-After a lot of trial and error, I have a process now, on how to learn with LLM.
+Now to explain this process... First for the batches, the LLM usually gives a long answer. One can tell it to be short, but given the problem to be solved, if we are doing short answers, we will have many back and forth messages and it will be slow and the waiting can stop the flow of thinking. I want to get out all the things in my head so leaving them for later won’t work. You know that feeling when you read books and Wikipedia articles, and you get more and more doubts and you can’t hold them in your head. (And in the old way, the answers for each are so far away, so many steps away. That is zig-zag but this is linear. No cognitive overload from context switching). With batches, I am giving in context about what I know and where I am weak. It will then know exactly what I need. When I make guesses and paraphrase, I am being an active learner and not a passive reader. Stating the obvious might seem a waste of time. But I want to follow the logical flow. I am thinking out loud. Repetition is actually productive here. It helps consolidate what I already know. I want to be validated and I gain a confidence boost from that. When I make guesses on what I think something is, how something works, I am also pulling things out of my memory. It is an exercise in bringing back fuzzy memories. I learn to be articulate. I learn to be simple. If you can't explain something in simple terms, you don't know that concept.
 
-First the process. I work based off doubts. I have a list of douts in my notetaking app. I keep adding qestions and concepts there. Then when I am in the right mood, I start with that doubt and go down the rabbit hole. I ask questions. A lot of questions at once. Bullet points are the keys. I put too many things at once. What I know. What I ghink I know. What I want to know. Then it replies. The replies cause more doubts in me. Some things are cleared. I send back more bullet points. Things I learned, I sent as paraphrased thigns. The more doubts, I put. I read the big output it gives and I make question and the next response. 
+AI is not here to make me lazy. I don’t treat AI as something that will do work for me. I am doing the work and AI is making it faster. Here AI is a tool. My brain is what I want to sharpen. I am making full use of my creative mind, my logical mind and my memory.
 
-Now the why part? This doubts based approach. That is because I want to leanr only what I don't know. So effetive. Books and Wikipedia, give you too much. An OCD person like me, want to read all top to bottom. Then about batch questiosn. The LLM responses are big. And they take time. Many things at once, means, the big response contains only what I want and it also gets some understanding what I wnat. The writing much and guessing adn paraphrasitn. It is me learning to articulate. And you can't know something when you can't explain ti youself.
-
-It is a totaly active process. Very much engaging. I love reading. but this is better than reading I found. This is exhausting. i do only a few sessions a day. All parts of the brain used. But I feel good in the end.
-
-## Structure for Draft 2
-- First an intro
-- Then just the process. How I do it.
-- Then the reasons
-- Final positive saying about exciting and active and rewarding
-
-## Draft 2
-
-First time I tried chatting with an LLM, I knew I was going to use this to learn. It took a couple of years for me to crack the most effective way of doing it. I finally have a system and I am cruising.
-
-It works like this. I have a database of doubts I have in my notetaking system. Each entry is a single statement, topic or a question? I get into a chat session only when I am in the right mood and pick one off the database. I use bullet points in all my chats. I try and get all that is in my mind at that moment into many bullet points. Doubts, guesses the answers, questions on related questions. I get more questions as I write questions. Then I send all of it into the LLM. It replies with big test. As I read, I start the other batch of bullet points. I write more questions these bring in me. I paraphrase things that I jsut read, more questios. I type as I read. Then I may add even more things. Brain dump. Then I send. This things repeats a fair number of times. When I know I have a clear picture, I stop and cross of the database. I don't let it go too long. If I get doubts in the future, they go as new entries and more chat. There I wour probably add what I learnd that I can get out of my head.
-
-The reasons are these. First for the batches, the LLM usually gives a long answer. One can tell it to beshort, but given the problem to be solved, if we are doing short answers, we will have many back and forth things. And it is slow. We have to wait. It is costly. With batches, I am giving in context what I know and where I am weak. Lots of ways it can find out my exact need. When I makes guess and paraphrasing, I am giving my brain a workout. I don't want to be the lazy person that let AI do everything. AI is a tool. My brain is what I want to sharpen. So I am engaging my creative mind, my logical mind and my memory when I make guesses on what I think something is, how something works. I learn to be articulate. I learn to be simple. If you can't explain something simply, you don't know that concept.
-
-So, this is a fun and intense process now. I feel exhausted in the end. Brain workout. But I is so rewarding and so engaging compared to just reading. I am a lifelong learner. My learning process got manifold faster now with LLMs.
-
-[In the next draft try and add an example. Or topic I have tried.]
+So, this is a fun yet intense process now. I feel exhausted in the end. I get a full brain workout. I can do only a few sessions a day. But it is so rewarding and so engaging compared to just reading. I am a lifelong learner. My learning process got many times faster now with LLMs.
