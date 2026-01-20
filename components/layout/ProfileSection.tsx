@@ -25,7 +25,7 @@ export default function ProfileSection({ name, imageSrc, imageAlt }: ProfileSect
 
       {/* Text Side - Standard CSS Typography */}
       <div className="w-full md:flex-1 text-center md:text-left min-w-0 flex flex-col justify-center">
-        <h1 className="font-bold leading-tight text-black dark:text-white animate-card-entrance break-words text-4xl sm:text-5xl md:text-5xl lg:text-6xl">
+        <h1 className="font-bold leading-tight text-black animate-card-entrance break-words text-4xl sm:text-5xl md:text-5xl lg:text-6xl">
           {name}
         </h1>
       </div>
