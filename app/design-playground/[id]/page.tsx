@@ -7,6 +7,17 @@ interface PageProps {
   params: Promise<{ id: string }>;
 }
 
+export async function generateStaticParams() {
+  const experimentsDirectory = join(process.cwd(), 'app/design-playground/experiments');
+  const filenames = await fs.readdir(experimentsDirectory);
+  
+  return filenames
+    .filter((name) => name.endsWith('.tsx'))
+    .map((name) => ({
+      id: name.replace(/\.tsx$/, ''),
+    }));
+}
+
 export default async function ExperimentPage({ params }: PageProps) {
   const { id } = await params;
   
