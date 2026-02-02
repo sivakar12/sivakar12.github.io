@@ -3,3 +3,13 @@ node_modules
 .DS_Store
 *storybook.log
 storybook-static
+
+# Build output
+out
+build.log
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
