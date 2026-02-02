@@ -43,11 +43,26 @@ jobs:
             echo "Unable to determine package manager"
             exit 1
           fi
+      - name: Setup pnpm
+        if: ${{ hashFiles('pnpm-lock.yaml') != '' }}
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
+          cache-dependency-path: |
+             package-lock.json
+             yarn.lock
+             pnpm-lock.yaml
+      - name: Overwrite detect for pnpm
+        if: ${{ hashFiles('pnpm-lock.yaml') != '' }}
+        run: |
+            echo "manager=pnpm" >> $GITHUB_OUTPUT
+            echo "command=install" >> $GITHUB_OUTPUT
+            echo "runner=pnpm" >> $GITHUB_OUTPUT
       - name: Setup Pages
         uses: actions/configure-pages@v3
         with:
